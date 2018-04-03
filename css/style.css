@@ -279,6 +279,9 @@ section.main .post-tags i {
 .featherlight .featherlight-content .featherlight-close:hover {
   text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 7px #228dff;
 }
+section.main .post .content p {
+  text-indent: 2em;
+}
 section.main .post .content h1,
 section.main .post .content h2,
 section.main .post .content h3,
