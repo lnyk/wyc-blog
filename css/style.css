@@ -3,11 +3,25 @@
 body {
   background: #0f1516;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.5em;
 }
 @media (max-width: 33.9em) {
   body {
     font-size: 0.7em;
+  }
+}
+@media (max-width: 47.9em) {
+  body {
+    font-size: 1em;
+  }
+}
+@media (max-width: 61.9em) {
+  body {
+    font-size: 1.3em;
+  }
+}
+@media (max-width: 74.9em) {
+  body {
+    font-size: 1.5em;
   }
 }
 .bg-gradient {
@@ -180,12 +194,29 @@ section.main .post .post-header.hover:after {
   right: 5px;
 }
 section.main .post .content {
+  font-size: 1.5em;
   margin-top: 65px;
 }
 @media (max-width: 33.9em) {
   section.main .post .content {
     margin-top: 40px;
     text-align: justify;
+    font-size: 0.7em;
+  }
+}
+@media (max-width: 47.9em) {
+  section.main .post .content {
+    font-size: 1em;
+  }
+}
+@media (max-width: 61.9em) {
+  section.main .post .content {
+    font-size: 1.3em;
+  }
+}
+@media (max-width: 74.9em) {
+  section.main .post .content {
+    font-size: 1.5em;
   }
 }
 section.main .post .content .gallery-container {
