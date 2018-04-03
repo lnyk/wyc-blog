@@ -3,7 +3,7 @@
 body {
   background: #0f1516;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 @media (max-width: 33.9em) {
   body {
@@ -12,17 +12,17 @@ body {
 }
 @media (max-width: 47.9em) {
   body {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 }
 @media (max-width: 61.9em) {
   body {
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
 }
 @media (max-width: 74.9em) {
   body {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 .bg-gradient {
@@ -460,7 +460,7 @@ section.main .post .content .video-container embed {
 .menu-bg .menu-container ul li a {
   font-family: "Orbitron", sans-serif;
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: 1.3em;
   border-bottom: none;
 }
 @media (max-width: 33.9em) {
@@ -470,17 +470,17 @@ section.main .post .content .video-container embed {
 }
 @media (max-width: 47.9em) {
   .menu-bg .menu-container ul li a {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 }
 @media (max-width: 61.9em) {
   .menu-bg .menu-container ul li a {
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
 }
 @media (max-width: 74.9em) {
   .menu-bg .menu-container ul li a {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 nav {
@@ -496,7 +496,7 @@ nav a:active {
   font-family: FontAwesome;
   font-style: normal;
   border-bottom: none;
-  font-size: 1.5em;
+  font-size: 1.3em;
   opacity: 0.5;
   transition: opacity 0.3s ease;
 }
@@ -513,7 +513,7 @@ nav a:active {
   nav a:link,
   nav a:visited,
   nav a:active {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 }
 @media (max-width: 61.9em) {
@@ -521,7 +521,7 @@ nav a:active {
   nav a:link,
   nav a:visited,
   nav a:active {
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
 }
 @media (max-width: 74.9em) {
@@ -529,7 +529,7 @@ nav a:active {
   nav a:link,
   nav a:visited,
   nav a:active {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 nav a:before,
