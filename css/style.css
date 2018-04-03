@@ -475,12 +475,12 @@ section.main .post .content .video-container embed {
 }
 @media (max-width: 61.9em) {
   .menu-bg .menu-container ul li a {
-    font-size: 1em;
+    font-size: 1.1em;
   }
 }
 @media (max-width: 74.9em) {
   .menu-bg .menu-container ul li a {
-    font-size: 1em;
+    font-size: 1.3em;
   }
 }
 nav {
@@ -521,7 +521,7 @@ nav a:active {
   nav a:link,
   nav a:visited,
   nav a:active {
-    font-size: 1em;
+    font-size: 1.1em;
   }
 }
 @media (max-width: 74.9em) {
@@ -529,7 +529,7 @@ nav a:active {
   nav a:link,
   nav a:visited,
   nav a:active {
-    font-size: 1em;
+    font-size: 1.3em;
   }
 }
 nav a:before,
