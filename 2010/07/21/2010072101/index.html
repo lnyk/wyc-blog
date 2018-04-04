@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="从Emacs到Github"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>从Emacs到Github - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2010/07/21/2010072101/">
+                从Emacs到Github
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2010-07-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>本文详细说明如何在Mac OS X中利用emacs通过git分布式版本控制系统利用GitHub.com的免费服务操作你的开源项目。</p>
+<a id="more"></a>
+<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
+<li><p>system: Mac OS X 10.6.4</p>
+</li>
+<li><p>emacs: GNU Emacs 23.2.1 (x86_64-apple-darwin, NS apple-appkit-1038.29)</p>
+</li>
+<li><p>git: git-core 1.7.1.1_1+bash_completion+doc+gitweb+svn</p>
+</li>
+</ul>
+<p>如果没有上面要求的内容，不要紧，我们从头开始。</p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>系统是Mac OS X平台，其他系统可以参考相应文档，不过除了各个软件的平台版本不同以外，其他应该都一样。</p>
+<p>好的，让我们开始吧。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>这个阶段，我会带领大家准备好一切所需要的东西。</p>
+<ol>
+<li>系统打补丁</li>
+</ol>
+<p>当然，这一步不是必须的，虽然第一步就是可选操作，而且对于我们后续的操作几乎没有影响，不过让系统保持最新版本，对于我们这种Coder类型的偏执狂们来说，应该会让心情好一些吧。</p>
+<p>具体操作，苹果系统：点左上角的“苹果”，然后Software Update…</p>
+<ol start="2">
+<li>准备好GNU Emacs</li>
+</ol>
+<p>对于苹果平台的Emacs来说，其实如果安装的时候就选择了Emacs，那么自带的版本是GNU Emacs 22.1.1 (mac-apple-darwin)，这显然与最新版本相去甚远，继续保持我们版本最新的偏执原则。</p>
+<p>这里就选择GNU那帮偏执狂们的官方版本吧：</p>
+<p><a href="http://ftp.gnu.org/pub/gnu/emacs/" target="_blank" rel="noopener">GNU Emacs</a></p>
+<p>我们Mac平台有几种版本，个人认为下面这个官方版本的最纯净Mac编译版本是最好的，版本更新也几乎与GNU官方同步，而且任何方面都忠实于GNU官方相应版本。什么叫偏执狂精神，这应该是很好的体现吧。网站地址如下：</p>
+<p><a href="http://emacsformacosx.com/" target="_blank" rel="noopener">GNU Emacs for Mac</a></p>
+<p>当然，还有很多其他版本的Mac平台Emacs，比如Aqua Emacs、Cocoa Emacs等等，当然可以直接编译官方原始版本，随你喜欢的安装吧。</p>
+<blockquote>
+<p>未完，待续。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h3 id="Global-setup"><a href="#Global-setup" class="headerlink" title="Global setup"></a>Global setup</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Download and install Git</span><br><span class="line">git config --global user.name <span class="string">"William Yao"</span></span><br><span class="line">git config --global user.email monoyo@gmail.com</span><br></pre></td></tr></table></figure>
+<h3 id="Next-steps"><a href="#Next-steps" class="headerlink" title="Next steps"></a>Next steps</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir Me-and-My-Wife</span><br><span class="line"><span class="built_in">cd</span> Me-and-My-Wife</span><br><span class="line">git init</span><br><span class="line">touch README</span><br><span class="line">git add README</span><br><span class="line">git commit -m <span class="string">'first commit'</span></span><br><span class="line">git remote add origin git@github.com:ayama/Me-and-My-Wife.git</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="Existing-Git-Repo"><a href="#Existing-Git-Repo" class="headerlink" title="Existing Git Repo?"></a>Existing Git Repo?</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> existing_git_repo</span><br><span class="line">git remote add origin git@github.com:ayama/Me-and-My-Wife.git</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/emacs/">#emacs</a> <a href="/tags/macports/">#macports</a> <a href="/tags/git/">#git</a> <a href="/tags/github/">#github</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2011/03/06/2011030602/">金庸群侠传</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2011/03/06/2011030601/">更新一下博客</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2010/11/07/2010110701/">用优盘安装Ubuntu 10.10</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2010/07/21/2010072102/">方便而又强大：本地Git操作完全指南</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="方便而又强大：本地Git操作完全指南"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>方便而又强大：本地Git操作完全指南 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2010/07/21/2010072102/">
+                方便而又强大：本地Git操作完全指南
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2010-07-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>正在构思这篇新的文章，介绍如何在抛开服务器、帐户、SSH、读写权限等等干扰，在本地相对安全的实现一个干净清洁的 Git 使用环境。</p>
+<p>先简单记录一下实际过程，有时间再进行细节的补充。</p>
+<a id="more"></a>
+<h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><p>具体步骤请参考我的另外一篇文章：《从 Emacs 到 GitHub》</p>
+<h2 id="生成本地一个纯净的Git仓库"><a href="#生成本地一个纯净的Git仓库" class="headerlink" title="生成本地一个纯净的Git仓库"></a>生成本地一个纯净的Git仓库</h2><p>因为本文介绍的Git使用环境是抛开了一切分布式服务器环境，单纯本地使用，为了尽可能避免仓库损坏带来不可挽回的损失，也为了达到相对安全的使用环境，我在实例环境中是这样进行描述的：</p>
+<p>Git的共享仓库，都放在使用TrueCrypt加密后的虚拟分区中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Volumes/&quot;TrueCrypt Volume&quot;/Git</span><br></pre></td></tr></table></figure>
+<p>而TrueCrypt的虚拟磁盘镜像文件存储在移动硬盘上。</p>
+<p>当然，如果没有加密需要，可以将共享仓库直接放在移动硬盘中，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mnt/projects/Git</span><br></pre></td></tr></table></figure>
+<p>实例中，当前项目为Diary，存放在下边位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/Projects/Diary</span><br></pre></td></tr></table></figure>
+<p>Diary项目中仅有一个文件：README</p>
+<p>介绍了本文实例中的规则之后，我们开始生成纯净Git仓库的具体步骤：</p>
+<p>首先进入Diary项目目录，将该目录初始化为Git仓库，并将该项目目录中所有文件加入Git监控（其实就README一个文件），然后进行第一次提交操作：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Projects/Diary</span><br><span class="line">git init</span><br><span class="line">git add *</span><br><span class="line">git commit -m <span class="string">"The first commit of Project: Diary"</span></span><br></pre></td></tr></table></figure>
+<p>这样，Diary项目已经是一个带有Git版本控制的目录了，并且该仓库已经进行了第一次成功的提交。</p>
+<p>接下来，利用这个已经变成带有Git版本控制功能的Diary项目目录，生成一个纯净的不带任何项目文件，只有.git目录的Git仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Projects</span><br><span class="line">git <span class="built_in">clone</span> --bare Diary Diary.git</span><br></pre></td></tr></table></figure>
+<p>然后，将该纯净仓库复制到我们的加密虚拟磁盘中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /Volumes/<span class="string">"TrueCrypt Volumes"</span>/Git</span><br><span class="line">cp ~/Projects/Diary.git /Volumes/<span class="string">"TrueCrypt Volume"</span>/Git/</span><br></pre></td></tr></table></figure>
+<p>这样，我们Diary项目的原始纯净仓库，就已经被安全的保护在了TrueCrypt虚拟磁盘中的Git目录中了。</p>
+<p>接下来，也是最后一步，删掉原来的Diary项目，重新从纯净仓库中clone出新的副本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Projects</span><br><span class="line">rm -f -r Diary</span><br><span class="line">git <span class="built_in">clone</span> file:///Volumes/<span class="string">"TrueCrypt Volume"</span>/Git/Diary.git</span><br></pre></td></tr></table></figure>
+<p>大功告成，目前的项目状态就是：</p>
+<p>当前工作副本是<code>~/Projects/Diary</code>，原始仓库是<code>/Volumes/&quot;TrueCrypt Volume&quot;/Git/</code>，当你愉快的工作了一个星期，进行了若干次commit提交操作，到了周末需要备份项目的时候（虽然一个星期备份一次是很不好的习惯，最好一天一次），只需要挂载上TrueCrypt分区，然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Projects/Diary</span><br><span class="line">git commit -m <span class="string">"Last commit and then push"</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>你一周的辛苦工作，就已经被推送（push）到TrueCrypt分区中位于<code>Git/Diary.git</code>的原始仓库中去了。</p>
+<p>当然，上边删除Diary原始目录并重新clone，仅仅是为了方便快捷，和作为说明来用，另外一个可能会因为Diary中文件被更改而被Git拒绝推送的操作是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Projects/Diary</span><br><span class="line">git remote add origin file:///Volumes/<span class="string">"TrueCrypt Volume"</span>/Git/Diary.git</span><br><span class="line">git commit -m <span class="string">"Last commit and then push"</span></span><br><span class="line">git push origin master</span><br><span class="line">或者</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/mac/">#mac</a> <a href="/tags/emacs/">#emacs</a> <a href="/tags/git/">#git</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2011/03/06/2011030602/">金庸群侠传</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2011/03/06/2011030601/">更新一下博客</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2010/11/07/2010110701/">用优盘安装Ubuntu 10.10</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2010/07/21/2010072102/">方便而又强大：本地Git操作完全指南</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
