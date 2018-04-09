@@ -151,6 +151,121 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2018/04/09/2014030601/index.html">
+                在Ubuntu中为Razer鼠标减速
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-04-09</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>今天买了新笔记本，因为没有预装系统，所以直接用Ubuntu引导的系统，插上我的Razer Naga鼠标之后，发现移动速度太快，即使设置为最低也没用，看来得用系统及别的降速了。</p>
+<p>打开终端，使用<code>xinput --list</code>命令找到鼠标的ID，我的ID是11，所以用下列命令进行降速，中间的句子是说明：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xinput --<span class="built_in">set</span>-prop <span class="string">"11"</span> <span class="string">"Device Accel Constant Deceleration"</span> 3</span><br></pre></td></tr></table></figure>
+<p>命令的意思是，把输入设备<code>11</code>的移动速度属性降到<code>3</code>，你也可以试试别的数字，对于我，3正好。</p>
+<p>命令会立即生效，所以可以多测试几个数值。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2014/03/09/2014030901/index.html">
+                清华大学KMS认证正版Win 8及Office 2010
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-03-09</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <ol>
+<li><p>首先确保你的Win 8是Enterprise版，Office 2010是Professional Plus，其他版本没试过，不敢确定能否激活。</p>
+</li>
+<li><p>将Win 8序列号修改为清华校园正版序列号。</p>
+</li>
+<li><p>将KMS服务器地址修改为清华KMS认证服务器。</p>
+</li>
+<li><p>开启认证。</p>
+</li>
+</ol>
+        </div>
+        <a href="/2014/03/09/2014030901/index.html" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2014/03/07/2014030701/index.html">
+                在Ubuntu中创建Windows 7/8 USB启动盘
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-03-07</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>如果想在Ubuntu中创建Windows 7或8的USB启动盘，由于没有Windows平台上那么方便的UltraISO，多数人只能选择GRUB手动安装，这样比较麻烦。</p>
+<p>今天无意中看到一个小软件，可以方便的在Ubuntu中创建Windows启动盘，经过测试还是比较方便的。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2014030701/2014030701-01.png!w-1024" alt="WinUSB"></p>
+<p>具体安装过程如下（假定你使用的是Ubuntu）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:colingille/freshlight</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install winusb</span><br></pre></td></tr></table></figure>
+<p>安装好之后，可以在Ubuntu的Dashboard中找到WinUSB，也可以直接使用命令行方式，格式如下：</p>
+<p><code>bash
+sudo winusb --format &amp;lt;iso path&amp;gt; &amp;lt;device&amp;gt;
+sudo winusb --install &amp;lt;iso path&amp;gt; &amp;lt;partition&amp;gt;</code>bash</p>
+<p>第一条命令会根据ISO的具体需要自动格式化设备为相应分区（一般为Fat32），第二条命令则安装ISO到设备分区，并写入MBR.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2013/12/25/2013122503/index.html">
                 修改 WordPress 的 SyntaxHighlighter 实现圆角和阴影效果
             </a>
@@ -361,110 +476,13 @@
 
     
         <div class="content">
-            <p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/wyc-blog/images/2013121602/2013-12-16-104017.png!w-1024" alt="Emacs with Purcell configuration"></p>
+            <p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2013121602/2013-12-16-104017.png!w-1024" alt="Emacs with Purcell configuration"></p>
 <p>一开始还想用自己在github上存的emacs设置，后来看了一下网上评论，都说purcell的大家都在用，于是干脆用人家的吧。</p>
 <p>经过试用，感觉还不错，功能很全，主要通用于各种语言编程。</p>
 <p><a href="https://github.com/purcell/emacs.d" target="_blank" rel="noopener">purcell/emacs.d</a></p>
 <p>作者把安装说明也写的很详细，而且不用修改init.el，可以创建lisp/init-local.el添加自己的喜好设定。</p>
 <p>唯一的问题，对于国内用户来说，第一次运行后自动安装编译加载那些需要的package过程太过漫长，连接melpa.milkbox.net:80简直就是一场噩梦，用无线上网卡我更新了整整一晚上。</p>
 <p>不过还好，最终结果还是蛮不错的。</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2013/12/16/2013121601/index.html">
-                解决ubuntu右上角日期时间消失的问题
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2013-12-16</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>刚刚解决了dpkg的问题，又突然发现日期时间消失了，google了一下，用下面两条命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get install gnome-panel</span><br></pre></td></tr></table></figure>
-<p>然后注销或重启。</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2013/12/15/2013121501/index.html">
-                解决ubuntu中dpkg操作中断后带来的问题
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2013-12-15</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>如果由于某些原因导致apt-get或者dpkg操作中断，有可能造成每次安装或更新都会提示如下信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">提示错误E: dpkg 的操作被中断了,</span><br><span class="line">您必须手动执行 <span class="string">'sudo dpkg --configure -a'</span> 以修复这个问题。</span><br></pre></td></tr></table></figure>
-        </div>
-        <a href="/2013/12/15/2013121501/index.html" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2012/12/23/2012122301/index.html">
-                复活
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2012-12-23</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/Whispers/">Whispers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>更新PayPal信息，服务器复活。</p>
-<p>暂时不想更新东西。</p>
 
         </div>
     
@@ -513,19 +531,19 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2018/04/09/2014030601/index.html">在Ubuntu中为Razer鼠标减速</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/03/09/2014030901/index.html">清华大学KMS认证正版Win 8及Office 2</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/03/07/2014030701/index.html">在Ubuntu中创建Windows 7/8 USB</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2013/12/25/2013122503/index.html">修改 WordPress 的 SyntaxHigh</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2013/12/25/2013122502/index.html">设定python的默认编码为UTF-8</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2013/12/25/2013122501/index.html">Ubuntu 13.10 LiveCD + boo</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2013/12/24/2013122401/index.html">利用virtualenv搭建python开发部署环</a>
             </li>
             
         </ul>
