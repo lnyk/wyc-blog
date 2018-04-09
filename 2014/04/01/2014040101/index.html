@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Ubuntu搭建TexLive+emacs+AucTex+magit(git)创作发布环境"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Ubuntu搭建TexLive+emacs+AucTex+magit(git)创作发布环境 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2014/04/01/2014040101/index.html">
+                Ubuntu搭建TexLive+emacs+AucTex+magit(git)创作发布环境
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-04-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>原来一直没写过关于搭建tex环境的小帮助，今天用到，所以总结一下给需要的朋友。</p>
+<a id="more"></a>
+<p>系统：Ubuntu Kyrin，官方中文版（麒麟），用中文版（国人自己的Ubuntu官方版）会省去很多字体配置、区域设置的问题。</p>
+<p>环境：TexLive包</p>
+<p>编辑器：Emacs 24</p>
+<p>因为是小帮助，我们就不来configure/make/make install那一套了，假定你可以方便的连接互联网，然后步骤就很简单了。</p>
+<p>首先使用apt-get安装所需要的所有东西：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br><span class="line">sudo apt-get install emacs</span><br><span class="line">sudo apt-get install texlive-full</span><br><span class="line">sudo apt-get install auctex</span><br></pre></td></tr></table></figure>
+<p>上面命令假设你有足够快的网速，不然特别是在第三步安装TexLive的步骤，最好泡杯茶，找个电影看看，这里是图省事儿，安装了ubuntu源中提供的texlive完整metapack，有经验的朋友也可以自己选择需要的包，如果自己选择，推荐texlive-base, texlive-generic还有texlive-xetex，我们在后面的配置中会默认使用xelatex进行编译。</p>
+<p>看完电影了？我们继续。</p>
+<p>首先配置emacs，这里可以参考我的另一篇文章，使用purcell同学的emacs.d自动搭建基础型全能emacs环境：</p>
+<a href="/2013/12/16/2013121602/index.html" title="终于搞定purcell-emacs.d">终于搞定purcell-emacs.d</a>
+<p>假定你完成了上面一步，那么打开<code>~/.emacs.d/lisp/init-local.el</code></p>
+<p>这是使用purcell的emacs.d环境之后，指定的可以添加自己的修改而不破坏purcell原始文件的地方。</p>
+<p>下面是我的init-local.el的完整内容，后半部分是配置magit和auctex的部分，其实依托apt-get搞定所有事情之后，配置起来是很简单的。</p>
+<p>每一部分都有说明，感兴趣的朋友可以直接套用。</p>
+<figure class="highlight erl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">(setq track-eol t)</span><br><span class="line"></span><br><span class="line">(setq-default abbrev-mode t)</span><br><span class="line">(setq save-abbrevs nil)</span><br><span class="line"></span><br><span class="line">(setq user-full-name 'William Yao')</span><br><span class="line">(setq user-mail-address 'monoyo@gmail.com')</span><br><span class="line"></span><br><span class="line">(setq make-backup-files nil)</span><br><span class="line">(setq auto-save-default nil)</span><br><span class="line"></span><br><span class="line">;; Kill a buffer without answering confirmation</span><br><span class="line">(global-set-key [(control x) (k)] 'kill-this-buffer)</span><br><span class="line">;; Auto kill processes <span class="keyword">when</span> killing a buffer.</span><br><span class="line">(delq 'process-kill-buffer-<span class="keyword">query</span>-function kill-buffer-<span class="keyword">query</span>-functions)</span><br><span class="line"></span><br><span class="line">(global-set-key [f11] 'my-fullscreen)</span><br><span class="line"></span><br><span class="line">;全屏</span><br><span class="line">(defun my-fullscreen ()</span><br><span class="line">  (interactive)</span><br><span class="line">  (x-send-client-message</span><br><span class="line">   nil <span class="number">0</span> nil '_NET_WM_STATE' <span class="number">32</span></span><br><span class="line">   '(<span class="number">2</span> '_NET_WM_STATE_FULLSCREEN' <span class="number">0</span>))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">;激活 magit 来管理 git</span><br><span class="line">(require 'magit)</span><br><span class="line"></span><br><span class="line">;激活 AucTex</span><br><span class="line">(load 'auctex.el' nil t t)</span><br><span class="line">(load 'preview-latex.el' nil t t)</span><br><span class="line">(setq TeX-auto-save t)</span><br><span class="line">(setq TeX-parse-self t)</span><br><span class="line">(setq-default TeX-master nil)</span><br><span class="line"></span><br><span class="line">(setq TeX-output-view-style (quote (('^pdf$' '.' 'evince <span class="comment">%o %(outpage)'))))</span></span><br><span class="line"></span><br><span class="line">(add-hook 'LaTeX-mode-hook</span><br><span class="line">(lambda()</span><br><span class="line">(add-to-list 'TeX-command-list '('XeLaTeX' '<span class="comment">%`xelatex%(mode)%' %t' TeX-run-TeX nil t))</span></span><br><span class="line">(setq TeX-command-default 'XeLaTeX')))</span><br><span class="line"></span><br><span class="line">(provide 'init-local)</span><br><span class="line"></span><br><span class="line">;;; init-local.el ends here</span><br></pre></td></tr></table></figure>
+<p><code>C+x,C+s保存文件，</code>C+x,C+c`退出emacs.</p>
+<p>然后重新打开emacs，如果一切顺利，你就配置完毕了，<code>C+x,C+f</code>打开一个在git管理中的.tex文件看看，是不是magit和auctex都启动了？</p>
+<p>试试用<code>C+c,C+c</code>编译，用<code>C+c,C+v</code>使用evince查看生成的pdf，是不是很爽？</p>
+<p>这里注意一点，上面配置文件的最后一部分，设置<code>C+c,C+c</code>命令默认使用xelatex编译pdf，你也可以设置为latex或其他支持的命令，这个设定只为方便。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/emacs/">#emacs</a> <a href="/tags/git/">#git</a> <a href="/tags/ubuntu/">#ubuntu</a> <a href="/tags/tex/">#tex</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/01/2014040103/index.html">Emacs中的Tab</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/01/2014040102/index.html">Ubuntu中简单的C语言Socket C/S例子</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/01/2014040101/index.html">Ubuntu搭建TexLive+emacs+Auc</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/03/18/2014031801/index.html">这个男人来自地球——Man from Earth</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
