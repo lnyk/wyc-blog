@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Ubuntu 13.10-django 1.5.1-apache 2.4.6-mod_wsgi安装部署问题详解"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Ubuntu 13.10-django 1.5.1-apache 2.4.6-mod_wsgi安装部署问题详解 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2013/12/18/2013121801/">
+                Ubuntu 13.10-django 1.5.1-apache 2.4.6-mod_wsgi安装部署问题详解
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-18</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <blockquote><p>这么多年过去了，当年文章中所描述的一些问题还有小部分仍然存在，不过自从<code>django</code>有了骚浪贱的<code>gunicorn</code>加<code>WhiteNoise</code>组合，这些问题都不叫事儿了。时代的发展速度真的很快……</p>
+<footer><strong>William Yao</strong><cite>2018年04月09日</cite></footer></blockquote>
+<p>最近忙着把项目从Windows+XAMPP移植到Ubuntu，经历和解决了若干问题，由于大多数问题多数时间我们都会碰到，于是整理了这篇文章，希望能帮到遇到此类问题的朋友。</p>
+<a id="more"></a>
+<h2 id="安装PostgreSQL"><a href="#安装PostgreSQL" class="headerlink" title="安装PostgreSQL"></a>安装PostgreSQL</h2><p>这里需要注意的是，用apt-get安装之后，需要做一系列设置：</p>
+<h3 id="设定postgres用户密码"><a href="#设定postgres用户密码" class="headerlink" title="设定postgres用户密码"></a>设定postgres用户密码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -u postgres psql</span><br></pre></td></tr></table></figure>
+<p>PostgreSQL会默认在系统中创建一个postgres用户作为数据库管理员，上面命令就是用postgres用户身份执行psql</p>
+<p>进入之后，输入<code>ALTER USER postgres WITH PASSWORD &#39;postgres&#39;;</code>为数据库postgres用户设定密码，结束后输入<code>\q</code>退出psql</p>
+<p>然后用下面命令清除系统中postgres用户的默认随机密码并重新指定密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd -d postgres</span><br><span class="line">sudo -u postgres passwd</span><br></pre></td></tr></table></figure>
+<p>这里容易弄混的地方是，数据库和系统中都各存在一个postgres用户，这两个用户不是一回事。</p>
+<h3 id="修改-PostgreSQL-默认配置"><a href="#修改-PostgreSQL-默认配置" class="headerlink" title="修改 PostgreSQL 默认配置"></a>修改 PostgreSQL 默认配置</h3><p>编辑<code>/etc/postgresql/9.1/main/postgresql.conf</code>，这是配置的主文件，如果你的数据库和应用在不同的服务器，那么要设定数据库服务器对外可以被访问：</p>
+<p>将<code>listen_addresses = &#39;localhost&#39;</code>修改为<code>listen_addresses = &#39;*&#39;</code></p>
+<p>编辑<code>/etc/postgresql/9.1/main/pg_hba.conf</code>，这个文件用来定义可以访问的用户网络地址段，一般做如下修改：</p>
+<p>将第一行<code>local all postgres peer</code>修改为<code>local all postgres trust</code>，不然你无法用postgres登录</p>
+<p>然后将<code>host all all 127.0.0.1/32 md5</code>修改为<code>host all all 127.0.0.1/32 trust</code></p>
+<h3 id="创建工作用户work"><a href="#创建工作用户work" class="headerlink" title="创建工作用户work"></a>创建工作用户work</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psql -U postgres -h 127.0.0.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">"work"</span> <span class="keyword">with</span> <span class="keyword">password</span> <span class="string">"123456"</span> nocreatedb;</span><br></pre></td></tr></table></figure>
+<p>注意这里用的都是双引号，以区分大小写。</p>
+<p>以后就可以为这个用户创建数据库进行工作了：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="string">"testdb"</span> <span class="keyword">with</span> owner=<span class="string">"work"</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="安装pgadmin3"><a href="#安装pgadmin3" class="headerlink" title="安装pgadmin3"></a>安装pgadmin3</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install pgadmin3</span><br></pre></td></tr></table></figure>
+<h3 id="使用psql恢复从前pg-dump备份的数据库"><a href="#使用psql恢复从前pg-dump备份的数据库" class="headerlink" title="使用psql恢复从前pg_dump备份的数据库"></a>使用psql恢复从前pg_dump备份的数据库</h3><p>先用pagadmin创建一个新的数据库，所有者选择刚才创建的用户work，模板使用template0，然后用下面命令进行恢复：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psql -h localhost -U work -d restored &lt; db.backup</span><br></pre></td></tr></table></figure>
+<p>这里要注意，日后django设定中的user必须是这里-U参数指定的用来恢复数据的用户（也就是之前的work），同时该用户也必须是数据库的所有者，不然django运行起来会没有权限访问数据表。这里用postgres用户也行，不过日后需要手动修改所有数据表的所有者，比较麻烦。</p>
+<h2 id="apache及mod-wsgi相关设定"><a href="#apache及mod-wsgi相关设定" class="headerlink" title="apache及mod_wsgi相关设定"></a>apache及mod_wsgi相关设定</h2><p>同样，使用apt-get安装apache和mod_wsgi后同样需要做一系列设置：</p>
+<h3 id="配置apache主设置文件"><a href="#配置apache主设置文件" class="headerlink" title="配置apache主设置文件"></a>配置apache主设置文件</h3><p>在ubuntu中，apache 2.4.6的配置文件结构有所变化，并不以httpd.conf来进行设置，其全局设置保存在<code>/etc/apache2/apache2.conf</code>中，此文件按照说明进行修改即可。</p>
+<p>需要注意一点，根目录的权限需要进行设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Options Indexes FollowSymLinks</span><br><span class="line">AllowOverride None</span><br><span class="line">Require all denied</span><br></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Options FollowSymLinks</span><br><span class="line">AllowOverride None</span><br><span class="line">Require all granted</span><br></pre></td></tr></table></figure>
+<p>使根目录具有访问权限，否则之后django将无法被访问，即使单独定义了VirtualHost的DocumentRoot权限也不行。</p>
+<p>紧接着，把下面关于<code>/srv/</code>目录的注释去掉，启用<code>/srv/</code>目录配置，在正式部署的时候django project会放到这个目录中。</p>
+<h3 id="修改envvars"><a href="#修改envvars" class="headerlink" title="修改envvars"></a>修改envvars</h3><p>因为默认编码设置的问题，很有可能在<code>apache/django</code>的文件上传功能被执行时，无法转换non-ascii编码的文件名，导致上传失败，所以要在<code>/etc/apache2/envvars</code>中进行如下修改，将</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## The locale used by some modules like mod_dav</span></span><br><span class="line"><span class="built_in">export</span> LANG=C</span><br><span class="line"><span class="comment">## Uncomment the following line to use the system default locale instead:</span></span><br><span class="line"><span class="comment">#. /etc/default/locale</span></span><br><span class="line"><span class="built_in">export</span> LANG</span><br></pre></td></tr></table></figure>
+<p>中的LANG定义注释掉，添加新的定义，上面几行修改为下面的样子</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## The locale used by some modules like mod_dav</span></span><br><span class="line"><span class="comment">#export LANG=C</span></span><br><span class="line"><span class="comment">## Uncomment the following line to use the system default locale instead:</span></span><br><span class="line"><span class="comment">#. /etc/default/locale</span></span><br><span class="line"><span class="comment">#export LANG</span></span><br><span class="line"><span class="built_in">export</span> LANG=<span class="string">'zh_CN.UTF-8'</span></span><br><span class="line"><span class="built_in">export</span> LC_ALL=<span class="string">'zh_CN.UTF-8'</span></span><br></pre></td></tr></table></figure>
+<p>或者在控制台中使用<code>echo $LANG</code>查看当前语言编码，并将返回的值原样替换上面的<code>zh_CN.UTF-8</code>，只要保证结尾的编码方式（这里是UTF-8）与你的django/pyhon设定的编码三者相同即可，对于中文用户，推荐上面的设定，你就不要改了。<br>在envvars文件中还能看到如下两行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> APACHE_RUN_USER=www-data</span><br><span class="line"><span class="built_in">export</span> APACHE_RUN_GROUP=www-data</span><br></pre></td></tr></table></figure>
+<p>这里定义的是apache默认运行的用户及组，记下来后面还要用到。</p>
+<h3 id="修改虚拟机设定"><a href="#修改虚拟机设定" class="headerlink" title="修改虚拟机设定"></a>修改虚拟机设定</h3><p>在ubuntu的apache版本中，不同的虚拟机被单独定义在不同的conf文件中，并由apache2.conf统一聚合，在<code>/etc/apache2</code>目录中，<code>sites-available</code>中存放着每个虚拟机的实际设定文件，<code>sites-enabled</code>中保存<code>sites-available</code>中部分conf的link，这就是说，真正需要修改的是<code>sites-available</code>目录中的文件。</p>
+<p>进入<code>sites-available</code>目录，默认可以看到<code>000-default.conf</code>，这是安装时生成的默认配置文件，里面的初始信息非常简单，如果你的默认虚拟机也需要使用来挂载其他应用的话，可以在这个文件当中进行设置，这里我们不动。</p>
+<p>还是在<code>sites-available</code>目录中，这次我们新建一个承载django运行wsgi，并服务静态文件的虚拟机：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch django.conf</span><br></pre></td></tr></table></figure>
+<p>用文本编辑器（nano比较方便）编辑这个文件：</p>
+<p>以我的项目为例，django.conf全文是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">ServerAdmin monoyo@gmail.com</span><br><span class="line">ServerName drms</span><br><span class="line"></span><br><span class="line">Documentroot /srv/drms/</span><br><span class="line"></span><br><span class="line"># mod_wsgi settings</span><br><span class="line">WSGIDaemonProcess drms user=www-data group=www-data threads=25 python-path=/srv/drms:/usr/local/lib/python2.7/site-packages:/usr/local/lib/python2.7/dist-packages</span><br><span class="line">WSGIProcessGroup drms</span><br><span class="line">WSGIScriptAlias /drms /srv/drms/drms/wsgi.py</span><br><span class="line"></span><br><span class="line"># Static file alias so static files can be referenced by /static/</span><br><span class="line">Alias /drms_static/ /var/www/drms_static/</span><br><span class="line"></span><br><span class="line"># Static files permissions</span><br><span class="line"># Used for serving static files.</span><br><span class="line"></span><br><span class="line">Order deny,allow</span><br><span class="line">Allow from all</span><br><span class="line"></span><br><span class="line"># Project wsgi permissions</span><br><span class="line"># Used for serving django pages.</span><br><span class="line"></span><br><span class="line">Order deny,allow</span><br><span class="line">Allow from all</span><br></pre></td></tr></table></figure>
+<p>将上面所有<code>/srv/drms/</code>替换为你的django项目的project目录（就是含有manage.py的目录），将<code>/srv/drms/drms/</code>替换为你的默认app目录（含有wsgi.py的目录）。注意/drms和/drms/drms的区别，前一个指project，后一个指app.</p>
+<p>注意<code>WSGIDaemonProcess</code>这一行的定义至关重要，在<code>/etc/apache2/envvars</code>中定义的用户和组（www-data）就需要用在这里，这一行的意思是，使用daemon方式执行wsgi，因为wsgi定义在virtualhost中，必须使用daemon方式，其次运行wsgi的用户名/组为www-data。经常有人遇到django wsgi不运行、目录无法访问、文件上传没权限等问题都是因为这里。</p>
+<p>注意<code>WSGIScriptAlias</code>定义的内容，这是用户的访问路径，比如在这里我的定义的意思，就是告诉apache，用户会通过<code>http://www.example.com/drms</code>这种路径（域名无关）来访问WSGI，所以，如果你同时定义了<code>/var/www</code>或者相同主机中的其他对外公开的访问路径，必须保证其他地方没有目录使用相同的访问路径，意思就是说如果<code>/var/www</code>是根目录，里面恰好也有个drms，那么访问<code>http://www.example.com/drms</code>就冲突了，则这里的WSGI就不会被运行，只会静态访问<code>/var/www/drms/</code></p>
+<p>注意别名<code>/drms_static/</code>和目录<code>/var/www/drms_static/</code>的定义，这一部分就是设置使用一个VirtualHost同时承载WSGI和静态文件，虽然django官方推荐使用不同的服务器承载静态文件，比如lighttpd/nginx，不过对于小项目来说，一个apache就足够了。 将你的django项目的静态文件cp到这个目录里面吧，同时留意一下这里的设置，在随后的django配置章节中，我会分享一个小技巧，利用DEBUG开关切换开发时的static目录与部署后的static目录。</p>
+<p>其他的行应该不用解释，大致都能看懂吧，按照你的路径修改。</p>
+<p>修改完毕django.conf后，使用apache提供的快捷程序a2ensite直接将django.conf链接到sites-enabled目录中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2ensite django.conf</span><br></pre></td></tr></table></figure>
+<p>如果提示找不到a2ensite命令，就find一下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo find / -name a2ensite</span><br></pre></td></tr></table></figure>
+<p>这个命令的作用，其实就是帮你把<code>sites-available/django.conf</code>链接到<code>sites-enabled/django.conf</code></p>
+<p>顺便检查一下sites-enabled/里面有没有000-default.conf，如果有就表示000-default.conf这个虚拟主机也启用了。</p>
+<p>普遍一提，撤销某个虚拟机挂载非常简单，只需要删除sites-enabled/里面对应的conf，然后<code>sudo service apache2 reload</code>就搞定。</p>
+<h3 id="在文件系统中修改相应目录的权限"><a href="#在文件系统中修改相应目录的权限" class="headerlink" title="在文件系统中修改相应目录的权限"></a>在文件系统中修改相应目录的权限</h3><p>有几个目录的权限需要修改，虽然在VirtualHost中定义了部分目录的权限，但那只是定义了apache为访问者设定的权限，和文件系统权限是两回事。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 755 -R /var/www/drms_static/</span><br></pre></td></tr></table></figure>
+<p>上面设定了静态文件目录以及内容的权限为755（就是普通权限），避免无法读取的情况出现。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chgrp -R www-data /var/www/drms_static/uploads/</span><br><span class="line">chmod -R g+w /var/www/drms_static/uploads/</span><br></pre></td></tr></table></figure>
+<p>上面两行是将uploads及内容的所有者组循环修改为www-data，并加上写权限，因为我的django设定中将uploads指定为ckeditor和FileUpload上传文件的地方，没有上面两句，会遇到OS Permission Denied这类问题。同时chgrp命令中的www-data、apache WSGI的执行用户组（django.conf）、apache envvars里面的用户组这三个地方要保持一致。</p>
+<p>需要说明一下，不管是开发时还是部署时，我们都使用apache提供静态文件访问服务，不使用开发服务器的静态文件管理功能，这样可以最大限度的避免django项目设定内容的混乱，可以更方便的从开发模式进入部署模式。</p>
+<p>到这里，PostgreSQL/Apache/mod_wsgi/django相关的操作就进行完毕了，紧接着我们开始修改django的设置文件以匹配上面全新的开发、运行环境。</p>
+<h2 id="django相关设定"><a href="#django相关设定" class="headerlink" title="django相关设定"></a>django相关设定</h2><p>留心的朋友应该能在前两节的设定中看出来，我的django project目录在<code>/home/william/Projects/python/2.7/drms/</code>，因为是从windows平台迁移过来，并且启用WSGI，所以要对settings.py进行一些修改，同时也有一些设定的小技巧与大家分享。</p>
+<p>例如我的项目，编辑<code>/home/william/Projects/python2.7/drms/drms/settings.py</code>，将<code>DATABASES[&#39;default&#39;][&#39;ENGINE&#39;]</code>设置为<code>django.db.backends.postgresql_psycopg2</code>，注意<code>DATABASES[&#39;default&#39;][&#39;HOST&#39;]</code>的设定与windows平台可以不同了，这里填写localhost或ip地址或域名，则通过TCP方式与PostgreSQL建立连接，在Linux中，这里还可以留空，则通过unix sockets建立连接。当然，如果数据库在不同的服务器上，还是TCP方式方便一些。</p>
+<p>如果你的本机只有一个ip，可以使用下面的设定自动匹配地址：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LOCAL_IP = socket.gethostbyname(socket.gethostname())</span><br><span class="line"><span class="keyword">if</span> DEBUG:</span><br><span class="line">LOCAL_URL = <span class="string">'http://'</span> + LOCAL_IP + <span class="string">':8000/'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">LOCAL_URL = <span class="string">'http://'</span> + LOCAL_IP + <span class="string">'/drms/'</span></span><br></pre></td></tr></table></figure>
+<p>这里利用了DEBUG开关，切换是runserver还是apache wsgi.</p>
+<p>如果发现静态文件无法访问，说明你的<code>/etc/hosts</code>对ip映射做了修改，或者系统有两个以上ip地址。</p>
+<p>那么只有手动指定网址了。对于本机开发，可以将LOCAL_IP直接设定为localhost，在ubuntu中，<code>/etc/hosts</code>会定义一个127.0.1.1这样一个本地环回，用gethostbyname()可能会读取到这个地址，如果apache中没有指定访问这个ip，则有可能读取不出静态文件。</p>
+<p>注意开发模式时候的<code>:8000</code>，这里假定我们采用默认运行方式，就是直接<code>manage.py runserver</code>不给定端口号，那么默认运行的就是8000端口。</p>
+<p>接下来的两行指定静态文件路径：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">STATIC_ROOT = <span class="string">'/var/www/drms_static/'</span></span><br><span class="line">STATIC_URL = <span class="string">'http://'</span> + LOCAL_IP + <span class="string">'/drms_static/'</span></span><br></pre></td></tr></table></figure>
+<p>就像上面提到的，不管开发还是部署，我们都用apache对静态文件提供访问服务。</p>
+<p>以上就是需要注意的地方，其他settings超出了本文范围，就不逐一介绍了。</p>
+<h2 id="其他注意事项"><a href="#其他注意事项" class="headerlink" title="其他注意事项"></a>其他注意事项</h2><p>对于开发模式与部署模式之间的切换需要注意一点，开发模式的目录在<code>/home/william/Projects/python/2.7/drms</code>，而部署的时候，我们需要把<code>drms project</code>目录拷贝到<code>/srv/</code>中，不推荐用链接将drms <code>ln</code>到<code>/srv/</code>，不管apache是否启用<code>FollowSymLink</code>选项，本身django+wsgi的组合牵扯的东西就太多，光文件访问权限的嵌套问题就不容易解决。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/apache/">#apache</a> <a href="/tags/django/">#django</a> <a href="/tags/ubuntu/">#ubuntu</a> <a href="/tags/wsgi/">#wsgi</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/25/2013122503/">修改 WordPress 的 SyntaxHigh</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/25/2013122502/">设定python的默认编码为UTF-8</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/25/2013122501/">Ubuntu 13.10 LiveCD + boo</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/24/2013122401/">利用virtualenv搭建python开发部署环</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

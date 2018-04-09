@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Ubuntu 13.10 LiveCD + boot-repair 拯救你的 grub2"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Ubuntu 13.10 LiveCD + boot-repair 拯救你的 grub2 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2013/12/25/2013122501/">
+                Ubuntu 13.10 LiveCD + boot-repair 拯救你的 grub2
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-25</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>今天修复<code>Linux Kernel 3.11.0.14-generic</code>的时候不小心把<code>grub2</code>给干掉了！</p>
+<p>折腾了一个晚上，终于成功解决，综合一下google结果和本次经验，希望能帮到你。</p>
+<a id="more"></a>
+<p>首先，要有一个可以成功引导的ubuntu，当然LiveCD最方便;</p>
+<p>其次，要有一个可用的互联网连接，我用的是UbuntuKylin 13.10，对我的电信上网卡有非常好的支持，顺便说一句，联合ubuntu社区打造出了ubuntu的中文化原生同步版本<code>ubuntu麒麟（Kylin）</code>，工信部这次真的砸了不少钱！</p>
+<p>下面假定我们使用LiveCD方式引导，试用ubuntu，进入桌面，打开终端（命令行），然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:yannubuntu/boot-repair</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install -y boot-repair</span><br></pre></td></tr></table></figure>
+<p>上面三条控制台命令的意思是：</p>
+<p>添加个人源</p>
+<p>更新软件源</p>
+<p>安装boot-repair，参数<code>-y</code>的意思是全选yes</p>
+<p>然后，如果你用的无线上网卡，可以拔下来了，因为有些上网卡（比如华为）会带有1到2个磁盘分区，也会被ubuntu自动挂载，boot-repair启动后会扫描磁盘分区，我的上网卡上的两个分区怎么也扫描不完，看来<code>dead loop</code>了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo boot-repair</span><br></pre></td></tr></table></figure>
+<p>运行之后，会提示正在扫描分区，此过程可能会等个几十秒，然后就弹出了软件界面。</p>
+<p>可以选择推荐修复模式，也可以选择高级选项，在推荐的基础上可以勾选一些额外的修复功能。</p>
+<p>一切都开始于右下角的“应用”按钮，一切也都结束于此。</p>
+<p>着重想说的是，网上那些个修复grub的文章，虽然看完会学会不少东西，但毕竟比较折腾，而且对于不是很熟悉linux/grub的朋友，成功率比较低，而这个boot-repair不光光是功能贴心，其设计也非常贴心，看出了软件作者的用心良苦，因为我用的ubuntukylin，系统语言从底层就是zh-CN，打开boot-repair后界面居然也全是中文，国际化做的非常不错（当然不排除作者应该也是中国人），更让人称赞的是，我的这个系统是装在移动硬盘上的，这种安装方式让我可以随时随地用任何不是特别古怪（主要指硬件）的电脑登入我自己的系统，而boot-repair在刚开始扫描的时候就询问我sdb是否是移动硬盘，并且在修复完毕之后又一次提醒我，“别忘了重启之后修改一下BIOS的启动顺序，好从移动硬盘引导进入系统”！看到这样的话，你是不是也和我一样，拯救系统引导大功告成之余，心里也暖暖的？</p>
+<p>这个软件会扫描/识别每个分区里面的每个系统，并可以选择将grub重新安装在所有介质，或指定介质中，我的本机有硬盘，并不想干扰脆弱的Windows 7 Loader，所以选择了将grub直接重装在sdb中。如果你是多系统，则可以直接用推荐方式恢复就好，同时可以勾选“修复windows引导程序”选项，这样grub就不会覆盖windows自己的引导程序了。</p>
+<p>最后，我想起一句话：</p>
+<blockquote><p>在Linux中，任何东西都是可以修复的。</p>
+<footer><strong>某位大神</strong></footer></blockquote>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/ubuntu/">#ubuntu</a> <a href="/tags/grub/">#grub</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/25/2013122503/">修改 WordPress 的 SyntaxHigh</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/25/2013122502/">设定python的默认编码为UTF-8</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/25/2013122501/">Ubuntu 13.10 LiveCD + boo</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/24/2013122401/">利用virtualenv搭建python开发部署环</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

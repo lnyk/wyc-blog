@@ -151,13 +151,13 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2012/06/20/2012062001/">
-                升级到Fedora 17
+            <a href="/2013/12/25/2013122503/">
+                修改 WordPress 的 SyntaxHighlighter 实现圆角和阴影效果
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2012-06-20</span>
+                <span class="date">2013-12-25</span>
             
             
             
@@ -170,19 +170,9 @@
 
     
         <div class="content">
-            <p>我的客户端升级到了Fedora 17，感觉还是不错的，特别是这台古董电脑，用LXDE速度勉强可以，OpenBox看不出效果，一切皆因这台电脑倒霉的S3 UniChrome Pro显示芯片！</p>
-<p>在这里收集一下与F17有关的有用的东西。</p>
-<ul>
-<li>为yum添加网易源</li>
-</ul>
-<p>访问<a href="http://mirrors.163.com/.help/fedora.html" target="_blank" rel="noopener">mirrors.163.com</a>看帮助安装</p>
-<ul>
-<li>激活RPM Fusion，为yum添加回来那些被Fedora Project排除在外的软件包源</li>
-</ul>
-<p>这个相当有用，比如VLC播放器，就被Fedora Project给Pass了，RPM Fusion源里面就有，还有MPlayer等等好东东。</p>
-<p>使用Firefox访问<a href="http://rpmfusion.org/Configuration" target="_blank" rel="noopener">rpmfusion</a>参照说明直接用Firefox安装，很方便。</p>
-
+            <p>对于编码/技术博客来说，<code>SyntaxHighlighter</code>代码高亮显式插件必不可少。</p>
         </div>
+        <a href="/2013/12/25/2013122503/" class="read-more">Read More</a>
     
 
 </div>
@@ -192,18 +182,18 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2012/06/09/2012060901/">
-                2012年北京市交管局对摩托车和摩托车驾驶证的一些问题答复
+            <a href="/2013/12/25/2013122502/">
+                设定python的默认编码为UTF-8
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2012-06-09</span>
+                <span class="date">2013-12-25</span>
             
             
             
                 <span class="category">
-                    <a href="/categories/Whispers/">Whispers</a>
+                    <a href="/categories/IronWare/">IronWare</a>
                 </span>
             
         </div>
@@ -211,10 +201,106 @@
 
     
         <div class="content">
-            <blockquote><p>这是2012年的规定，现在已经有了很多变化，留做归档日后备查。</p>
+            <p>今天重装Pillow时遇到了编码问题，编译不通过，于是重新设置了一下python的默认编码。</p>
+        </div>
+        <a href="/2013/12/25/2013122502/" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/25/2013122501/">
+                Ubuntu 13.10 LiveCD + boot-repair 拯救你的 grub2
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-25</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>今天修复<code>Linux Kernel 3.11.0.14-generic</code>的时候不小心把<code>grub2</code>给干掉了！</p>
+<p>折腾了一个晚上，终于成功解决，综合一下google结果和本次经验，希望能帮到你。</p>
+        </div>
+        <a href="/2013/12/25/2013122501/" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/24/2013122401/">
+                利用virtualenv搭建python开发部署环境
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-24</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>随着安装各种python package，我们的site-packages/dist-packages会越来越杂乱，而且有些包是临时测试用途的，基本用完之后就荒废了，更重要的是，有些程序的运行环境比较复杂，当和其他程序混在一起的时候，容易出现冲突或各种各样的错误，甚至进入死版本状态无法同时解决，这也是目前大多数python开发者都推荐使用virtualenv的最主要原因，比如readthedoc/django/django-cms等等混在一起的环境。</p>
+<p>现在我们就从头开始，利用virtualenv搭建各种不同的python虚拟开发/运行环境，并从头开始部署django-cms</p>
+        </div>
+        <a href="/2013/12/24/2013122401/" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/18/2013121801/">
+                Ubuntu 13.10-django 1.5.1-apache 2.4.6-mod_wsgi安装部署问题详解
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-18</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <blockquote><p>这么多年过去了，当年文章中所描述的一些问题还有小部分仍然存在，不过自从<code>django</code>有了骚浪贱的<code>gunicorn</code>加<code>WhiteNoise</code>组合，这些问题都不叫事儿了。时代的发展速度真的很快……</p>
 <footer><strong>William Yao</strong><cite>2018年04月09日</cite></footer></blockquote>
+<p>最近忙着把项目从Windows+XAMPP移植到Ubuntu，经历和解决了若干问题，由于大多数问题多数时间我们都会碰到，于是整理了这篇文章，希望能帮到遇到此类问题的朋友。</p>
         </div>
-        <a href="/2012/06/09/2012060901/" class="read-more">Read More</a>
+        <a href="/2013/12/18/2013121801/" class="read-more">Read More</a>
     
 
 </div>
@@ -224,13 +310,147 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2012/05/25/2012052501/">
-                踏上漫长的CCNP之路
+            <a href="/2013/12/17/2013121701/">
+                在Ubuntu上安装Calibre
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2012-05-25</span>
+                <span class="date">2013-12-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>虽然Ubuntu软件源里面有Calibre，但是版本跟实际Current Release相差甚远，并不实际，还是用Calibre官网上的方法进行安装和升级吧。</p>
+<p>安装和升级都只需要把下面一行复制到控制台里回车就行。</p>
+        </div>
+        <a href="/2013/12/17/2013121701/" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/16/2013121602/">
+                终于搞定purcell-emacs.d
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <img src="/2013/12/16/2013121602/2013-12-16-104017.png" title="Emacs with Purcell configuration">
+<p>一开始还想用自己在github上存的emacs设置，后来看了一下网上评论，都说purcell的大家都在用，于是干脆用人家的吧。</p>
+<p>经过试用，感觉还不错，功能很全，主要通用于各种语言编程。</p>
+<p><a href="https://github.com/purcell/emacs.d" target="_blank" rel="noopener">purcell/emacs.d</a></p>
+<p>作者把安装说明也写的很详细，而且不用修改init.el，可以创建lisp/init-local.el添加自己的喜好设定。</p>
+<p>唯一的问题，对于国内用户来说，第一次运行后自动安装编译加载那些需要的package过程太过漫长，连接melpa.milkbox.net:80简直就是一场噩梦，用无线上网卡我更新了整整一晚上。</p>
+<p>不过还好，最终结果还是蛮不错的。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/16/2013121601/">
+                解决ubuntu右上角日期时间消失的问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>刚刚解决了dpkg的问题，又突然发现日期时间消失了，google了一下，用下面两条命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get install gnome-panel</span><br></pre></td></tr></table></figure>
+<p>然后注销或重启。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/15/2013121501/">
+                解决ubuntu中dpkg操作中断后带来的问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-15</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>如果由于某些原因导致apt-get或者dpkg操作中断，有可能造成每次安装或更新都会提示如下信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">提示错误E: dpkg 的操作被中断了,</span><br><span class="line">您必须手动执行 <span class="string">'sudo dpkg --configure -a'</span> 以修复这个问题。</span><br></pre></td></tr></table></figure>
+        </div>
+        <a href="/2013/12/15/2013121501/" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2012/12/23/2012122301/">
+                复活
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2012-12-23</span>
             
             
             
@@ -243,238 +463,10 @@
 
     
         <div class="content">
-            <p>不久前买了一套6本的CCNP官方教程中文版，又从网上Down了一套6本英文PDF版，打算入门CCNP，结果才看了两天，就发现，当年的基础知识有不少印象都模糊了，只好又趁着周末去买了三本CCNA的，打算先预热一下基础知识，然后再上CCNP，毕竟跨专业很多年了，重新捡起来也不是那么顺手。</p>
-<p>总觉得目前的工作环境里有大把的时间可以利用起来，快三十的男人了，再不把时间充分利用在学习硬东西上，恐怕将来要吃亏。</p>
-<p>因为每天都在写日记，博客真的荒废了很久了，希望能尽快把新加坡这个新服务器完全弄起来，内容没有不怕，服务总得全功能，不然也对不起咱的资金投入……</p>
+            <p>更新PayPal信息，服务器复活。</p>
+<p>暂时不想更新东西。</p>
 
         </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2012/05/19/2012051901/">
-                服务器迁移成功
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2012-05-19</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>今天把服务器从美国迁移到了新加坡，访问速度有了明显提升，而且从CentOS 5 32-bit服务器升级到了CentOS 6 64-bit，处理速度也有了明显进步，加上WordPress的memcached服务原生支持，现在的博客应该可以承载足够数量的访问压力了。</p>
-<p>高兴，庆贺一下。</p>
-<p>顺便准备上线Django 1.4的项目。</p>
-<p>WebFaction的主机，SSH管道直接维护，方便的很！只要有点Linux基础，可以为所欲为！</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2011/08/28/2011082802/">
-                Papers 2过期了，尝试用iTunes管理PDF
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2011-08-28</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>今天犯贱，升级了本来是K过的Papers 2，结果就提示试用期已过。</p>
-        </div>
-        <a href="/2011/08/28/2011082802/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2011/08/28/2011082801/">
-                Mac下转换bin/cue到ISO
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2011-08-28</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>今天发现了一个好玩的小工具，将bin/cue转换为ISO，要知道bin/cue在Mac平台上可是不被原生支持的。</p>
-<p>还是老样子，这个叫做<code>bchunk</code>的可爱小工具还是Unix/Linux系列工具，老办法，用MacPorts安装。</p>
-        </div>
-        <a href="/2011/08/28/2011082801/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2011/05/25/2011052501/">
-                MacPorts Changed
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2011-05-25</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>When I was dealing with Pymacs, I found python_select was gone, here’s the issue track message from MacPorts:</p>
-<blockquote>
-<p><code>python_select</code> (and other standalone <code>*_select</code> scripts) is gone. Use <code>sudo port select python python26</code> etc.</p>
-</blockquote>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2011/03/06/2011030602/">
-                金庸群侠传
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2011-03-06</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/Whispers/">Whispers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>这几天在拼命的玩儿金庸群侠传，就是十几年前那个让无数人感动的武侠大梦！</p>
-<p>因为有高手移植到了IOS平台上，所以玩儿起来更方便了。</p>
-<p>真是觉得从那个简单又复杂的DOS年代过来的人特别容易怀旧。</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2011/03/06/2011030601/">
-                更新一下博客
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2011-03-06</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>今天WordPress提示有新版本升级，赶紧升级，然后想选个主题。在选主题的过程中发现了BuddyPress这个可以把博客变成社区的插件，尝试了一下，觉得原来挺简单的博客，一下子变得复杂了。搜索了一下插件库，发现关于BuddyPress的相关插件还真不少，可以这样我觉得WordPress的路就走歪了，毕竟维基有mediawiki，论坛有phpBB，现在这世界第一大开源博客系统WordPress，让一个小小的BuddyPress插件给搞的人不像人鬼不像鬼。总之个人不喜欢。</p>
-<p>今天换了一个博客风格，虽然看起来有点乱，不过总是需要尝试一下新事物的，毕竟好久没更新文章了，就先从“界面”开始吧。</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2010/11/07/2010110701/">
-                用优盘安装Ubuntu 10.10
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2010-11-07</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>这两天一直在折腾，给办公室的台式机装系统。因为从一个“莫名其妙”的地方下了个Ubuntu 10.10 DVD版的，所以那个for Windows的USB Universal Installer.exe用不了。为什么说折腾呢，这两天用手头上的工具折腾了好几遍，把优盘格了又格，用UltraISO(Windows)写入光盘镜像，USB-ZIP/ZIP+/HDD/HDD+四个模式都试过了，就是不能正常引导，不光Ubuntu这样，连之前一直保留的Fedora 13镜像都无法正常安装，郁闷之极中还是耐着性子看了官方网站上使用优盘安装的教程，之前一直不愿意看主要是因为嫌太啰嗦，这下可好，耽误功夫不说，到头来还得看人家的官方文档。没办法，先转载一下，再次表示对Ubuntu的尊敬。</p>
-        </div>
-        <a href="/2010/11/07/2010110701/" class="read-more">Read More</a>
     
 
 </div>
@@ -521,19 +513,19 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/2012/06/20/2012062001/">升级到Fedora 17</a>
+                <a class="footer-post" href="/2013/12/25/2013122503/">修改 WordPress 的 SyntaxHigh</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2012/06/09/2012060901/">2012年北京市交管局对摩托车和摩托车驾驶证的一些</a>
+                <a class="footer-post" href="/2013/12/25/2013122502/">设定python的默认编码为UTF-8</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2012/05/25/2012052501/">踏上漫长的CCNP之路</a>
+                <a class="footer-post" href="/2013/12/25/2013122501/">Ubuntu 13.10 LiveCD + boo</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2012/05/19/2012051901/">服务器迁移成功</a>
+                <a class="footer-post" href="/2013/12/24/2013122401/">利用virtualenv搭建python开发部署环</a>
             </li>
             
         </ul>

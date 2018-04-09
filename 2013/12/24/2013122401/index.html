@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="利用virtualenv搭建python开发部署环境"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>利用virtualenv搭建python开发部署环境 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2013/12/24/2013122401/">
+                利用virtualenv搭建python开发部署环境
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-24</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>随着安装各种python package，我们的site-packages/dist-packages会越来越杂乱，而且有些包是临时测试用途的，基本用完之后就荒废了，更重要的是，有些程序的运行环境比较复杂，当和其他程序混在一起的时候，容易出现冲突或各种各样的错误，甚至进入死版本状态无法同时解决，这也是目前大多数python开发者都推荐使用virtualenv的最主要原因，比如readthedoc/django/django-cms等等混在一起的环境。</p>
+<p>现在我们就从头开始，利用virtualenv搭建各种不同的python虚拟开发/运行环境，并从头开始部署django-cms</p>
+<a id="more"></a>
+<h2 id="安装部署virtualenv"><a href="#安装部署virtualenv" class="headerlink" title="安装部署virtualenv"></a>安装部署virtualenv</h2><p>首先，这个工具叫<a href="&quot;https://github.com/pypa/virtualenv&quot;" title="github上的virtualenv源码地址">virtualenv</a></p>
+<p>（看看文档赶紧回来，我们继续啦）</p>
+<p>下面我们进行安装，这里假定使用环境为ubuntu 13.10，当然Windows平台的pip工作原理也是一样的，只是virtualenv的运行机制会有所变化，需要了解的朋友自行google一下吧。</p>
+<p><code>sudo pip install virtualenv</code>或者<code>sudo apt-get install python-virtualenv</code></p>
+<p>推荐前一种，利用python的pip进行安装管理，这样不至于在我们的ubuntu软件丛里面增加更多的东西，如果你的pip罢工，就用第二种方式吧。</p>
+<p>这里需要注意，安装virtualenv是有几个依赖包的，上述两种安装方式会自动安装依赖包。</p>
+<p>等待安装结束，我们就可以使用virtualenv来配置虚拟环境了。</p>
+<p>首先，virtualenv的大致工作原理是，在命令行当前位置创建一个包含虚拟环境各种信息的文件夹，同时在文件夹中<code>bin/</code>创建控制虚拟环境的脚本，当我们使用该虚拟环境（也就是这个目录中的东东）的时候，包括各种<code>envvar`</code>site-packages`会统统只聚合在这个虚拟环境（目录）中，不会对原始python环境造成任何影响。</p>
+<p>接下来的操作中，我们假定会把各种虚拟环境都统一放在<code>~/virtualenv/</code>里面，并且搭建django-cms的专用虚拟环境。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">mkdir virtualenv</span><br><span class="line"><span class="built_in">cd</span> virtualenv</span><br><span class="line">virtualenv env-django-cms</span><br></pre></td></tr></table></figure>
+<p>上面的最后一条命令就是创建了以env-django-cms为名称的虚拟环境（其实就是个目录）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/virtualenv/env-django-cms</span><br><span class="line"><span class="built_in">source</span> bin/activate</span><br></pre></td></tr></table></figure>
+<p>上面的命令是使用source命令执行<code>~/virtualenv/env-django-cms/bin/active</code>脚本，这个脚本会激活当前虚拟环境，在<code>bin/</code>目录中还有其他脚本，以默认命令创建虚拟环境时会默认安装<code>pip`</code>easy_install`等python脚本，方便使用。</p>
+<p>当激活该虚拟环境之后，我们的shell提示符前就多了<code>(env-django-cms)</code>这个信息，表示当前已经进入了虚拟环境，使用的是env-django-cms.</p>
+<p>对于不同的虚拟环境，可以使用source命令到不同的文件夹中进行切换，而删除虚拟环境比较简单，退出控制台（其实就是退出当前虚拟环境），重新打开控制台，干掉对应的虚拟环境目录就OK了。</p>
+<p>其实virtualenv命令并不是我们本文的终点，接下来的virtualenvwrapper才是日常真正使用的virtualenv帮助程序。</p>
+<p>virtualenvwrapper封装了虚拟环境的各种操作，不需要再使用类似source这样的命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install virtualenvwrapper</span><br></pre></td></tr></table></figure>
+<p>同样会自动安装几个依赖包。</p>
+<p>安装完毕之后，编辑<code>~/.bashrc</code>，在文件末尾新行中添加下面一行内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /usr/<span class="built_in">local</span>/bin/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
+<p>这里说明一下，ubuntu是<code>.bashrc</code>，fedora/redhat/mandriva等发行版的rc文件不一定是这个。</p>
+<p>设置好之后，exit退出控制台，重新打开控制台，以应用上面的设置，这样我们的virtualenvwrapper就可以正常工作了。</p>
+<p>下面是几个常用命令（不需要再使用virtuelenv/source等命令了）：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">功能</th>
+<th style="text-align:left">命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">创建虚拟环境</td>
+<td style="text-align:left">mkvirtualenv env-django-cms</td>
+</tr>
+<tr>
+<td style="text-align:right">退出当前虚拟环境</td>
+<td style="text-align:left">deactivate</td>
+</tr>
+<tr>
+<td style="text-align:right">进入或切换虚拟环境</td>
+<td style="text-align:left">workon env-django-cms</td>
+</tr>
+<tr>
+<td style="text-align:right">删除虚拟环境</td>
+<td style="text-align:left">rmvirtualenv env-django-cms</td>
+</tr>
+</tbody>
+</table>
+<p>需要说明的几点是：</p>
+<ul>
+<li><p>virtualenvwrapper创建的虚拟环境默认会放在<code>~/.virtualenvs</code>目录中，并且上述操作虚拟环境的命令也与路径无关，不管你当前目录在哪里，virtualenvwrapper都会去<code>~/.virtualenvs</code>目录中查找相应目录。</p>
+</li>
+<li><p>当workon启用虚拟环境之后，使用<code>easy_install</code>/<code>pip</code>等命令时要小心，比如<code>pip2</code>/<code>pip3</code>这些在虚拟环境目录中的<code>bin/</code>中没有的脚本，还是会默认调用python原来的脚本，而在虚拟环境中，pip2对应的是pip-2.7（或者你的版本号），我喜欢指定版本号调用命令，所以开始的时候也犯过pip2/pip3将包安装到了python原始site-packages并提示权限不够安装终止的问题。而在<code>bin/</code>目录中的<code>pip</code>/<code>easy_install</code>等脚本，则是可以在任何地方直接使用的，它们的优先级高于全站脚本，不会调用<code>python site-wide script</code></p>
+</li>
+<li><p>在虚拟环境中使用pip安装时，最好手动指定一下缓存目录，这样所有虚拟环境都会通用这个目录，不用一遍遍的下载相同的包进行安装了，比如：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip-2.7 install --download-cache=~/.pip2_cache psycopg2</span><br></pre></td></tr></table></figure>
+<p>自此，virtualenv及其帮助程序顺利搞定，接下来我们开始部署django-cms</p>
+<blockquote><p>当年就写到这里……官方文档很详细，就不重复了</p>
+<footer><strong>William Yao</strong><cite>2018年04月09日</cite></footer></blockquote>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/python/">#python</a> <a href="/tags/django/">#django</a> <a href="/tags/virtualenv/">#virtualenv</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/25/2013122503/">修改 WordPress 的 SyntaxHigh</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/25/2013122502/">设定python的默认编码为UTF-8</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/25/2013122501/">Ubuntu 13.10 LiveCD + boo</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2013/12/24/2013122401/">利用virtualenv搭建python开发部署环</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All right reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
