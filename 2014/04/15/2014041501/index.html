@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="通过控制台SSH升级阿里云（AliYun）ECS服务器的Ubuntu"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>通过控制台SSH升级阿里云（AliYun）ECS服务器的Ubuntu - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2014/04/15/2014041501/index.html">
+                通过控制台SSH升级阿里云（AliYun）ECS服务器的Ubuntu
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-04-15</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>终于厌烦了讨厌的CentOS破旧软件源！决定把阿里云的ECS服务器系统换了，于是今晚干了一件神奇的事情，当时手头上只有我的Motorola XOOM，装的CyanogenMod（Android CM版），因为Android本身就是Linux，而且自带SSH，之前也经常用我的平板SSH到ECS上维护服务器，所以照例用root登陆进去，从控制台中把系统给升级了。</p>
+<a id="more"></a>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2014041501/2014041501-01.jpg!w-1024" alt="Xoom and Aliyun ECS"></p>
+<p>现在成文，教大家怎么把阿里云的Ubuntu搞定到最新版！</p>
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>我的ECS服务器实例里面没有什么东西，所以不需要备份，如果你进行了不少设置，或者放进去了不少东西，又心疼丢失，那就先备份出来吧，阿里云ECS更换系统是会抹掉系统盘的！</p>
+<p>当然如果你挂载了数据盘，就可以高枕无忧了。</p>
+<h2 id="停止ECS实例，更换系统。"><a href="#停止ECS实例，更换系统。" class="headerlink" title="停止ECS实例，更换系统。"></a>停止ECS实例，更换系统。</h2><p>进入控制台点“停止”，或者SSH/VNC进去shutdown都可以。</p>
+<p>完事儿刷新一下控制台里面ECS的当前状态，当状态为“停止”时，“更多操作”菜单里面的“更换系统”按钮就Enable了。</p>
+<p>请更换为Ubuntu，阿里云提供的版本是12.04，古老的东西，本文旨在升级这个古老的东西。</p>
+<h2 id="SSH登陆Ubuntu-12-04"><a href="#SSH登陆Ubuntu-12-04" class="headerlink" title="SSH登陆Ubuntu 12.04"></a>SSH登陆Ubuntu 12.04</h2><p>刚切换完系统，阿里云会发短信给你，告知相关变动情况，顺便把root密码也告诉你。</p>
+<p>这样我们就直接爽快的打开控制台（Windows用户请用Putty！ Windows Command Prompt是没有SSH的）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@xxx.xxx.xxx.xxx</span><br></pre></td></tr></table></figure>
+<p>进去第一件事是先用<code>passwd</code>把root密码改了</p>
+<h2 id="用apt-get升级Update-Dist区域的所有软件包"><a href="#用apt-get升级Update-Dist区域的所有软件包" class="headerlink" title="用apt-get升级Update/Dist区域的所有软件包"></a>用apt-get升级Update/Dist区域的所有软件包</h2><p>在root身份下，或者你之前新建了用户并登陆了，就su一下，或者确保你的当前用户在sudoers中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get dist-upgrade</span><br><span class="line">apt-get autoremove</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<p>上面四条命令分别是：</p>
+<ul>
+<li><p>更新apt-get的源信息</p>
+</li>
+<li><p>升级apt-get的Dist区域软件包</p>
+</li>
+<li><p>删除多余包</p>
+</li>
+<li><p>重启系统（关键！）</p>
+</li>
+</ul>
+<p>上面第二条命令比较费时，截至今晚Ubuntu 14.04还是LTS版本，需要下载大约270M的软件包，如果以后最新版本是更高的了，这个数字肯定还会变动。</p>
+<p>因为是给ECS升级，走的都是阿里云的带宽，说真的270M左右，分分钟就完事儿了，从这也能看出，目前用户数不多的阿里云ECS不管性能还是带宽都还是十分非常极其令人满意的（我的这个ECS实例是1 CPU/512M RAM/2M Bandwidth，基本属于最低配置）。</p>
+<p>注意：最后一定要重启系统（用reboot命令）</p>
+<h2 id="确保update-manager已经安装在系统中"><a href="#确保update-manager已经安装在系统中" class="headerlink" title="确保update manager已经安装在系统中"></a>确保update manager已经安装在系统中</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install update-manager-core</span><br></pre></td></tr></table></figure>
+<p>一般会提示已经安装了该包，确认是最新版本就行了。</p>
+<h2 id="正式开始自动升级！"><a href="#正式开始自动升级！" class="headerlink" title="正式开始自动升级！"></a>正式开始自动升级！</h2><blockquote><ul>
+<li><p>此步骤要求非常稳定的SSH连接，一旦断线就比较难办，请在网络状况较好的时候执行，如果不怕折腾，升级失败导致系统崩溃，就ECS控制台中再擦除一次系统盘也行。</p>
+</li>
+<li><p>实在点儿背中断了，参看最后<code>0A</code>步骤！</p>
+</li>
+<li><p>我用的平板登陆的，风险更是相当高！说明我的运气还是不错的。</p>
+</li>
+<li><p>运行升级命令后，系统会立刻提醒你使用SSH操作存在风险，选择“Yes”会打开一个额外的SSH连接，端口为1020（或者1022），如果当前SSH中断了，则可以使用ssh登陆到这个端口来恢复系统到初始状态。</p>
+</li>
+</ul>
+</blockquote>
+<p>让我们开始吧：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span>-release-upgrade -d</span><br></pre></td></tr></table></figure>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2014041501/2014041501-02.jpg!w-1024" alt="do-release-upgrade"></p>
+<p>这一步会下载更多的包，580M左右吧，但咱的服务器是云服务器，带宽不是问题，总体上会运行个大约7~8分钟，包括自动下载和编译安装等等全过程。</p>
+<blockquote><ul>
+<li><p>开始不久会开始提示“New version…”之类的回答“yes/no”的问题，大致意思每次都是软件包提供者提供了该软件包的新版本，是否套用新配置，一路Yes就好。</p>
+</li>
+<li><p>过程中会被问到一次“有些服务需要停止以便更新，是否同意由升级程序操作自动停止/更新/重启相关服务？”类似的问题（英文），这时候照例选择“Yes”</p>
+</li>
+<li><p>过程中会进入一个红色背景的界面（SSH 服务配置），说“新版本建议取消root用户的SSH密码登陆方式”，这时候可以选择“同意”来关闭之后root通过SSH的登陆行为，也可以默认“不同意”继续同意root的SSH密码登陆。我在这里是保持了，因为阿里云有“云盾”服务，从云出口处检测暴力攻击，并是反向端口开放策略（手动指定开放，默认全部关闭），已经够安全了（除非你的root密码是123456这样的……）。</p>
+</li>
+<li><p>过程中会有一个“Grub”的提示，说引导记录怎么怎么更新的，细节不用管，继续“Yes”</p>
+</li>
+</ul>
+</blockquote>
+<p>等一切搞定，提示你升级完毕，就可以重启系统了，等一会儿再用root登陆进来，你看到的就将是最新版本（目前是14.04 LTS）的Ubuntu运行在你的阿里云ECS服务器中了！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+<h2 id="再次登陆，添加用户"><a href="#再次登陆，添加用户" class="headerlink" title="再次登陆，添加用户"></a>再次登陆，添加用户</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh root@xxx.xxx.xxx.xxx</span><br><span class="line">adduser xxx</span><br></pre></td></tr></table></figure>
+<p>上面的adduser是Ubuntu中添加用户的命令，当然你也可以使用更“标准”的useradd命令，只是这两个命令的区别是，adduser自动为你创建Home文件夹，并进入设置密码过程，最后拷贝相应的shell配置和RC文件到Home文件夹中，而useradd需要你自己搞定这些东西。</p>
+<p>编辑<code>/etc/sudoers</code>文件，里面添加<code>xxx ALL=(ALL) ALL</code>一行，<code>xxx</code>是用户名，这样你新建的xxx用户就可以sudo了。</p>
+<h2 id="0A-升级过程中SSH不幸中断！"><a href="#0A-升级过程中SSH不幸中断！" class="headerlink" title="0A. 升级过程中SSH不幸中断！"></a>0A. 升级过程中SSH不幸中断！</h2><p>如果你点儿确实背，不幸在升级过程中break了SSH，还是有办法恢复并重新开始自动升级过程的。</p>
+<p>首先用那个备用的端口SSH进去系统，然后编辑<code>/etc/update-manager/release-upgrades</code>文件，找到<code>Prompt=xxxxxxxx</code>（内容不一样）这样的句子，把所有的Prompt=这行全改成<code>Prompt=normal</code></p>
+<p>然后重复<code>do-release-upgrade -d</code>步骤再次启动自动升级程序。</p>
+<h2 id="一切搞定了？给自己恭喜一下吧！"><a href="#一切搞定了？给自己恭喜一下吧！" class="headerlink" title="一切搞定了？给自己恭喜一下吧！"></a>一切搞定了？给自己恭喜一下吧！</h2><p>等14.04正式版，或者以后更高的版本出来想升级的话，打开此文，再次走一遍。</p>
+<p>当然，这次升级纯粹是因为12.04“太老”了，apt源里都没什么新东西。</p>
+<p>其实版本升级不用这么频繁，反正ECS包月，带宽性能不用也是浪费（有服务的另说）。</p>
+<p>最后，希望能帮到你。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/ubuntu/">#ubuntu</a> <a href="/tags/ssh/">#ssh</a> <a href="/tags/vpc/">#vpc</a> <a href="/tags/ecs/">#ecs</a> <a href="/tags/aliyun/">#aliyun</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/15/2014041501/index.html">通过控制台SSH升级阿里云（AliYun）ECS服</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/01/2014040103/index.html">Emacs中的Tab</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/01/2014040102/index.html">Ubuntu中简单的C语言Socket C/S例子</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/01/2014040101/index.html">Ubuntu搭建TexLive+emacs+Auc</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
