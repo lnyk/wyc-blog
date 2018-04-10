@@ -183,8 +183,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br><span class="line">sudo apt-get install emacs</span><br><span class="line">sudo apt-get install texlive-full</span><br><span class="line">sudo apt-get install auctex</span><br></pre></td></tr></table></figure>
 <p>上面命令假设你有足够快的网速，不然特别是在第三步安装TexLive的步骤，最好泡杯茶，找个电影看看，这里是图省事儿，安装了ubuntu源中提供的texlive完整metapack，有经验的朋友也可以自己选择需要的包，如果自己选择，推荐texlive-base, texlive-generic还有texlive-xetex，我们在后面的配置中会默认使用xelatex进行编译。</p>
 <p>看完电影了？我们继续。</p>
-<p>首先配置emacs，这里可以参考我的另一篇文章，使用purcell同学的emacs.d自动搭建基础型全能emacs环境：</p>
-<a href="/2013/12/16/2013121602/index.html" title="终于搞定purcell-emacs.d">终于搞定purcell-emacs.d</a>
+<p>首先配置emacs，这里可以参考我的另一篇文章，使用purcell同学的emacs.d自动搭建基础型全能emacs环境：《<a href="/2013/12/16/2013121602/index.html" title="终于搞定purcell-emacs.d">终于搞定purcell-emacs.d</a>》</p>
 <p>假定你完成了上面一步，那么打开<code>~/.emacs.d/lisp/init-local.el</code></p>
 <p>这是使用purcell的emacs.d环境之后，指定的可以添加自己的修改而不破坏purcell原始文件的地方。</p>
 <p>下面是我的init-local.el的完整内容，后半部分是配置magit和auctex的部分，其实依托apt-get搞定所有事情之后，配置起来是很简单的。</p>
@@ -236,19 +235,19 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2014/04/20/2014042001/index.html">2014色调清华</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/16/2014041601/index.html">用 Android 平板电脑为阿里云（AliYun</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2014/04/15/2014041501/index.html">通过控制台SSH升级阿里云（AliYun）ECS服</a>
             </li>
             
             <li>
                 <a class="footer-post" href="/2014/04/01/2014040103/index.html">Emacs中的Tab</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2014/04/01/2014040102/index.html">Ubuntu中简单的C语言Socket C/S例子</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2014/04/01/2014040101/index.html">Ubuntu搭建TexLive+emacs+Auc</a>
             </li>
             
         </ul>

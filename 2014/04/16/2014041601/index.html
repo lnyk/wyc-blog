@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="用 Android 平板电脑为阿里云（AliYun）的 ECS Ubuntu 安装 VNCServer 和 LXDE 桌面"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>用 Android 平板电脑为阿里云（AliYun）的 ECS Ubuntu 安装 VNCServer 和 LXDE 桌面 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2014/04/16/2014041601/index.html">
+                用 Android 平板电脑为阿里云（AliYun）的 ECS Ubuntu 安装 VNCServer 和 LXDE 桌面
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-04-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>今天又开始折腾ECS服务器，主要想测试一下用XOOM平板的AndroidVNC远程登录阿里云的ECS服务器，看看跑起来VNCServer和LXDE桌面的云服务器性能如何。</p>
+<a id="more"></a>
+<p>这里选择LXDE而不是GNOME或KDE主要是因为，作为服务器，大多数大型桌面系统所提供的特效/专属应用之类的东西都是不需要的，我们需要的是一个轻量级可定制，同时占用系统资源及硬件资源较少的桌面，因为XFCE还是面向开发的多一些，且从性能上来讲，占用资源还是稍微多了一些，所以这里我们选择主打性能的LXDE桌面，关于LXDE具体性能如何，可以参考官方网站，或者侧面参考lubuntu.org（该ubuntu衍生版本主攻性能，使用的就是LXDE）。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2014041501/2014041601-01.jpg!w-1024" alt="Landscape of XOOM"></p>
+<h2 id="测试环境"><a href="#测试环境" class="headerlink" title="测试环境"></a>测试环境</h2><table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">终端硬件</td>
+<td style="text-align:left">Motorola XOOM平板</td>
+</tr>
+<tr>
+<td style="text-align:right">终端系统</td>
+<td style="text-align:left">CM Android</td>
+</tr>
+<tr>
+<td style="text-align:right">终端VNC</td>
+<td style="text-align:left">AndroidVNC</td>
+</tr>
+<tr>
+<td style="text-align:right">远程平台</td>
+<td style="text-align:left">阿里云（AliYun）ECS服务器</td>
+</tr>
+<tr>
+<td style="text-align:right">服务系统</td>
+<td style="text-align:left">Ubuntu 14.04 LTS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="系统准备"><a href="#系统准备" class="headerlink" title="系统准备"></a>系统准备</h2><p>因为阿里云默认提供的是Ubuntu 12.04，有点老，建议先升级到最新版本的系统，可以参考我的另一篇文章：《<a href="/2014/04/15/2014041501/index.html" title="通过控制台SSH升级阿里云（AliYun）ECS服务器的Ubuntu">通过控制台SSH升级阿里云（AliYun）ECS服务器的Ubuntu</a>》</p>
+<h2 id="SSH登录安装X和LXDE"><a href="#SSH登录安装X和LXDE" class="headerlink" title="SSH登录安装X和LXDE"></a>SSH登录安装X和LXDE</h2><p>因为安装服务需要root权限，请确保登录的账户在sudoers中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh user@xxx.xxx.xxx.xxx</span><br></pre></td></tr></table></figure>
+<p>进入系统后，使用如下命令安装X系统和LXDE核心：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install xorg</span><br><span class="line">sudo apt-get install lxde-core</span><br></pre></td></tr></table></figure>
+<p>根据目前阿里云ECS集群的计算性能和网络性能，上述操作，分分钟就完事儿了！再次感慨一下，一两年之后，等用户数量变得庞大起来之后，阿里云还能否提供出这样的性能体验？</p>
+<h2 id="安装VNC服务器"><a href="#安装VNC服务器" class="headerlink" title="安装VNC服务器"></a>安装VNC服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vnc4server</span><br><span class="line">sudo apt-get install tightvncserver</span><br></pre></td></tr></table></figure>
+<p>具体依赖关系忘了，貌似首先安装tightvncserver会自动依赖安装vnc4server，因为在写这篇文章之前，我是用vnc4server进行测试的，而且之后默认使用的也是vnc4server的命令，这里具体不多说，带宽资源都是阿里云的，俩都装上好了，反正服务器的日常维护基本用不到VNC，测试完毕卸载就好。</p>
+<h2 id="初始化并配置VNC服务器"><a href="#初始化并配置VNC服务器" class="headerlink" title="初始化并配置VNC服务器"></a>初始化并配置VNC服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tightvncserver :1</span><br><span class="line">tightvncserver -<span class="built_in">kill</span> :1</span><br></pre></td></tr></table></figure>
+<p>上面第一条命令为启动1号VNC线程服务。如果不存在1号线程服务，或者说以前没有安装过VNC服务器（本文之后默认为首次安装），则会自动初始化服务器文件到<code>~/.vnc</code>目录中。</p>
+<blockquote><p>从这里开始，就不需要root权限了，请勿继续sudo，否则配置会有些麻烦，就让VNC服务器运行在当前用户身份下就好。</p>
+</blockquote>
+<p>接下来，编辑<code>~/.vnc/xstartup</code>，对VNC服务器进行简单配置，在文件最后加上下面几行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lxterminal &amp;</span><br><span class="line">/usr/bin/lxsession -s LXDE &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tightvncserver :1 -geometry 1280x750</span><br></pre></td></tr></table></figure>
+<p>这里解释一下，一会儿会用XOOM平板进行登录，而我的平板分辨率是1280x800，为了避免安卓系统下面的系统栏遮挡部分窗口，所以不能将VNC服务器以常规分辨率启动（1280x800）。VNC服务器这方面也很方便，使用<code>-geometry</code>选项可以直接定义由服务器返回的桌面分辨率。</p>
+<p>当然，因为我测试的时候用的是WIFI公共连接，网速不够，且XOOM 10.1英寸的屏幕真的上了1280x800的桌面，会非常难操作（主要是按钮太小，指头太粗~~），这里可以用其它比例为1.7的分辨率启动服务器（比如800x470）。当然，接上OTG线，连上鼠标就会好些了。</p>
+<h2 id="平板上操作"><a href="#平板上操作" class="headerlink" title="平板上操作"></a>平板上操作</h2><p>自此，服务器上的操作就完成了，接下来我们用Android系统从平板电脑上通过VNC连接阿里云的ECS服务器！</p>
+<p>首先，打开软件市场（Google Play 商店中就有），安装AndroidVNC。</p>
+<p>然后，打开AndroidVNC，进行简单配置：</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2014041501/2014041601-02.png!w-1024" alt="AndroidVNC"></p>
+<ul>
+<li><p>Nickname为服务器上已经启动了VNC服务器的用户名。</p>
+</li>
+<li><p>Password为初始化VNC线程时为VNC登录设定的用户名（看看<code>~/.vnc/</code>里面有没有passwd文件）</p>
+</li>
+<li><p>Address为服务器地址</p>
+</li>
+<li><p>Port为连接端口</p>
+</li>
+</ul>
+<p>这里需要注意，VNC服务器默认端口为<code>59XX</code>，就是59开头的端口，记得上面<code>tightvncserver :1</code>和<code>tightvncserver -kill :1</code>这两个命令吗？命令后面的参数<code>:1</code>指的不光是VNC线程的ID号，而且指明了端口号！</p>
+<p>因为我们启动的是<code>:1</code>线程，所以这里的端口号填写<code>5901</code>，举一反三，如果初始化时系统提示你的VNC线程号为<code>:2</code>（比如你运行了两次<code>tightvncserver</code>命令，就会初始化出两个线程），这里就填写<code>5902</code>，以此类推。</p>
+<p>Username不用填写，登录Windows的VNC服务器时才会用到。</p>
+<p>最后一个选项，<code>Color Format</code>，这个色彩选项直接关乎连接的速度感觉，最高为24位真彩色，最低为纯黑白，256色已经够用了，也可以多试试找到适合你带宽的颜色方案。</p>
+<p>对于阿里云的ECS服务器来说，颜色的多少只受连接带宽影响，性能影响几乎无差别，所以我们的本地连接和ECS服务器的前向链路带宽只要够快，大可以选择24位色（反正我测试的时候选择24位色看到的是幻灯片效果……）。</p>
+<p>上述设置完毕后，点击<code>Connect</code>连接，如果没有什么意外，我们就成功登录到阿里云的ECS服务器桌面了。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2014041501/2014041601-03.png!w-1024" alt="LXDE"></p>
+<p>还等什么，赶快体验一下用Android系统连接远程LXDE桌面吧。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/android/">#android</a> <a href="/tags/ecs/">#ecs</a> <a href="/tags/aliyun/">#aliyun</a> <a href="/tags/vnc/">#vnc</a> <a href="/tags/lxde/">#lxde</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/20/2014042001/index.html">2014色调清华</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/16/2014041601/index.html">用 Android 平板电脑为阿里云（AliYun</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/15/2014041501/index.html">通过控制台SSH升级阿里云（AliYun）ECS服</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/01/2014040103/index.html">Emacs中的Tab</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
