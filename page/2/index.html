@@ -62,6 +62,12 @@
     <!-- Gallery -->
     <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
 
+    <!-- APlayer -->
+    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+
+    <!-- DPlayer -->
+    <link href="https://cdn.bootcss.com/dplayer/1.22.2/DPlayer.min.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
@@ -284,7 +290,7 @@
 
     
         <div class="content">
-            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>终于找到N年之前看过但却忘了名字的电影了，虽然只看了一遍，但这么多年过去了仍然留给我深刻印象！强烈推荐！</p>
+            <p>终于找到N年之前看过但却忘了名字的电影了，虽然只看了一遍，但这么多年过去了仍然留给我深刻印象！强烈推荐！</p>
 <h2 id="《这个男人来自地球》"><a href="#《这个男人来自地球》" class="headerlink" title="《这个男人来自地球》"></a>《这个男人来自地球》</h2><table>
 <thead>
 <tr>
@@ -394,7 +400,7 @@
 
     
         <div class="content">
-            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>如果想在Ubuntu中创建Windows 7或8的USB启动盘，由于没有Windows平台上那么方便的UltraISO，多数人只能选择GRUB手动安装，这样比较麻烦。</p>
+            <p>如果想在Ubuntu中创建Windows 7或8的USB启动盘，由于没有Windows平台上那么方便的UltraISO，多数人只能选择GRUB手动安装，这样比较麻烦。</p>
 <p>今天无意中看到一个小软件，可以方便的在Ubuntu中创建Windows启动盘，经过测试还是比较方便的。</p>
 <p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2014030701/2014030701-01.png!w-1024" alt="WinUSB"></p>
 <p>具体安装过程如下（假定你使用的是Ubuntu）：</p>
@@ -434,7 +440,7 @@ sudo winusb --install &amp;lt;iso path&amp;gt; &amp;lt;partition&amp;gt;</code>b
 
     
         <div class="content">
-            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天买了新笔记本，因为没有预装系统，所以直接用Ubuntu引导的系统，插上我的Razer Naga鼠标之后，发现移动速度太快，即使设置为最低也没用，看来得用系统及别的降速了。</p>
+            <p>今天买了新笔记本，因为没有预装系统，所以直接用Ubuntu引导的系统，插上我的Razer Naga鼠标之后，发现移动速度太快，即使设置为最低也没用，看来得用系统及别的降速了。</p>
 <p>打开终端，使用<code>xinput --list</code>命令找到鼠标的ID，我的ID是11，所以用下列命令进行降速，中间的句子是说明：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xinput --<span class="built_in">set</span>-prop <span class="string">"11"</span> <span class="string">"Device Accel Constant Deceleration"</span> 3</span><br></pre></td></tr></table></figure>
 <p>命令的意思是，把输入设备<code>11</code>的移动速度属性降到<code>3</code>，你也可以试试别的数字，对于我，3正好。</p>
@@ -682,6 +688,15 @@ sudo winusb --install &amp;lt;iso path&amp;gt; &amp;lt;partition&amp;gt;</code>b
 
 <!-- Gallery -->
 <script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- APlayer -->
+<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
+
+<!-- Meting.JS -->
+<script src="/js/Meting.min.js"></script>
+
+<!-- DPlayer -->
+<script src="https://cdn.bootcss.com/dplayer/1.22.2/DPlayer.min.js"></script>
 
 <!-- Custom JavaScript -->
 <script src="/js/main.js"></script>
