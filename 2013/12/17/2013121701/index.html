@@ -179,7 +179,7 @@
         
 
         <!-- Post Content -->
-        <p>虽然Ubuntu软件源里面有Calibre，但是版本跟实际Current Release相差甚远，并不实际，还是用Calibre官网上的方法进行安装和升级吧。</p>
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>虽然Ubuntu软件源里面有Calibre，但是版本跟实际Current Release相差甚远，并不实际，还是用Calibre官网上的方法进行安装和升级吧。</p>
 <p>安装和升级都只需要把下面一行复制到控制台里回车就行。</p>
 <a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -v &amp;&amp; wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c <span class="string">"import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"</span></span><br></pre></td></tr></table></figure>
