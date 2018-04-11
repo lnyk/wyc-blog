@@ -151,6 +151,86 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2014/03/09/2014030901/index.html">
+                清华大学KMS认证正版Win 8及Office 2010
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-03-09</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <ol>
+<li><p>首先确保你的Win 8是Enterprise版，Office 2010是Professional Plus，其他版本没试过，不敢确定能否激活。</p>
+</li>
+<li><p>将Win 8序列号修改为清华校园正版序列号。</p>
+</li>
+<li><p>将KMS服务器地址修改为清华KMS认证服务器。</p>
+</li>
+<li><p>开启认证。</p>
+</li>
+</ol>
+        </div>
+        <a href="/2014/03/09/2014030901/index.html" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2014/03/07/2014030701/index.html">
+                在Ubuntu中创建Windows 7/8 USB启动盘
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-03-07</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>如果想在Ubuntu中创建Windows 7或8的USB启动盘，由于没有Windows平台上那么方便的UltraISO，多数人只能选择GRUB手动安装，这样比较麻烦。</p>
+<p>今天无意中看到一个小软件，可以方便的在Ubuntu中创建Windows启动盘，经过测试还是比较方便的。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2014030701/2014030701-01.png!w-1024" alt="WinUSB"></p>
+<p>具体安装过程如下（假定你使用的是Ubuntu）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:colingille/freshlight</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install winusb</span><br></pre></td></tr></table></figure>
+<p>安装好之后，可以在Ubuntu的Dashboard中找到WinUSB，也可以直接使用命令行方式，格式如下：</p>
+<p><code>bash
+sudo winusb --format &amp;lt;iso path&amp;gt; &amp;lt;device&amp;gt;
+sudo winusb --install &amp;lt;iso path&amp;gt; &amp;lt;partition&amp;gt;</code>bash</p>
+<p>第一条命令会根据ISO的具体需要自动格式化设备为相应分区（一般为Fat32），第二条命令则安装ISO到设备分区，并写入MBR.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2014/03/06/2014030601/index.html">
                 在Ubuntu中为Razer鼠标减速
             </a>
@@ -409,71 +489,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2013/12/16/2013121601/index.html">
-                解决ubuntu右上角日期时间消失的问题
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2013-12-16</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>刚刚解决了dpkg的问题，又突然发现日期时间消失了，google了一下，用下面两条命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get install gnome-panel</span><br></pre></td></tr></table></figure>
-<p>然后注销或重启。</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2013/12/15/2013121501/index.html">
-                解决ubuntu中dpkg操作中断后带来的问题
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2013-12-15</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>如果由于某些原因导致apt-get或者dpkg操作中断，有可能造成每次安装或更新都会提示如下信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">提示错误E: dpkg 的操作被中断了,</span><br><span class="line">您必须手动执行 <span class="string">'sudo dpkg --configure -a'</span> 以修复这个问题。</span><br></pre></td></tr></table></figure>
-        </div>
-        <a href="/2013/12/15/2013121501/index.html" class="read-more">Read More</a>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -516,19 +531,19 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/2018/04/11/2014042201/index.html">2014042201</a>
+                <a class="footer-post" href="/2014/05/10/2014051002/index.html">善用CAJViewer的OCR文字识别功能</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/05/10/2014051001/index.html">WordPress W3TotalCache CD</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/22/2014042201/index.html">OpenOffice LibreOffice与Mi</a>
             </li>
             
             <li>
                 <a class="footer-post" href="/2014/04/20/2014042001/index.html">2014色调清华</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2014/04/16/2014041601/index.html">用 Android 平板电脑为阿里云（AliYun</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2014/04/15/2014041501/index.html">通过控制台SSH升级阿里云（AliYun）ECS服</a>
             </li>
             
         </ul>

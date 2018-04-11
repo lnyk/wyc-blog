@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="WordPress W3TotalCache CDN实现主站分流"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>WordPress W3TotalCache CDN实现主站分流 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2014/05/10/2014051001/index.html">
+                WordPress W3TotalCache CDN实现主站分流
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-05-10</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>今天拿另一个空间结合ECS测试了一下CDN内容分发网络，一切顺利，现在成文，教你怎么轻松实现利用另一个空间或者CDN来给你的WordPress加速！</p>
+<a id="more"></a>
+<h2 id="系统准备及基本要求"><a href="#系统准备及基本要求" class="headerlink" title="系统准备及基本要求"></a>系统准备及基本要求</h2><p>首先你要在承载WordPress的空间之外还要额外拥有一个空间，或者amazon S3之类的CDN服务权限，这里我们使用另一个空间，关于CDN的使用请参考W3TotalCache关于CDN配置的说明。</p>
+<p>其次，要有对你的空间绑定的域名DNS有添加A记录的权限，或者完全用另一个域名来实现也是一样的，只是那种事情在国内要求你对两个域名都有备案（再次鄙视万恶的GXB），且这种多域名的访问实现一般只有大型网站才那么干，他们会利用多域名来做负载均衡或者云XX之类的策略。</p>
+<p>最后，你得有实体FTP权限，而不是什么WebFTP之类的。</p>
+<p>本文采用的实例规格如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">主站</td>
+<td style="text-align:left">阿里云ECS，承载WordPress，绑定域名blog.lnyk2.com</td>
+</tr>
+<tr>
+<td style="text-align:right">分流</td>
+<td style="text-align:left">万网共享空间（速度够快，只是流量限制），绑定域名site.lnyk2.com</td>
+</tr>
+<tr>
+<td style="text-align:right">域名</td>
+<td style="text-align:left">使用阿里云对域名进行解析，目前阿里云的域名解析速度是很快的（不是广告，人家做的确实不错，新建A记录后的解析速度基本和我在美国的顶级域.COM解析速度相同，都属于建好就能访问的那种，一般不需要等48小时的同步时间）。</td>
+</tr>
+<tr>
+<td style="text-align:right">WordPress插件</td>
+<td style="text-align:left">W3TotalCache</td>
+</tr>
+<tr>
+<td style="text-align:right">分流方式</td>
+<td style="text-align:left">Self-hosted CDN / FTP</td>
+</tr>
+</tbody>
+</table>
+<p>满足上面的条件吗？OK, Let’s roll!</p>
+<h2 id="WordPress-W3TotalCache"><a href="#WordPress-W3TotalCache" class="headerlink" title="WordPress W3TotalCache"></a>WordPress W3TotalCache</h2><p>一般使用WordPress的小伙伴都会使用WordPress Super Cache或者W3TotalCache来静态化缓存，在不使用CDN功能的情况下，也会减少数据库的查询量，从而小幅度提高访问速度。</p>
+<p>然而，对于主站带宽不高的童鞋，CDN是你提速的唯一选择了。</p>
+<p>这里默认你装好了插件，并做好了你自己的设置，就差CDN没有打开。</p>
+<h2 id="准备分流主机"><a href="#准备分流主机" class="headerlink" title="准备分流主机"></a>准备分流主机</h2><p>首先FTP到你的分流空间中查看目录结构（没有FTP客户端？那你还玩儿什么？赶紧FileZilla~），一般的网站空间，其HTTP访问目录都不是根目录，我的访问路径是：<code>/htdocs/</code></p>
+<p>如果你的不是（比如WebFaction的主机就需要你自己新建站点），就先记下来。</p>
+<p>然后，确定你分流主机的域名DNS，我这里将site.lnyk2.com指派给分流主机。</p>
+<p>最后，新建需要的目录。一般都不会把所有东西丢在根目录吧？</p>
+<p>我使用<code>/htdocs/static/blog/</code>保存要分流的内容，如果你还有别的主站想要分流，可以以<code>static/</code>为基础新建其他目录，比如<code>/htdocs/static/wiki/</code>，<code>/htdocs/static/gallery/</code>，等待分流主机的域名DNS生效后，就可以进行下一步了。</p>
+<h2 id="启用W3TotalCache的CDN设置"><a href="#启用W3TotalCache的CDN设置" class="headerlink" title="启用W3TotalCache的CDN设置"></a>启用W3TotalCache的CDN设置</h2><p>进入WordPress的后台控制，进入左侧Performance（性能）选项，在General（总体配置或者什么的，我用的英文版WordPress）里启用CDN，启用完毕后，跳到CDN的配置子项里去。</p>
+<p>填写相关配置如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">FTP Hostname</td>
+<td style="text-align:left">site.lnyk2.com</td>
+</tr>
+<tr>
+<td style="text-align:left">FTP Username</td>
+<td style="text-align:left">你的FTP用户名</td>
+</tr>
+<tr>
+<td style="text-align:left">FTP Password</td>
+<td style="text-align:left">你的FTP密码</td>
+</tr>
+<tr>
+<td style="text-align:left">FTP Path</td>
+<td style="text-align:left">记得上面让你记下来的路径吗？填在这里，本例使用<code>/htdocs/static/blog</code></td>
+</tr>
+<tr>
+<td style="text-align:left">SSL Support</td>
+<td style="text-align:left">默认就可以，除非你想分流站点使用https访问，而不是http.</td>
+</tr>
+<tr>
+<td style="text-align:left">Replace Site’s hostname with</td>
+<td style="text-align:left">site.lnyk2.com/static/blog</td>
+</tr>
+</tbody>
+</table>
+<p>这里填写的内容就是在启用CDN之后，页面中需要分流的内容链接前面的路径部分，比如原来的<code>http://blog.lnyk2.com/me.jpg</code>会被重新替换为<code>http://site.lnyk2.com/static/blog/me.jpg</code>.</p>
+<p>这一项下面还有个”Add CNAME”按钮，意思是，如果这里只填写一条记录，则所有分流的内容都会指到<code>site.lnyk2.com/static/blog</code>，如果你希望彻底到连DNS解析都分流的话，可以在这里填写更多地CNAME，并准备好相应的DNS解析，因为填写多条记录的时候，W3TotalCache就自动启用内容分类分流了，比如：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">css.lnyk2.com</td>
+<td style="text-align:left">分流CSS</td>
+</tr>
+<tr>
+<td style="text-align:left">js.lnyk2.com</td>
+<td style="text-align:left">分流head标签中的JS</td>
+</tr>
+<tr>
+<td style="text-align:left">js2.lnyk2.com</td>
+<td style="text-align:left">分流紧跟body标签的JS</td>
+</tr>
+<tr>
+<td style="text-align:left">js3.lnyk2.com</td>
+<td style="text-align:left">分流body标签之前的JS</td>
+</tr>
+</tbody>
+</table>
+<p>其实对于小型网站来说，完全没必要这样做。</p>
+<p>一条就够：<code>site.lnyk2.com/static/blog</code>，不用点Add CNAME按钮。</p>
+<p>都设置完毕了嘛？好，点下面的Test按钮，让插件自动进行测试，看看FTP路径或者DNS解析是否正常。</p>
+<p>如果通过了测试，恭喜你，就差一步了；如果没通过，根据提示进行相应更改。</p>
+<p>最后，点击保存配置，使配置生效。</p>
+<h2 id="上传相应内容"><a href="#上传相应内容" class="headerlink" title="上传相应内容"></a>上传相应内容</h2><p>这一步其实最简单，只要你上面的内容全部完成，W3TotalCache会帮你完成上传工作。上一步保存完配置之后，页面会刷新，上面多出关于CDN的一行提示，里面有需要的按钮。</p>
+<p>首先，如果你的分流空间FTP有连接数限制，就先关闭FileZilla或者你的FTP客户端，释放FTP连接。</p>
+<p>点第一个“Export the media library”，这一步会将你媒体库里的所有图片音乐等文件同步到分流主机中。</p>
+<p>在弹出的窗口中，有一个蓝色的“Start”，点一下，耐心等待进度条跑到头并且按钮从“Pause”重新变回“Start”，同步就完成了，关闭窗口。</p>
+<blockquote><p>这里需要注意，每次你上传文件到媒体库中之后，W3TotalCache会自动把你上传的文件也FTP到分流主机中一份，不用手动同步。</p>
+</blockquote>
+<p>当然，如果你在媒体库中删除文件的时候，记得在鼠标指向文件行的时候，先点最后面那个“Purge from CDN”，将分流站里的对应文件自动删除先。</p>
+<p>点第二个“WP-Includes”，同理，会将你WP-Includes目录中的东西同步到分流主机。</p>
+<p>点第三个“Themes”，这一步是同步你的主题相关文件。这里需要注意一下，以后你更改了默认主题，还需要重新同步Themes.</p>
+<p>第四个“Custom files”，如果你有自定义的一些CSS之类的东西，就同步一下。我这里没有。</p>
+<p>根据需要同步完了所有内容后，这个提示行其实就可以不要了，点“Hide Message”。</p>
+<h2 id="检查验收"><a href="#检查验收" class="headerlink" title="检查验收"></a>检查验收</h2><p>一切搞定之后，就可以回到主站前台，随便打开一篇有上传过图片的日志，右键查看源代码，找到那张图片的链接，是不是发现图片地址已经变成你的分流主机的链接了？</p>
+<p>现在打开FileZilla，重新登陆到你的分流主机空间中，看看你制定的路径里面是不是已经有东西了？</p>
+<p>恭喜你，你的主站现在已经是多路分流了，感觉是不是快多了？</p>
+<p>这里额外讨论一下，在大多数情况中，只有分流主机网速不是很慢，才能体会出速度提升，当然并不是说分流主机一定得多么的快。提速并不是单单靠分流，而是还有并行读取，在主站向浏览器传送页面的同时，浏览器也在向分流站点请求图片等信息，这样有时候用户会体验到一种情况，页面还没显示完整，页面中的图片就已经全都显示出来了。即使对于单一主机的情况，从HTTP请求解析过程来说，多路请求也会比队列请求要快很多。这也是大多数大型网站都在采用的策略，他们宁愿多分配几个CNAME，让所有信息都有不同的URL，也不想把所有内容放在一个URL下，只使用路径来分割，举个稍微重复一点的例子：</p>
+<p>一个HTML中，有下面几个内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">www.lnyk2.com/js/firefox.js</span><br><span class="line">www.lnyk2.com/photo/me.png</span><br><span class="line">www.lnyk2.com/image/very-big-backgroud.jpg</span><br></pre></td></tr></table></figure>
+<p>同一个HTML，内容变成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">js.lnyk2.com/firefox.js</span><br><span class="line">photo.lnyk2.com/me.png</span><br><span class="line">image.lnyk2.com/very-big-background.jpg</span><br></pre></td></tr></table></figure>
+<p>这两个HTML展示给访问者的时候，大多数情况下是后面一个快，因为即使第二个页面有3次DNS解析，也是同步进行的，而第一个页面中，虽然只有一次DNS解析，但内容却占用同一个站点的三个并发连接，即使第二个页面的三个子域名都指向同一个主机，并发读取的速度也是比并发连接挨个读取的用户体验要好。</p>
+<p>在更普遍的情况下，<code>js/photo/image</code>三个域名指向的是同一个主机的不同虚拟主机，对于访问压力不是很大的站点来说，可以更充分的挖掘http服务器的工作资源，因为这牵扯到一个比较常见的问题：并发连接数。</p>
+<p>说了这么多，无非是想让站点快一些，可能有些地方有点吹毛求疵，但如果你主站全功能，而又有一个访问速度不错，但只能存放静态页面的便宜主机，干嘛不利用起来，变成自己的Self-hosted CDN呢？</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>经过反复测试，W3 Total Cache占用CPU确实比较高，而WordPress Super Cache则是在功能上不如前者，但性能非常优秀。由于我的ECS只指派了一个CPU，在交替启用这两个插件进行测试的时候，是能够明显感觉出反应速度不同的，建议共享空间的童鞋启用W3 Total Cache，而VPC或ECS的童鞋，乖乖Super Cache吧，与其反应速度慢，还不如让读取速度慢点儿。</p>
+<p>还有，如果你启用W3 Total Cache的Minify之后，页面乱了，很有可能是你的JS/html/css内容乱码，这时候需要关闭Browser Cache的Gzip选项！Google了很多帖子，没有说怎么修正这个问题的，只好暂时关闭压缩了。可是这样一来，所有缓存的节约量都赶不上一个大JS压缩后的节约量了。</p>
+<p>网上也有很多人说W3 Total Cache的CPU占用率居高不下，很多大型网站被迫改用其他缓存插件。这点在后记一开始我有说明，还是那句话，如果不是网速的原因，童鞋你还是明显觉得慢，肯定就是它的问题了。关闭之后再看看，然后自己做决定是否更换其他的插件。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>使用Super Cache也是可以使用CDN的，只是这个CDN是真正的CDN，不是咱的分流主机配合FTP了，一般需要花银子。</p>
+<p>但是使用Super Cache搭配Autoptimize还是一个不错的选择，Autoptimize会实现Minify等很多功能。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/wordpress/">#wordpress</a> <a href="/tags/cdn/">#cdn</a> <a href="/tags/cache/">#cache</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2014/05/10/2014051002/index.html">善用CAJViewer的OCR文字识别功能</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/05/10/2014051001/index.html">WordPress W3TotalCache CD</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/22/2014042201/index.html">OpenOffice LibreOffice与Mi</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2014/04/20/2014042001/index.html">2014色调清华</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
