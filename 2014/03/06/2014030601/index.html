@@ -62,12 +62,6 @@
     <!-- Gallery -->
     <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
 
-    <!-- APlayer -->
-    <link href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
-
-    <!-- DPlayer -->
-    <link href="https://cdn.bootcss.com/dplayer/1.22.2/DPlayer.min.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
@@ -179,7 +173,7 @@
         
 
         <!-- Post Content -->
-        <p>今天买了新笔记本，因为没有预装系统，所以直接用Ubuntu引导的系统，插上我的Razer Naga鼠标之后，发现移动速度太快，即使设置为最低也没用，看来得用系统及别的降速了。</p>
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>今天买了新笔记本，因为没有预装系统，所以直接用Ubuntu引导的系统，插上我的Razer Naga鼠标之后，发现移动速度太快，即使设置为最低也没用，看来得用系统及别的降速了。</p>
 <p>打开终端，使用<code>xinput --list</code>命令找到鼠标的ID，我的ID是11，所以用下列命令进行降速，中间的句子是说明：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xinput --<span class="built_in">set</span>-prop <span class="string">"11"</span> <span class="string">"Device Accel Constant Deceleration"</span> 3</span><br></pre></td></tr></table></figure>
 <p>命令的意思是，把输入设备<code>11</code>的移动速度属性降到<code>3</code>，你也可以试试别的数字，对于我，3正好。</p>
@@ -330,15 +324,6 @@
 
 <!-- Custom JavaScript -->
 <script src="/js/main.js"></script>
-
-<!-- APlayer -->
-<script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js"></script>
-
-<!-- Meting -->
-<script src="/js/Meting.min.js"></script>
-
-<!-- DPlayer -->
-<script src="https://cdn.bootcss.com/dplayer/1.22.2/DPlayer.min.js"></script>
 
 <!-- Disqus Comments -->
 
