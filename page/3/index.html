@@ -151,6 +151,183 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2014/03/09/2014030901/index.html">
+                清华大学KMS认证正版Win 8及Office 2010
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-03-09</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <ol>
+<li><p>首先确保你的Win 8是Enterprise版，Office 2010是Professional Plus，其他版本没试过，不敢确定能否激活。</p>
+</li>
+<li><p>将Win 8序列号修改为清华校园正版序列号。</p>
+</li>
+<li><p>将KMS服务器地址修改为清华KMS认证服务器。</p>
+</li>
+<li><p>开启认证。</p>
+</li>
+</ol>
+        </div>
+        <a href="/2014/03/09/2014030901/index.html" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2014/03/07/2014030701/index.html">
+                在Ubuntu中创建Windows 7/8 USB启动盘
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-03-07</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>如果想在Ubuntu中创建Windows 7或8的USB启动盘，由于没有Windows平台上那么方便的UltraISO，多数人只能选择GRUB手动安装，这样比较麻烦。</p>
+<p>今天无意中看到一个小软件，可以方便的在Ubuntu中创建Windows启动盘，经过测试还是比较方便的。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2014030701/2014030701-01.png!w-1024" alt="WinUSB"></p>
+<p>具体安装过程如下（假定你使用的是Ubuntu）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:colingille/freshlight</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install winusb</span><br></pre></td></tr></table></figure>
+<p>安装好之后，可以在Ubuntu的Dashboard中找到WinUSB，也可以直接使用命令行方式，格式如下：</p>
+<p><code>bash
+sudo winusb --format &amp;lt;iso path&amp;gt; &amp;lt;device&amp;gt;
+sudo winusb --install &amp;lt;iso path&amp;gt; &amp;lt;partition&amp;gt;</code>bash</p>
+<p>第一条命令会根据ISO的具体需要自动格式化设备为相应分区（一般为Fat32），第二条命令则安装ISO到设备分区，并写入MBR.</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2014/03/06/2014030601/index.html">
+                在Ubuntu中为Razer鼠标减速
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2014-03-06</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天买了新笔记本，因为没有预装系统，所以直接用Ubuntu引导的系统，插上我的Razer Naga鼠标之后，发现移动速度太快，即使设置为最低也没用，看来得用系统及别的降速了。</p>
+<p>打开终端，使用<code>xinput --list</code>命令找到鼠标的ID，我的ID是11，所以用下列命令进行降速，中间的句子是说明：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xinput --<span class="built_in">set</span>-prop <span class="string">"11"</span> <span class="string">"Device Accel Constant Deceleration"</span> 3</span><br></pre></td></tr></table></figure>
+<p>命令的意思是，把输入设备<code>11</code>的移动速度属性降到<code>3</code>，你也可以试试别的数字，对于我，3正好。</p>
+<p>命令会立即生效，所以可以多测试几个数值。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/25/2013122503/index.html">
+                修改 WordPress 的 SyntaxHighlighter 实现圆角和阴影效果
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-25</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>对于编码/技术博客来说，<code>SyntaxHighlighter</code>代码高亮显式插件必不可少。</p>
+        </div>
+        <a href="/2013/12/25/2013122503/index.html" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/25/2013122502/index.html">
+                设定python的默认编码为UTF-8
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-25</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>今天重装Pillow时遇到了编码问题，编译不通过，于是重新设置了一下python的默认编码。</p>
+        </div>
+        <a href="/2013/12/25/2013122502/index.html" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2013/12/25/2013122501/index.html">
                 Ubuntu 13.10 LiveCD + boot-repair 拯救你的 grub2
             </a>
@@ -312,168 +489,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2013/12/16/2013121601/index.html">
-                解决ubuntu右上角日期时间消失的问题
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2013-12-16</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>刚刚解决了dpkg的问题，又突然发现日期时间消失了，google了一下，用下面两条命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get install gnome-panel</span><br></pre></td></tr></table></figure>
-<p>然后注销或重启。</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2013/12/15/2013121501/index.html">
-                解决ubuntu中dpkg操作中断后带来的问题
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2013-12-15</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>如果由于某些原因导致apt-get或者dpkg操作中断，有可能造成每次安装或更新都会提示如下信息：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">提示错误E: dpkg 的操作被中断了,</span><br><span class="line">您必须手动执行 <span class="string">'sudo dpkg --configure -a'</span> 以修复这个问题。</span><br></pre></td></tr></table></figure>
-        </div>
-        <a href="/2013/12/15/2013121501/index.html" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2012/12/23/2012122301/index.html">
-                复活
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2012-12-23</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/Whispers/">Whispers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>更新PayPal信息，服务器复活。</p>
-<p>暂时不想更新东西。</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2012/08/12/2012081201/index.html">
-                收拾旧河山，活出味道
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2012-08-12</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/Whispers/">Whispers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>一万年没有更新博客了。</p>
-<p>该好好收拾一下了，不能总微博空间的，有点乱。</p>
-<p>一个人静静，挺好的。</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2012/06/20/2012062001/index.html">
-                升级到Fedora 17
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2012-06-20</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>我的客户端升级到了Fedora 17，感觉还是不错的，特别是这台古董电脑，用LXDE速度勉强可以，OpenBox看不出效果，一切皆因这台电脑倒霉的S3 UniChrome Pro显示芯片！</p>
-<p>在这里收集一下与F17有关的有用的东西。</p>
-        </div>
-        <a href="/2012/06/20/2012062001/index.html" class="read-more">Read More</a>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -516,19 +531,19 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/2014/10/14/2014101401/index.html">曾经的你</a>
+                <a class="footer-post" href="/2015/04/12/2015041202/index.html">Mozilla 64-bit产品线</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2014/10/12/2014101201/index.html">终于进入S弯阶段，纪念一下！</a>
+                <a class="footer-post" href="/2015/04/12/2015041201/index.html">将Gravatar改为国内多说头像镜像</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2014/08/02/2014080201/index.html">灰狼日记</a>
+                <a class="footer-post" href="/2015/03/18/2015031801/index.html">留个纪念</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2014/06/30/2014063001/index.html">解决HDMI连接电视画面延时问题</a>
+                <a class="footer-post" href="/2015/01/18/2015011801/index.html">萨克斯Day.0留个纪念</a>
             </li>
             
         </ul>
