@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Ubuntu搭建TexLive+emacs+AucTex+magit(git)创作发布环境"/>
+        <meta property="og:title" content="Win8.1和OneDrive 30G免费空间走起"/>
     
 
     <!--Open Graph Description-->
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Ubuntu搭建TexLive+emacs+AucTex+magit(git)创作发布环境 - William Yao&#39;s Dream World</title>
+    <title>Win8.1和OneDrive 30G免费空间走起 - William Yao&#39;s Dream World</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
@@ -150,13 +150,13 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2014/04/01/2014040101/index.html">
-                Ubuntu搭建TexLive+emacs+AucTex+magit(git)创作发布环境
+            <a href="/2015/04/16/2015041601/index.html">
+                Win8.1和OneDrive 30G免费空间走起
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2014-04-01</span>
+                <span class="date">2015-04-16</span>
             
             
             
@@ -173,26 +173,47 @@
         
 
         <!-- Post Content -->
-        <p>原来一直没写过关于搭建tex环境的小帮助，今天用到，所以总结一下给需要的朋友。</p>
+        <p>今天换了OCZ的VECTOR 180 240G，瞬间感觉大本儿起飞了！</p>
+<p>重装了64-bit的Win8.1，认证激活。</p>
+<p>清华大学的正版认证服务请参看《<a href="/2014/03/09/2014030901/index.html" title="清华大学KMS认证正版Win 8及Office 2010">清华大学KMS认证正版Win 8及Office 2010</a>》，这次不用那么复杂了，其他不变，序列号不用更换了，用后面两条命令，重定向认证服务器，然后 /ato 认证就好。</p>
+<p>原来Win8.1和Win8果然是两个不同的系统，差别有点儿大，主要集中在网络功能上，微软云渗透在系统各个角落！</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-01.png!w-1024" alt="OneDrive"></p>
+<p>这就教大家激活Win8.1的云服务！本文主在介绍，实际操作比较简单，放心看下来吧。</p>
 <a id="more"></a>
-<p>系统：Ubuntu Kyrin，官方中文版（麒麟），用中文版（国人自己的Ubuntu官方版）会省去很多字体配置、区域设置的问题。</p>
-<p>环境：TexLive包</p>
-<p>编辑器：Emacs 24</p>
-<p>因为是小帮助，我们就不来configure/make/make install那一套了，假定你可以方便的连接互联网，然后步骤就很简单了。</p>
-<p>首先使用apt-get安装所需要的所有东西：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br><span class="line">sudo apt-get install emacs</span><br><span class="line">sudo apt-get install texlive-full</span><br><span class="line">sudo apt-get install auctex</span><br></pre></td></tr></table></figure>
-<p>上面命令假设你有足够快的网速，不然特别是在第三步安装TexLive的步骤，最好泡杯茶，找个电影看看，这里是图省事儿，安装了ubuntu源中提供的texlive完整metapack，有经验的朋友也可以自己选择需要的包，如果自己选择，推荐texlive-base, texlive-generic还有texlive-xetex，我们在后面的配置中会默认使用xelatex进行编译。</p>
-<p>看完电影了？我们继续。</p>
-<p>首先配置emacs，这里可以参考我的另一篇文章，使用purcell同学的emacs.d自动搭建基础型全能emacs环境：《<a href="/2013/12/16/2013121602/index.html" title="终于搞定purcell-emacs.d">终于搞定purcell-emacs.d</a>》</p>
-<p>假定你完成了上面一步，那么打开<code>~/.emacs.d/lisp/init-local.el</code></p>
-<p>这是使用purcell的emacs.d环境之后，指定的可以添加自己的修改而不破坏purcell原始文件的地方。</p>
-<p>下面是我的init-local.el的完整内容，后半部分是配置magit和auctex的部分，其实依托apt-get搞定所有事情之后，配置起来是很简单的。</p>
-<p>每一部分都有说明，感兴趣的朋友可以直接套用。</p>
-<figure class="highlight erl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">(setq track-eol t)</span><br><span class="line"></span><br><span class="line">(setq-default abbrev-mode t)</span><br><span class="line">(setq save-abbrevs nil)</span><br><span class="line"></span><br><span class="line">(setq user-full-name 'William Yao')</span><br><span class="line">(setq user-mail-address 'monoyo@gmail.com')</span><br><span class="line"></span><br><span class="line">(setq make-backup-files nil)</span><br><span class="line">(setq auto-save-default nil)</span><br><span class="line"></span><br><span class="line">;; Kill a buffer without answering confirmation</span><br><span class="line">(global-set-key [(control x) (k)] 'kill-this-buffer)</span><br><span class="line">;; Auto kill processes <span class="keyword">when</span> killing a buffer.</span><br><span class="line">(delq 'process-kill-buffer-<span class="keyword">query</span>-function kill-buffer-<span class="keyword">query</span>-functions)</span><br><span class="line"></span><br><span class="line">(global-set-key [f11] 'my-fullscreen)</span><br><span class="line"></span><br><span class="line">;全屏</span><br><span class="line">(defun my-fullscreen ()</span><br><span class="line">  (interactive)</span><br><span class="line">  (x-send-client-message</span><br><span class="line">   nil <span class="number">0</span> nil '_NET_WM_STATE' <span class="number">32</span></span><br><span class="line">   '(<span class="number">2</span> '_NET_WM_STATE_FULLSCREEN' <span class="number">0</span>))</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">;激活 magit 来管理 git</span><br><span class="line">(require 'magit)</span><br><span class="line"></span><br><span class="line">;激活 AucTex</span><br><span class="line">(load 'auctex.el' nil t t)</span><br><span class="line">(load 'preview-latex.el' nil t t)</span><br><span class="line">(setq TeX-auto-save t)</span><br><span class="line">(setq TeX-parse-self t)</span><br><span class="line">(setq-default TeX-master nil)</span><br><span class="line"></span><br><span class="line">(setq TeX-output-view-style (quote (('^pdf$' '.' 'evince <span class="comment">%o %(outpage)'))))</span></span><br><span class="line"></span><br><span class="line">(add-hook 'LaTeX-mode-hook</span><br><span class="line">(lambda()</span><br><span class="line">(add-to-list 'TeX-command-list '('XeLaTeX' '<span class="comment">%`xelatex%(mode)%' %t' TeX-run-TeX nil t))</span></span><br><span class="line">(setq TeX-command-default 'XeLaTeX')))</span><br><span class="line"></span><br><span class="line">(provide 'init-local)</span><br><span class="line"></span><br><span class="line">;;; init-local.el ends here</span><br></pre></td></tr></table></figure>
-<p><code>C+x,C+s保存文件，</code>C+x,C+c`退出emacs.</p>
-<p>然后重新打开emacs，如果一切顺利，你就配置完毕了，<code>C+x,C+f</code>打开一个在git管理中的.tex文件看看，是不是magit和auctex都启动了？</p>
-<p>试试用<code>C+c,C+c</code>编译，用<code>C+c,C+v</code>使用evince查看生成的pdf，是不是很爽？</p>
-<p>这里注意一点，上面配置文件的最后一部分，设置<code>C+c,C+c</code>命令默认使用xelatex编译pdf，你也可以设置为latex或其他支持的命令，这个设定只为方便。</p>
+<h2 id="大致情况"><a href="#大致情况" class="headerlink" title="大致情况"></a>大致情况</h2><p>首先，激活云服务之后，就可以用微软ID登录系统了，因为微软ID会与本机账号绑定，所以对于本地系统，什么都不会丢失和改变，在断网状态下，依然可以用本机账号的密码登录系统。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-02.png!w-1024" alt="OneDrive"></p>
+<p>其次，激活云服务之后，可选让Win8.1使用OneDrive的免费15G空间，将本机系统的配置、账号信息、桌面背景、用户头像、应用程序配置等等信息同步备份到微软云中，当安装另一套系统（或重装系统）的时候，就可以泡杯茶，边喝边看微软云怎么把你新装的系统一下子变回原来的样子了。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-03.png!w-1024" alt="OneDrive"></p>
+<p>再次，OneDrive的另一个功能是可以同步你的Documents文件夹，但由于Windows平台的设计理念经常与软件开发者（无良的那些）不一致，导致Documents（文档）文件夹里过不多久就会乱七八糟，各种游戏进度、视频缓冲、日志文件、莫名垃圾等等会塞满Documents，所以这里不建议打开该功能。</p>
+<p>最后，同步照片！这功能应该是OneDrive用的最频繁的功能了（当然备份系统是最重要的功能），虽然和百度云、360云等的功能类似，但这个更方便，手机端安装OneDrive，开启本地相册备份，手机照片就会自动同步到微软云，而Win8.1的OneDrive则会自动同步云上的照片到本机，以后你就可以习惯放轻松的用手机“咔嚓”一下，哎？电脑上出现了刚才拍的照片！</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-04.png!w-1024" alt="OneDrive"></p>
+<p>为什么说比百度云、360云等客户端方便呢？还用说嘛，系统集成度问题，那些个云端需要下载客户端手动同步，而OneDrive则自动同步。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-05.png!w-1024" alt="OneDrive"></p>
+<p>当然你要想打开百度的自动同步我也没意见，可是系统配置备份、云登录系统它就无能为力了，像下面这种情况，应该是比较多余的了吧……</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-06.png!w-1024" alt="OneDrive"></p>
+<h2 id="PC端操作"><a href="#PC端操作" class="headerlink" title="PC端操作"></a>PC端操作</h2><p>首先，正常用本地账号登录系统，鼠标移动到屏幕右下角，等出现Super Buttons（超级按钮）的时候，点“齿轮”，选择最下面“Change PC Settings”（抱歉我是英文系统，中文貌似叫做“进一步配置”之类的）</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-07.png!w-1024" alt="OneDrive"></p>
+<p>进入配置程序之后，点左边的“Accounts”（账户）</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-08.png!w-1024" alt="OneDrive"></p>
+<p>按提示一步一步操作就可以（这里我是不是有点儿不负责任~~），如果没有微软账号，注册一个就好，建议使用你目前最经常用的电子邮箱注册微软账号，微软的免费邮箱太难用了，没必要。</p>
+<p>一堆Login、Authorization、Sync之后，恭喜你，你的本地帐户就和微软ID绑在一起了。</p>
+<p>最后，还是“PC Settings”面板，进入“OneDrive”选项卡，该关关，该开开。</p>
+<h2 id="手机端操作"><a href="#手机端操作" class="headerlink" title="手机端操作"></a>手机端操作</h2><p>有童鞋会问，为什么还要在手机端进行操作呢？我并不想用照片同步功能啊！</p>
+<p>其实如果细心看图片的童鞋都会发现，文章里提到OneDrive是15G免费空间，可我的标题和图片里明明都是30G啊！</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-09.png!w-1024" alt="OneDrive"></p>
+<p>嘿嘿，这就是手机端的操作了，其他平台不清楚，IOS上搜索安装OneDrive，用你的微软ID登录。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-10.png!w-1024" alt="OneDrive"></p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-11.png!w-1024" alt="OneDrive"></p>
+<p>只要开启一下本地照片同步功能，就可以获赠另外15G的免费空间！我猜想再关掉照片同步后，多出来的15G微软应该不会收回了，毕竟这样也太挫了吧，所以不想用照片同步的童鞋，大可以打开→获赠另外15G→关掉……</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>记得当年开电脑就上QQ和MSN Messenger的那个年代（那时候哪儿有微信？最高大上的就是腾讯的IM和Skype），MSN做的还很烂，云的概念还没有具体实现，当年最热的还是MSN Space，这次激活OneDrive之后，突然发现相册同步回三张照片，N年前在Space上用Windows Writer写博客时留下的背景图，那个感动啊！现在什么东西都挂着“云”标签，但是具体有多少被使用了呢？现在云的过度富余和云计算中心的电力消耗，会不会也将导致电子信息领域的“通货膨胀”？</p>
+<p>百度云的容量可观</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-12.png!w-1024" alt="OneDrive"></p>
+<p>360云的更“离谱”</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-13.png!w-1024" alt="OneDrive"></p>
+<p>可我觉得具体到应用上，给我30G，足够了。</p>
+<p>当然，Evernote这60M/Month也有点儿过分了~</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041601/2015041601-14.png!w-1024" alt="OneDrive"></p>
+<p>真希望哪一天Google回到中国，我还能再次见到Picasa上的那些老照片！（顺便缅怀一下逝去的Flickr…工信部，你大爷！）</p>
 
     </div>
 
@@ -201,7 +222,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/emacs/">#emacs</a> <a href="/tags/git/">#git</a> <a href="/tags/ubuntu/">#ubuntu</a> <a href="/tags/tex/">#tex</a>
+            <a href="/tags/windows/">#windows</a> <a href="/tags/onedrive/">#onedrive</a>
         </div>
     
 
