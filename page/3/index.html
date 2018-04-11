@@ -151,6 +151,140 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2013/12/24/2013122401/index.html">
+                利用virtualenv搭建python开发部署环境
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-24</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>随着安装各种python package，我们的site-packages/dist-packages会越来越杂乱，而且有些包是临时测试用途的，基本用完之后就荒废了，更重要的是，有些程序的运行环境比较复杂，当和其他程序混在一起的时候，容易出现冲突或各种各样的错误，甚至进入死版本状态无法同时解决，这也是目前大多数python开发者都推荐使用virtualenv的最主要原因，比如readthedoc/django/django-cms等等混在一起的环境。</p>
+<p>现在我们就从头开始，利用virtualenv搭建各种不同的python虚拟开发/运行环境，并从头开始部署django-cms</p>
+        </div>
+        <a href="/2013/12/24/2013122401/index.html" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/18/2013121801/index.html">
+                Ubuntu 13.10-django 1.5.1-apache 2.4.6-mod_wsgi安装部署问题详解
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-18</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <blockquote><p>这么多年过去了，当年文章中所描述的一些问题还有小部分仍然存在，不过自从<code>django</code>有了骚浪贱的<code>gunicorn</code>加<code>WhiteNoise</code>组合，这些问题都不叫事儿了。时代的发展速度真的很快……</p>
+<footer><strong>William Yao</strong><cite>2018年04月09日</cite></footer></blockquote>
+<p>最近忙着把项目从Windows+XAMPP移植到Ubuntu，经历和解决了若干问题，由于大多数问题多数时间我们都会碰到，于是整理了这篇文章，希望能帮到遇到此类问题的朋友。</p>
+        </div>
+        <a href="/2013/12/18/2013121801/index.html" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/17/2013121701/index.html">
+                在Ubuntu上安装Calibre
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>虽然Ubuntu软件源里面有Calibre，但是版本跟实际Current Release相差甚远，并不实际，还是用Calibre官网上的方法进行安装和升级吧。</p>
+<p>安装和升级都只需要把下面一行复制到控制台里回车就行。</p>
+        </div>
+        <a href="/2013/12/17/2013121701/index.html" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/16/2013121602/index.html">
+                终于搞定purcell-emacs.d
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2013121602/2013-12-16-104017.png!w-1024" alt="Emacs with Purcell configuration"></p>
+<p>一开始还想用自己在github上存的emacs设置，后来看了一下网上评论，都说purcell的大家都在用，于是干脆用人家的吧。</p>
+<p>经过试用，感觉还不错，功能很全，主要通用于各种语言编程。</p>
+<p><a href="https://github.com/purcell/emacs.d" target="_blank" rel="noopener">purcell/emacs.d</a></p>
+<p>作者把安装说明也写的很详细，而且不用修改init.el，可以创建lisp/init-local.el添加自己的喜好设定。</p>
+<p>唯一的问题，对于国内用户来说，第一次运行后自动安装编译加载那些需要的package过程太过漫长，连接melpa.milkbox.net:80简直就是一场噩梦，用无线上网卡我更新了整整一晚上。</p>
+<p>不过还好，最终结果还是蛮不错的。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2013/12/16/2013121601/index.html">
                 解决ubuntu右上角日期时间消失的问题
             </a>
@@ -340,136 +474,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2012/05/25/2012052501/index.html">
-                踏上漫长的CCNP之路
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2012-05-25</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/Whispers/">Whispers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>不久前买了一套6本的CCNP官方教程中文版，又从网上Down了一套6本英文PDF版，打算入门CCNP，结果才看了两天，就发现，当年的基础知识有不少印象都模糊了，只好又趁着周末去买了三本CCNA的，打算先预热一下基础知识，然后再上CCNP，毕竟跨专业很多年了，重新捡起来也不是那么顺手。</p>
-<p>总觉得目前的工作环境里有大把的时间可以利用起来，快三十的男人了，再不把时间充分利用在学习硬东西上，恐怕将来要吃亏。</p>
-<p>因为每天都在写日记，博客真的荒废了很久了，希望能尽快把新加坡这个新服务器完全弄起来，内容没有不怕，服务总得全功能，不然也对不起咱的资金投入……</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2012/05/19/2012051901/index.html">
-                服务器迁移成功
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2012-05-19</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>今天把服务器从美国迁移到了新加坡，访问速度有了明显提升，而且从CentOS 5 32-bit服务器升级到了CentOS 6 64-bit，处理速度也有了明显进步，加上WordPress的memcached服务原生支持，现在的博客应该可以承载足够数量的访问压力了。</p>
-<p>高兴，庆贺一下。</p>
-<p>顺便准备上线Django 1.4的项目。</p>
-<p>WebFaction的主机，SSH管道直接维护，方便的很！只要有点Linux基础，可以为所欲为！</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2011/08/28/2011082802/index.html">
-                Papers 2过期了，尝试用iTunes管理PDF
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2011-08-28</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>今天犯贱，升级了本来是K过的Papers 2，结果就提示试用期已过。</p>
-        </div>
-        <a href="/2011/08/28/2011082802/index.html" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2011/08/28/2011082801/index.html">
-                Mac下转换bin/cue到ISO
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2011-08-28</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>今天发现了一个好玩的小工具，将bin/cue转换为ISO，要知道bin/cue在Mac平台上可是不被原生支持的。</p>
-<p>还是老样子，这个叫做<code>bchunk</code>的可爱小工具还是Unix/Linux系列工具，老办法，用MacPorts安装。</p>
-        </div>
-        <a href="/2011/08/28/2011082801/index.html" class="read-more">Read More</a>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -512,19 +516,19 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/2014/05/10/2014051002/index.html">善用CAJViewer的OCR文字识别功能</a>
+                <a class="footer-post" href="/2014/10/12/2014101201/index.html">终于进入S弯阶段，纪念一下！</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2014/05/10/2014051001/index.html">WordPress W3TotalCache CD</a>
+                <a class="footer-post" href="/2014/08/02/2014080201/index.html">灰狼日记</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2014/04/22/2014042201/index.html">OpenOffice LibreOffice与Mi</a>
+                <a class="footer-post" href="/2014/06/30/2014063001/index.html">解决HDMI连接电视画面延时问题</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2014/04/20/2014042001/index.html">2014色调清华</a>
+                <a class="footer-post" href="/2014/06/12/2014061201/index.html">Google远去</a>
             </li>
             
         </ul>
