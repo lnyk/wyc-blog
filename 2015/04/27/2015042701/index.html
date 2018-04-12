@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Git私有托管服务初（粗）探（谈）"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Git私有托管服务初（粗）探（谈） - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2015/04/27/2015042701/index.html">
+                Git私有托管服务初（粗）探（谈）
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2015-04-27</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><blockquote><p>快三年前写的文章，经过这么久的发展和版本更迭，GOGS反而成了我的最爱！</p>
+<footer><strong>William Yao</strong><cite>2018年04月12日</cite></footer></blockquote>
+<p>这周本来憋着想写几篇技术贴的，可是事情到了最后各种失败和不适用，一直没有形成实质性的结果，所以最后就改成这么一篇介绍性的文章吧，具体安装过程和其中碰到的各种问题也简单的以介绍性为主了。</p>
+<a id="more"></a>
+<p>首先，这件事的起因是这周突发奇想整理存档库，解开了尘封很多年的一堆归档包，里面是我从1999年开始到今天的几乎全部程序代码和人生，大部分都丢失了文件创建日期等基本信息，而且那时候的我还没有什么版本控制系统的概念，只知道用压缩包。这笔财富丢了就一去不复返了，得像保护历史文物那样去花时间好好管理。可惜从里面没找到1996年写的第一个小程序，和1997年弄的第一个网站，可能那时候“太年轻”，硬件平台几经更换之后也没想起来备份什么的吧，程序也就随着当初那个2Gb的硬盘一起消失在历史烟雨中了，等这个五一假期，回家翻翻箱子底，看看能不能找出几张当年的软盘，里面兴许会有意外收获也说不定。</p>
+<p>其次，折腾这词儿形容的是经过好几天的努力，最终事情回到起点，没有留下任何实质性的结果，不光如此，由于本地环境与服务器环境差距太大（x86和x64），实验只能在服务器上进行，几天下来不光服务器资源混乱不堪，还添加了很多不稳定因素，甚至不可恢复的灾难性问题，被迫回滚磁盘快照好几次（在此也感慨一下阿里云ECS的磁盘自动快照功能，真是帮了我大忙），同时影响了正常服务的运行，可以算是服务中断了。为什么会遇到这些问题，接下来相对简单的讲给大家听。</p>
+<h2 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h2><p>最先搜索到的是Gitlab这个顶顶大名的开源项目，因为版本已经到了7.9，看上去还是很让人放心的，不但功能较为全面，而且各个平台都有对应的支持，一开始的我认为可能这就是我所需要的吧。</p>
+<h3 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：功能强大、全面，自带Nginx，干净的系统可以较顺利的一步到位安装；官方文档比较详细，具体安装过程及对应平台设置都有介绍。</p>
+<p>缺点：系统性能消耗巨大（5个基本服务需要同时运行，对于低配的虚拟服务器来说直接吃不消），运行内存不够1G的还需要手动挂在额外的系统交换分区（Swap）；如果系统不“干净”，自带的Nginx/MySQL等服务需要在配置中设定为关闭，并且剩下的配置比较复杂，容易碰到问题；碰到问题的话，官方没有多少实质能用的Faq，由于Git托管属于相对冷门的项目，搜索引擎几乎找不到对应版本的问题解决方案；最后是这种系统的通病，权限管理设置复杂。</p>
+<h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><p>先从Gitlab说起，不仅因为这个是我第一个实验目标，也是因为这是最胖最“牛刀”，同时也是配置最复杂的一个，光折腾它，就用去了我这周的两天时间。上面的优点大致都能被理解为“强大”，但是套上它的缺点，至少对于我，就实在不能够接受了。</p>
+<p>Ubuntu平台有对应的APT包，干净的系统可以直接apt-get install gitlab，但是对于我这个跑着Nginx/MySQL/PostgreSQL/Git over SSH和若干FastCGI调用的小小ECS服务器来说，apt-get离我真的很远。所以只能选择第二种安装方式，手动安装。</p>
+<h3 id="在手动安装中出现了若干问题"><a href="#在手动安装中出现了若干问题" class="headerlink" title="在手动安装中出现了若干问题"></a>在手动安装中出现了若干问题</h3><h4 id="第一"><a href="#第一" class="headerlink" title="第一"></a>第一</h4><p>禁用内置Nginx，配置外部Nginx服务器进行反向代理，虽然这一步官方文档有详细说明怎么弄，但并不全面，什么运行用户/目录权限等等问题千奇百怪，虽然最后找到了解决办法（本想就这个解决办法单独写篇文章的），顺利挂上了外部Nginx，静态文件载入成功，文件上传正常，但权限设置中还有很多不容易发现的漏洞。</p>
+<h4 id="第二"><a href="#第二" class="headerlink" title="第二"></a>第二</h4><p>启动问题，外部Nginx通过ProxyPass透明代理到Gitlab的服务端口是比较简单的运行方案，但作为系统服务启动这个老问题却让我好好的脑补了大半天，从init.d运行级到systemd的.service配置，最后选择的，也是成功运行的方案是supervisord，这三个东西具体是什么，不再缀述。</p>
+<h4 id="第三"><a href="#第三" class="headerlink" title="第三"></a>第三</h4><p>也是最重要的一个问题，权限问题。Gitlab原生支持LDAP，这种高大上的东西暂时用不到，默认的服务器角色分配就够了，这里说的权限问题，也是这类托管平台的通病，SSH和HTTP的权限问题！</p>
+<p>SSH的问题比较轻，依托密钥进行身份认证。</p>
+<p>HTTP/HTTPS的问题十分严重，表现是通过HTTP和HTTPS可以实现匿名clone，但却连带着push也匿名了！这不天下大乱了嘛！最开始想到了一个这种情况的解决方案，也在Issue上进行了讨论，公开托管服务项目不适合这种折中解决方案，但我的目的是完全私有，则可以试试，办法就是在Gitlab的后台打开访问登录限制，只有登录后才能看到内容，同时关闭注册功能，这样就至少让服务平台界面隔绝在私有范畴，但在经过测试之后发现，虽然可以隔绝平台操作界面，但如果知道了某代码库的克隆地址，依然可以拉取到本地，并且依然可以Push！Issue里面有人给出了个参考的解决办法，外国小伙还就爱钻牛角尖啊，办法是用Nginx的权限管理，撇开Gitlab，直接通过passwd文件给HTTP和HTTPS配置访问权限，达到单项访问的目的，同时启用SSH，这样通过HTTP/HTTPS单向Clone和Pull，通过SSH过滤无权限操作，实现密钥式的推送。这虽然是个办法，但他的做法是手动修改passwd，无法自动适配Gitlab的权限系统，也就是说注册了个新用户，这个新用户并不会自动出现在passwd中，需要手动添加进去，或者修改Gitlab的Ruby脚本（没错，Gitlab的Web框架是Ruby on Rails），给Git仓库加HOOK。</p>
+<p>其实后来想想，对于我这个单用户非公开的使用环境来说，passwd的做法足够了，拒绝一切匿名的HTTP/HTTPS访问，通过密钥使用SSH，这样是可以解决问题的，但平台消耗了资源，只为了这么点儿目的，还不如继续我之前的一个小项目，给Gitolite做一个Python的Helper来的简单呢。</p>
+<p>Gitolite的Helper在可用之后会开源放在Github上，有兴趣的童鞋可以随时关注本站的最新文章：）（小广告一枚）</p>
+<h2 id="GOGS"><a href="#GOGS" class="headerlink" title="GOGS"></a>GOGS</h2><p>这是一个国人90后小童鞋开发的项目，别看年轻，却大有作为啊，给国人挣了面子。</p>
+<h3 id="优缺点-1"><a href="#优缺点-1" class="headerlink" title="优缺点"></a>优缺点</h3><p>优点：体积小，资源消耗少，通过系统的Git用户和.ssh/authorized_keys文件管理SSH权限；自带HTTP服务，可以通过Nginx透明代理到HTTPS；安装方便，直接提供对应平台的二进制可运行代码，无需安装，直接./gogs web运行即可。</p>
+<p>缺点：和Gitlab一样的匿名权限问题，解决方法同样也是只能使用Nginx的passwd；使用GO语言编写，相对小众，官网被墙，文档查询只能通过国内的爱好者网站，而且做本地修改的话需要在下源码之前先过语言关……</p>
+<p>GOGS还是非常不错的，比Gitlab小的多的资源消耗，没有那么一大堆内置服务（Nginx之类的）需要关闭，虽然有相同的问题，但如果通过和Gitlab一样的解决方法来实现的话，显然GOGS更适合，因为资源占用小，解决了HTTP/HTTPS的问题之后，就比较适合小型团队的私有运行环境了。而且在操作authorized_keys文件上，使用了自己的标签分组，理论上应该和Gitolite不冲突。</p>
+<p>除了通病问题以外，GOGS的问题还反应在版本目前比较低，只有0.6.1，很多功能作者说是会在0.6.2中引入，比较年轻的项目，值得持续关注，同时也因为比较年轻，相关讨论少的可怜，基本只能在其github的issue里面讨论。</p>
+<p>由于是二进制方式直接运行，所以日后升级什么的也比较简单，在测试GOGS的时候，唯一遇到的问题还是卡在了Git系统用户的权限问题上，使用Supervisord运行需要指定GOGS的启动用户，一般都是git用户，但用Nginx做反向代理的时候，Nginx默认运行在www(www-data)用户下，这里绕了几个弯儿，最后想起Nginx的Server段可以指定以哪个用户身份运行……也给遇到问题的童鞋们备注一下，凡是Nginx反向代理这类需要运行在特殊用户之下的应用的时候，可以指定与其相同的用户。</p>
+<h2 id="Gitomony"><a href="#Gitomony" class="headerlink" title="Gitomony"></a>Gitomony</h2><p>法国的一个开源项目，是Git托管服务的一个小型应用，纯PHP实现，因为可能会在SSH上出问题，所以我对这个项目没有进行测试，有兴趣的可以看看。</p>
+<h2 id="Gitbucket"><a href="#Gitbucket" class="headerlink" title="Gitbucket"></a>Gitbucket</h2><p><a href="https://github.com/takezoe/gitbucket" target="_blank" rel="noopener">Gitbucket</a></p>
+<p>这是一个神奇的网站……呃……神奇的项目。</p>
+<p>有人说Gitbucket可以算是Github的开源版本，也有人甚至说它是Github的官方克隆，不管怎么说，这个虽然是吃系统资源最大（甚至比Gitlab还要大）的托管平台系统，但也是系统隔离最好，不会对现有服务产生任何影响（主要是Gitolite）的绝对隔离的平台，因为它是用JAVA写的，打包了所有自身需要运行的包到一个war文件，官方上是这么说的，扔到类Tomcat的服务器中运行，或者干脆<code>java -jar gitbucket.war</code>调用其自带的Web服务器直接开端口运行（这一步会解包一些必要文件到当前用户的主目录，不过没关系，卸载的时候删掉就行），就是这么简单。</p>
+<p>虽然说的多么好，但本人折腾到现在，已经身心俱疲了，一周时间也就这么如飞一般过完了。简单尝试运行了一下就作罢，不过还真像Github，连wiki/issue都有，Markdown/fork/star/watch一样不少，据说pull request正在测试。</p>
+<p>对于Gitlab的资源消耗都有点承受不起的我来说，再来一套JAVA，估计主服务就要卡内存了……</p>
+<p>同样，有兴趣的朋友可以关注一下，从安装使用方面来说，Gitbucket是不二之选，功能强大，使用简单，同样可以使用Supervisord直接开机启动！</p>
+<h2 id="Gitblit"><a href="#Gitblit" class="headerlink" title="Gitblit"></a>Gitblit</h2><p><a href="http://gitblit.com/" target="_blank" rel="noopener">Gitblit</a></p>
+<p>好嘛，这个更过分了，也是JAVA写的，不但有容器端的war包，还有独立运行（Standalone Edition）版本，甚至还有一个管理器Manager程序，这个应该是单机应用的最理想版本了。</p>
+<h2 id="Atlassian-BitBucket"><a href="#Atlassian-BitBucket" class="headerlink" title="Atlassian BitBucket"></a>Atlassian BitBucket</h2><p><a href="https://bitbucket.org/" target="_blank" rel="noopener">BitBucket</a></p>
+<p>这个算是超出本文范畴的应用了，虽然国内访问速度明显没有Github.com快，但本人从Confluence到JIRA再到BitBucket，一直是比较喜欢Atlassian的设计风格的，虽然Atlassian每个应用吃资源都不小，但作为单机应用，还是不错的。</p>
+<p>为什么把BitBucket也放在这里呢，因为Atlassian这一贯抠门的风格，居然在BitBucket上没有体现出来，免费的Plan有5个用户，私有仓库则是没有上限！这种设定对于小型团队来说，应该是非常不错的选择（要就要他Unlimited Private Repo！）</p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>说了这么多，大致介绍了我这周测试的几个“主流”Git托管服务系统，想要开属于自己的Github的童鞋，你除了上面几个平台的相关问题需要克服以外，还需要过用户管理/稳定性测试/分部存储等好几个关口，本人已经倒下了，希望你能再接再厉，最终实现自己的目标。</p>
+<p>最后，希望对你有帮助。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/git/">#git</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/27/2015042701/index.html">Git私有托管服务初（粗）探（谈）</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/19/2015041901/index.html">测试Markdown语法支持</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/16/2015041602/index.html">彻底解决Linux LC_ALL的问题</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/16/2015041601/index.html">Win8.1和OneDrive 30G免费空间走起</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
