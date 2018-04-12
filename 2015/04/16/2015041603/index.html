@@ -192,7 +192,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase):</span><br></pre></td></tr></table></figure>
 <p>直接两次回车，留空就好，本例子不需要。</p>
 <p>回车之后，会显示出RSA 2048的散列图（也可以用其他加密算法，在这里不详细叙述），同时生成”test”（私钥）和”test.pub”（公钥）</p>
-<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041603/2015041603-01.jpg!w-1024" alt="Gitolite"></p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041603/2015041603-01.png!w-1024" alt="Gitolite"></p>
 <p>上图中的”test”和”test.pub”就是我们要的密钥对儿，图上还能看出我有其他几个密钥，其中”william_laptop_ubuntu”和”william_laptop_win”是我这两个平台上的密钥，我的密钥管理的比较多，所以起的名字都比较复杂，建议走第二条路的童鞋也养成这样儿好习惯，省的将来一堆id_rsa头都大了。</p>
 <p>好，两条路都可以，我们拿到自己的密钥对儿了，进入下一步。</p>
 <h2 id="获得权限"><a href="#获得权限" class="headerlink" title="获得权限"></a>获得权限</h2><p>gitolite的权限分配和仓库维护，都是通过gitolite-admin.git这个特殊的git版本库来完成的（设计真的很奇妙），在本地修改相应配置后直接推送到服务器上，服务器就会根据修改做出相应的动作，所以我们首先要获得这个特殊的管理库。</p>
@@ -204,7 +204,7 @@
 <p>先进入keydir目录，将”william_laptop_win.pub”拷贝到这个目录里，因为原来Linux中的用户已经获得权限，所以等拷贝完成时，这个目录现在有两个文件<code>william_laptop_ubuntu.pub</code>和<code>william_laptop_win.pub</code>.</p>
 <p>然后让我们回到conf目录中，用编辑器打开”gitolite.conf”</p>
 <p>我的配置大致是这个样子：</p>
-<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041603/2015041603-02.jpg!w-1024" alt="Gitolite"></p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041603/2015041603-02.png!w-1024" alt="Gitolite"></p>
 <p>第一行定义了一个用户组，原来只有”william_laptop_ubuntu”一个用户，现在要多一个了，因为都是我，所以组名叫做”william”，在ubuntu之后空一格，添加我们新的用户”william_laptop_win”，这里要注意，名字要和”keydir”中的公钥名称相同（”william_laptop_win”），这样才能形成对应关系。</p>
 <p>下面的一堆repo是我的托管库中的一部分版本库，这里每一个repo都是在定义上面的用户在该版本库中具有什么样的权限，我这里偷懒了，注意看第一个repo段，@all表示全部版本库（或者全部用户），这段定义的意思是，@william这个用户组对@all（所有版本库）都有RW+（管理员）权限，随后的所有repo都只是个声明，用来操作gitolite新建对应版本库。</p>
 <p>到这里，明白为什么“一把钥匙”的童鞋可以直接跳到下一步了吧？因为那样根本就是在用之前的用户，而不是新建用户，那样多没意思~</p>
@@ -223,7 +223,7 @@
 <p>如果一切顺利，克隆完成，恭喜你，认亲成功！再有组员基友什么的想用你的服务器托管代码，就不用再切换回Linux操作了，从Windows中将他的公钥和用户名添加到gitolite-admin中推送，让他去clone只属于他自己的项目，就OK了。</p>
 <p>最后一个gitolite的高频率使用功能之一：<code>ssh gandie-win</code></p>
 <p>这个ssh命令并不能真正登录到服务器中（因为git用户是锁死的），而是返回对应的用户所有拥有权限的代码库的名字列表，以及所具有的对应权限，并中断连接。</p>
-<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041603/2015041603-03.jpg!w-1024" alt="Gitolite"></p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041603/2015041603-03.png!w-1024" alt="Gitolite"></p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>记得我多年前第一次使用密钥对儿登录某服务器的时候，给我的感觉就是：“哇擦居然不要密码！这样安全吗？”其实这个问题这么些年从来没消失过，谈的多了就是网络安全，那话题就太沉重了，别问我为什么，我不想说T_T，总之培养良好的安全意识比什么铁腕儿手段都来的重要，看好你的私钥和闭口不谈密码是一样重要，也是一样安全（或不安全）的。</p>
 <p>还是建议童鞋们，该给密钥加passphrase就一定要加，也千万别一把钥匙即开门锁又开保险柜！</p>
 <p>最后，希望能对你有帮助。</p>
@@ -269,6 +269,10 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2015/05/08/2015050801/index.html">解决MAIWO K305B硬盘底座的Win8.1驱</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2015/04/27/2015042701/index.html">Git私有托管服务初（粗）探（谈）</a>
             </li>
             
@@ -278,10 +282,6 @@
             
             <li>
                 <a class="footer-post" href="/2015/04/16/2015041602/index.html">彻底解决Linux LC_ALL的问题</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2015/04/16/2015041601/index.html">Win8.1和OneDrive 30G免费空间走起</a>
             </li>
             
         </ul>

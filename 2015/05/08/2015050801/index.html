@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="解决MAIWO K305B硬盘底座的Win8.1驱动问题"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>解决MAIWO K305B硬盘底座的Win8.1驱动问题 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2015/05/08/2015050801/index.html">
+                解决MAIWO K305B硬盘底座的Win8.1驱动问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2015-05-08</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>前几天在京东上败了如下两个东西</p>
+<a id="more"></a>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015050801/2015050801-01.jpg!w-1024" alt="K305Bu3"></p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015050801/2015050801-02.jpg!w-1024" alt="ORICO-H1012-U3"></p>
+<p>一个是MAIWO的4硬盘底座，一个是ORICO的10口USB 3.0 HUB，本以为买回来可以直接使用，结果硬盘底座却出了问题，系统无法找到合适的驱动程序，具体问题描述如下：</p>
+<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>软件平台：Windows 8.1 Enterprise 64-bit 英文原版，打好截止2015-05-08之前的所有关键更新补丁</p>
+<p>硬件平台：四台笔记本分别是ThundeRobot，Lenovo Thinkpad，Sony VAIO和Samsung</p>
+<p>故障位置：ThundeRobot</p>
+<p>接口类型：USB 3.0/2.0以及ORICO HUB上的USB 3.0</p>
+<h2 id="故障现象"><a href="#故障现象" class="headerlink" title="故障现象"></a>故障现象</h2><p>四个笔记本使用的都是 Windows 8.1 Enterprise 64-bit，区别是ThundeRobot上用的是原生英文，其他三个本儿上是中文包，不知道是补丁的问题还是主板接口芯片的问题，除了TR以外其他三个本儿都可以自动安装驱动，唯独TR（也是我主用的笔记本）上的系统无法正确识别硬件。</p>
+<h2 id="尝试解决"><a href="#尝试解决" class="headerlink" title="尝试解决"></a>尝试解决</h2><p>其实一开始在怀疑，硬盘连接底座，底座再连接Hub，Hub最终接到笔记本的主USB 3.0口上，虽然中间的硬件都号称免驱动，但这种连接方式会不会给系统识别硬件造成障碍？于是直接将底座接在主机上，依然无法识别……进而开始怀疑是不是败了个残次品？于是在TR上切到Ubuntu 14.04 LTS，一切正常。看来问题锁定了，驱动不对！</p>
+<p>由于Win 8.1在联网环境下是自动搜索安装对应驱动的，这一步过不了，只能手动在设备管理器里面操作，先是扫描硬件改动，又是卸载重新安装，依然无果。</p>
+<p>360驱动大师、驱动人生、驱动精灵统统无法扫描出新的硬件……</p>
+<p>所以……</p>
+<h2 id="联系客服"><a href="#联系客服" class="headerlink" title="联系客服"></a>联系客服</h2><p>这里要大赞一下MAIWO的客服，可能是因为碰到了我这个稍微懂点儿，把问题描述的比较清楚的用户，客服那边也是非常尽心尽力的帮我解决，甚至连远程协助都用了，当时没有弄好，MAIWO的硬件工程师在初步判断了故障之后，给我的答复是会尽快解决，但正好赶上五一放假，需要两三天时间。</p>
+<p>我心想人家解决问题的态度这么到位，我又暂时不着急使用，就等等吧。</p>
+<h2 id="官方解决方案出炉"><a href="#官方解决方案出炉" class="headerlink" title="官方解决方案出炉"></a>官方解决方案出炉</h2><p>经过两天耐心的等待，终于收到了客服的消息，这次依然是QQ上实时交流，问题故障最终也得到解决，具体操作是需要给硬盘底座重新刷一下固件，具体解决方案如下：</p>
+<h3 id="准备另一台电脑（或者Windows-8及以下版本）……"><a href="#准备另一台电脑（或者Windows-8及以下版本）……" class="headerlink" title="准备另一台电脑（或者Windows 8及以下版本）……"></a>准备另一台电脑（或者Windows 8及以下版本）……</h3><p>还好手头上有四个笔记本，其中三个都正常识别底座，不然这问题还真得折腾着重装系统了……</p>
+<p>为什么要这么做呢？因为需要刷固件，如果连设备都无法正常识别和连接到系统上，还怎么刷？</p>
+<h3 id="判断芯片型号"><a href="#判断芯片型号" class="headerlink" title="判断芯片型号"></a>判断芯片型号</h3><p>据客服工程师介绍，K305Bu3这一款底座先后使用过两种芯片，一个是VL701，一个是VL711S，因为开始使用的是VL701，后来芯片停产了，才更换到VL711S，而出货上并没有标注具体芯片的使用型号，所以这个需要我自己尝试，方法就是，刷两次！因为刷写固件是要严格对应芯片接口类型的，类型不对根本就刷不进去，所以两套各对应一种芯片的刷机包，哪个能刷，芯片就是哪个型号。</p>
+<p>提前在这里交代一下，是让在看这篇文章的你在接下来的刷固件步骤中放宽心，第一遍没刷成功，只表示你选错刷机包了~</p>
+<h3 id="准备刷写固件"><a href="#准备刷写固件" class="headerlink" title="准备刷写固件"></a>准备刷写固件</h3><p>这里提供两套刷机包的本地下载：<a href="https://wyc-blog.oss-cn-beijing.aliyuncs.com/software/2015050801/VL701-MP-TOOL.7z" target="_blank" rel="noopener">VL701-MP-TOOL</a>，<a href="https://wyc-blog.oss-cn-beijing.aliyuncs.com/software/2015050801/VL711S-MP-TOOL.7z" target="_blank" rel="noopener">VL711S-MP-TOOL</a></p>
+<p>如果你不能确定芯片是哪个，就都下载下来吧，每个包只有2M，很小。</p>
+<p>以下以我的VL701芯片为例（VL711S操作完全相同）：</p>
+<p>首先解压缩刷机包，会得到两个文件：<code>VL70xMPTool_Setup_V1.0.0.28.exe</code>，<code>VL701-R02_00_00_06-20111019.bin</code></p>
+<p>第一个是刷写工具，第二个是固件文件。</p>
+<p>首先安装刷写工具，一路下一步就行。</p>
+<p>安装好之后，打开刷写工具，会看到默认界面是这样：</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015050801/2015050801-03.png!w-1024" alt="MPTool"></p>
+<p>我的是英文系统，所以打开的话界面可能会有点难看，你的应该比我的好看些：）</p>
+<p>首先在顶部菜单中，将设备数量改成4</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015050801/2015050801-04.png!w-1024" alt="MPTool"></p>
+<p>随后左上角点“设置”按钮，打开设置窗口：</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015050801/2015050801-05.jpg!w-1024" alt="MPTool"></p>
+<p>先用右上角“打开文件”按钮，找到压缩包里的固件文件（VL701-R02_00_00_06-20111019.bin），确定。</p>
+<p>然后按照上图进行设置：</p>
+<ul>
+<li>Flash: 选择Default</li>
+<li>关闭格式化</li>
+<li>禁用压力测试</li>
+<li>窗口右半部分中间的两个数值需要进行设置：VID为0x2109，这个数值代表生产厂商威刚，PID为0x0701，这个是芯片代号（如果你的芯片是VL711S，就把这个数值改成0x0711）</li>
+<li>其他保持默认即可</li>
+</ul>
+<p>设置完毕，确定回到主界面，然后连接上设备，打开电源，等待软件识别出4个驱动器。</p>
+<p>然后点上面“自动运行”按钮，应该一瞬间就能刷完。</p>
+<p>其实我觉得这里先连接设备还是先打开软件并没有什么区别，如果你已经连上了设备，也无妨。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015050801/2015050801-06.jpg!w-1024" alt="MPTool"></p>
+<blockquote>
+<p>如果你看到上图，恭喜你，你挑错刷机包了……</p>
+</blockquote>
+<p>果断换另一个包，从步骤5.3开始重来……这里需要格外注意两点，一个是固件文件要选对，一个是PID参数要设置正确，两套刷机包针对两个芯片，固件文件和PID都是不一样的。</p>
+<p>先前的MP-Tool可以先不用卸载，两个包中的MP-Tool是各自对应两种芯片的，名字也不同，不会覆盖的，等刷好之后一起卸载就是了。</p>
+<p>回到5.3再次开始之后，</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015050801/2015050801-07.jpg!w-1024" alt="MPTool"></p>
+<p>如果看到上图，恭喜你，终于大功告成了。</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>还等什么？关掉MP-Tool，关闭设备，插回那个无法识别硬件的系统上，是不是问题解决了？</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>据客服工程师（和这兄弟聊的非常投缘~~）介绍说，设备之所以会出现这样的情况，主要是因为Win 8.1依靠VID和PID两个硬件参数来判断硬件类型，并自动搜索安装驱动，而有可能我这台设备针对Win 8.1的时候，系统无法正确读取VID和PID，也可能是个别情况，我这个底座的两个参数本身就设置有误（不过Ubuntu上正常啊……），总之这个刷机包只是重写了这两个参数，让Win 8.1 64-bit的系统可以正确找到对应的驱动，并没有对硬件芯片固件进行其他的修改。</p>
+<p>另外，因为发现了我这个底座用的是已经停产的VL701芯片，心里还曾有点小小的不爽，客服工程师说VL711S只是比VL701在架构和功耗上好了那么一点点，引脚、功能、性能什么的完全一样，根本看不出差别。</p>
+<p>呼，心里好歹舒服一些了。</p>
+<p>本来很少写关于硬件的东西，这次借着这个事儿，也小小的体验了一次硬件工程师的感觉，也更坚定了我原本对硬件方面的感觉：通过一番努力做出来的东西，可以实实在在的拿在手里，感觉它的重量，我总觉得这种成就感，反而要比设计出了什么先进算法、写了个什么多少人都在用的软件所带来的成就感要来的实在的多，也强烈的多，因为你能够触碰到你的作品，而不只是看着它YY~</p>
+<p>再次感谢工程师兄弟，本不是什么太值钱的设备，客服能做到这份儿上很让我感动，如果国人企业都能有这种敢于担当的态度，也许很多事情的结果都会不一样吧。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015050801/2015050801-08.png!w-1024" alt="Support"></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/usb/">#usb</a> <a href="/tags/hdd/">#hdd</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2015/05/08/2015050801/index.html">解决MAIWO K305B硬盘底座的Win8.1驱</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/27/2015042701/index.html">Git私有托管服务初（粗）探（谈）</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/19/2015041901/index.html">测试Markdown语法支持</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/16/2015041602/index.html">彻底解决Linux LC_ALL的问题</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
