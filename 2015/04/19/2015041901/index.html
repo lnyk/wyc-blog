@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="测试Markdown语法支持"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>测试Markdown语法支持 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2015/04/19/2015041901/index.html">
+                测试Markdown语法支持
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2015-04-19</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天测试了一下WP-Markdown，开启Markdown语法支持，为我这不堪重负的服务器再添上点儿赘肉，最后测试结果：不启用！</p>
+<a id="more"></a>
+<p>原因：</p>
+<ol>
+<li><p>和已有的Syntaxhighlighter不兼容，无法解析之前文章的Code Block，虽然Crayon Syntax Highlighter和Jetpack完全兼容，可以将现在的语法高亮/WP-Markdown替换成JetPack和Crayon，但首先不敢保证对之前的文章有没有影响（应该会有，因为两个高亮插件的语法标记不同），其次是对JetPack深恶痛绝，因为GFW的缘故，连接JetPack得用过墙体……</p>
+</li>
+<li><p>博客已有几年的文章积攒了，轻易变动格式，是需要对未来有个充分的预期和应对措施的，虽然WP-Markdown会在存储的时候将标记先转换成HTML再存储，但日后若有变动，影响面还是会非常广的。</p>
+</li>
+</ol>
+<p>以下是测试文章的原文，当时是启用了WP-Markdown的。</p>
+<p>在文档这一块儿，虽然一直习惯用emacs + reStructuredText + Sphinx的三贱客组合，偶尔调戏一下小妾ReadTheDocs，但毕竟有点儿不上不下的感觉。为什么这么说呢？往上说，我自认为已经掉进LaTeX的坑里很多年，不是Open Document就是TeX出PDF；往下说，小一点的文档我喜欢Plain Text（纯文本），无格式化信息，调用方便。所以Markdown虽然自出现以来一直有所关注，也尝试过一些方便的写作方式和应用，但偶尔转回“博大精深”的TeX写完再回来，就觉得这东西有点儿找不到地方用……MediaWiki支持TeX，ReadTheDocs是reStructuredText，虽然BBCode是上个世纪的事儿，但只要是从那个年代过来的，像我这样看到老东西就心潮澎湃的大叔大姐还是大有人在。之前唯一用Markdown的地方，就是开源项目的文档，不管是GitHub还是类GitLab/GOGS的平台，貌似都对.md情有独钟，大叔也只好赶潮流了。说实话，还真是怀念那个SourceForge一统天下的年代，当时找到需要的软件，一旦碰到是收费的，第一反应不是找破解（良心小小不安），而是上SF找Open Source Projects, 拿回来源码编译运行，即解决了当下需要，又有种偏执的享受。</p>
+<p>自从Git“股价走高”，Mecurial“屡见不鲜”之后，开源世界里各种胡乱Fork各种无良Branch各种收费Distribution层出不穷，直接导致在GitHub等托管服务上用搜索功能根本搜不到你想要的东西。SF.net作为SVN最早的拥护者和拓展者之一，现在几乎Weekly Download Top 10上一半儿的Project Wiki首页都挂着“Moved to GitHub”的字样，看着真让人心酸。</p>
+<p>说实话文本格式这一块儿，我算是经历了跌宕起伏的几大轮回啊，回想十五年前，哪有那么多花哨，弄个FoxPro，来个UCDOS/WPS塞点儿文章就爽的不要不要的；十年前，觉得HTML + CSS才是奸夫淫妇最佳组合，以至于数据库里的纯文本全都转成了臃肿的HTML；八年前，初步接触到所谓内容表现分离的概念，一度懊恼自己写过的那些初中生高中生作文里边怎么那么多尖括号，想提取文字只能打开浏览器复制粘贴；七年前，身边的人操作系统是个什么东西都没概念，他们居然会用Word！六年前，大牛们突然又回到起点，为了文字里有内容以外的格式化标记就叫不可用的垃圾这种破事儿天天打来打去；五年前，一方赢了，文字去格式化“运动”蓬勃兴起；同年，少部分人（比如我）受够了微软的霸权，转向Open Office和.odt，当时我们的豪言壮语是：如果文档需要格式，那它应该被TeX塞进.pdf里；四年前，存储代价成了白菜价，人们不再关心一篇中学生作文体积是1K还是1M，1K的TXT却要用100K的.doc去承载，只因为它标题小二号，正文仿宋。也就是从那一年（甚至更早几年），“去格式化”运动和叫做云计算的女人“结婚”了，生出了几个儿子，为了增加儿子们找到好媳妇的筹码，在教老婆识别过滤格式代码，哄老婆开心的同时，“偷偷”给儿子们加进了“格式化”的元素，取名叫.rst/.md等等，直到今天，状况就是，老子退休在家不出门，老娘不识美丑，如日中天，即将迎来中年第二春，儿子们广撒网钓大鱼，纷纷瞄准了开源世界和移动应用各种调戏妹纸，因此当下还看不出是上还是下，是格式化还是非格式化，是Plain Text还是“浏览器复制粘贴”，因为混血了！</p>
+<p>这次测试Wordpress的Markdown插件，主要是想看看能不能配合GitHub和GitLab的文档自动生成，感觉WP-Markdown插件本身做的还是很不错的，有即时预览功能，同时支持Setext和atx两种语法（保存或发布之后，会自动将Setext转换为atx语法）。reStructuredText插件就不测试了，与目的不符，本来就从来不用Wordpress的及时编辑器，都是直接在Text模式里写东西。其实上面洋洋洒洒一大段历史独白是有原因的，这篇文档用的Markdown语法，可如果哪天卸载了插件，Wordpress不再支持Markdown，或者某个应用需要调用Wordpress数据库里的文章，是不是就得对这掺杂着格式化信息（哪怕它再轻量化）的文本专门写代码进行过滤呢？</p>
+<p>用锋利的大剪刀去修剪鼻毛，是什么感觉？……</p>
+<p>本来是篇测试文章，却又掺进了对历史的喋喋不休，难道真是老了吗？</p>
+<p>其实换来换去，不管TeX，reStructuredText还是Markdown，我全用emacs搞定！关于安装和使用emacs，请看：《<a href="/2015/04/14/2015041401/index.html" title="Win8 64-bit上运行emacs 24.5 64-bit">Win8 64-bit上运行emacs 24.5 64-bit</a>》和《<a href="/2014/04/01/2014040101/index.html" title="Ubuntu搭建TexLive+emacs+AucTex+magit(git)创作发布环境">Ubuntu搭建TexLive+emacs+AucTex+magit(git)创作发布环境</a>》</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/wordpress/">#wordpress</a> <a href="/tags/markdown/">#markdown</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/19/2015041901/index.html">测试Markdown语法支持</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/16/2015041602/index.html">彻底解决Linux LC_ALL的问题</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/16/2015041601/index.html">Win8.1和OneDrive 30G免费空间走起</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/16/2015041603/index.html">Win8.1上管理gitolite和托管版本库</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

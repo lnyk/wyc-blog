@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Win8.1上管理gitolite和托管版本库"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Win8.1上管理gitolite和托管版本库 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2015/04/16/2015041603/index.html">
+                Win8.1上管理gitolite和托管版本库
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2015-04-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天还真写了不少东西！</p>
+<p>以前一直在Ubuntu上操作gitolite托管git仓库，近日需要在Win8.1平台上写代码，众所周知git是linux世界的东西，即使MinGW和GitHub for Windows解决了大问题，但一些常用架构和服务框架还是没法在Windows平台上使用的，比如gitolite这个方便的git托管服务器维护工具！</p>
+<p>关于gitolite一直想写篇文章介绍一下怎么实际安装和操作，一会儿再动笔，先打个标记在这里，等不及的可以先看<a href="https://github.com/sitaramc/gitolite" target="_blank" rel="noopener">官方文档（其实挺简单）</a></p>
+<p>在Linux平台上使用gitolite托管版本库，我一直都是用分布式单用户流程，用密钥直接操作，现在启用Windows平台，就相当于添加了一个用户给gitolite，本文就顺便科普的详细带你走一边给gitolite添加新用户的流程吧。</p>
+<a id="more"></a>
+<h2 id="准备好git"><a href="#准备好git" class="headerlink" title="准备好git"></a>准备好git</h2><p>没git还玩儿什么呀？尚没准备好的，请猛戳我这篇文章：《<a href="/2015/04/14/2015041401/index.html" title="Win8 64-bit上运行emacs 24.5 64-bit">Win8 64-bit上运行emacs 24.5 64-bit</a>》</p>
+<h2 id="准备密钥"><a href="#准备密钥" class="headerlink" title="准备密钥"></a>准备密钥</h2><p>这里分两种方法，请详细看完并认真选择。</p>
+<p>第一种情况：“一把钥匙走天下”（不推荐）</p>
+<p>如果你喜欢用一对儿密钥登录所有地方，虽然不是很安全，但方便倒是真的，那就这么办：</p>
+<p>进入Linux（或者你存放钥匙对儿的地方），把公钥私钥都拿回到Windows上来。</p>
+<p>第二种情况：“我是一个认真的人”</p>
+<p>如果你喜欢为每一个环境（场合）配一对儿钥匙，那就这么办，打开”Git Shell”（随GitHub for Windows一起安装的），在Win8.1平台上默认情况下应该是包装过的Windows Powershell. 在Git Shell里面，许多Linux的命令是可以直接使用的（比如ls/mv/cp），很方便。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh/</span><br><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+<p>上面的命令是进入Home主目录里面的.ssh目录中（这里存放着key相关的所有东西），使用ssh-keygen命令生成新的公钥私钥对儿，当问到下面这句话时，是让你输入密钥的名称，这里我们输入：test</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter file in which to save the key</span><br></pre></td></tr></table></figure>
+<p>这句设置密钥的密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase):</span><br></pre></td></tr></table></figure>
+<p>直接两次回车，留空就好，本例子不需要。</p>
+<p>回车之后，会显示出RSA 2048的散列图（也可以用其他加密算法，在这里不详细叙述），同时生成”test”（私钥）和”test.pub”（公钥）</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041603/2015041603-01.jpg!w-1024" alt="Gitolite"></p>
+<p>上图中的”test”和”test.pub”就是我们要的密钥对儿，图上还能看出我有其他几个密钥，其中”william_laptop_ubuntu”和”william_laptop_win”是我这两个平台上的密钥，我的密钥管理的比较多，所以起的名字都比较复杂，建议走第二条路的童鞋也养成这样儿好习惯，省的将来一堆id_rsa头都大了。</p>
+<p>好，两条路都可以，我们拿到自己的密钥对儿了，进入下一步。</p>
+<h2 id="获得权限"><a href="#获得权限" class="headerlink" title="获得权限"></a>获得权限</h2><p>gitolite的权限分配和仓库维护，都是通过gitolite-admin.git这个特殊的git版本库来完成的（设计真的很奇妙），在本地修改相应配置后直接推送到服务器上，服务器就会根据修改做出相应的动作，所以我们首先要获得这个特殊的管理库。</p>
+<p>那么问题来了，因为现在我们不具有访问gitolite托管库的权限，所以根本无法clone回来这个库，怎么办呢？有的童鞋可能会想，进Linux，把那儿的gitolite-admin.git考回来呗。那样做其实是无用的，因为还是不具有推送的权限。</p>
+<p>所以首先要做的，就是获得管理员（或相应角色的）权限，这里分情况：</p>
+<p>如果在上一步中你选了第一条路（一把钥匙走天下），而且是把Linux中的公钥私钥都给考回来了，那就请直接跳到下一步（4）。</p>
+<p>如果是按照本文一步步生成密钥来到这里的，那么我们开始，这里我们要做一个大动作，就是带着你新生成的公钥（不是私钥，是带.pub的那个文件）回到Linux中，然后进入本地的gitolite-admin目录中（服务器上gitolite-admin.git的克隆），因为回到Linux之后，我们是有权限操作gitolite的，我们就从那里，把Windows中生成的公钥提供给gitolite，让他认了Windows这个干爹~</p>
+<p>进入gitolite-admin目录，我们会看到”keydir”和”conf”两个目录，为了更直观一些，我们抛弃之前那个test名字，假定我们生成密钥那一步生成的是”william_laptop_win”这一对儿。</p>
+<p>先进入keydir目录，将”william_laptop_win.pub”拷贝到这个目录里，因为原来Linux中的用户已经获得权限，所以等拷贝完成时，这个目录现在有两个文件<code>william_laptop_ubuntu.pub</code>和<code>william_laptop_win.pub</code>.</p>
+<p>然后让我们回到conf目录中，用编辑器打开”gitolite.conf”</p>
+<p>我的配置大致是这个样子：</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041603/2015041603-02.jpg!w-1024" alt="Gitolite"></p>
+<p>第一行定义了一个用户组，原来只有”william_laptop_ubuntu”一个用户，现在要多一个了，因为都是我，所以组名叫做”william”，在ubuntu之后空一格，添加我们新的用户”william_laptop_win”，这里要注意，名字要和”keydir”中的公钥名称相同（”william_laptop_win”），这样才能形成对应关系。</p>
+<p>下面的一堆repo是我的托管库中的一部分版本库，这里每一个repo都是在定义上面的用户在该版本库中具有什么样的权限，我这里偷懒了，注意看第一个repo段，@all表示全部版本库（或者全部用户），这段定义的意思是，@william这个用户组对@all（所有版本库）都有RW+（管理员）权限，随后的所有repo都只是个声明，用来操作gitolite新建对应版本库。</p>
+<p>到这里，明白为什么“一把钥匙”的童鞋可以直接跳到下一步了吧？因为那样根本就是在用之前的用户，而不是新建用户，那样多没意思~</p>
+<p>完成拷贝和修改动作之后，在当前目录（gitolite-admin目录中的任意位置）将更改提交给服务器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/path/to/gitolite-admin/</span><br><span class="line">git add .</span><br><span class="line">git commit -am &amp;quot;Add user: william_laptop_win into group-william&amp;quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>如果push成功，表示用户已经添加完毕了，让我们进入下一步，回到Windows…</p>
+<h2 id="配置ssh的config"><a href="#配置ssh的config" class="headerlink" title="配置ssh的config"></a>配置ssh的config</h2><p>终于又回到Windows下了，现在的状况是服务器已经知道他还有个干爹叫”william_laptop_win”，只是还没见面，没关系，咱这就认亲去！</p>
+<p>还是打开Git Shell，”cd ~/“进入主目录，”cd .ssh”进入ssh目录，接下来我们要用到一个ssh封装别名组的小技巧来声明使用哪个私钥去访问哪个服务器：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">host gandie-win</span><br><span class="line">    user git</span><br><span class="line">    hostname ganerzi.com</span><br><span class="line">    port 22</span><br><span class="line">    identityfile ~/.ssh/william_laptop_win</span><br></pre></td></tr></table></figure>
+<p>第一行是给封装取个别名，user那里是”git”，因为gitolite就是在服务器的git用户名下运行的（参考安装使用gitolite那篇文章），默认端口22</p>
+<p>这里关键是最后一行，identityfile指定具体用哪个私钥去跟服务器上的公钥配对，这里我们用服务器上（刚才已经推送到服务器上了）的william_laptop_win.pub对应的这个私钥。</p>
+<p>还有个小技巧，如果你之前把Linux的密钥对儿也拷过来了，这里可以紧接着定义一个新的别名段，让你可以随时以不同的身份与服务器通信（不推荐）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">host gandie-win</span><br><span class="line">    user git</span><br><span class="line">    hostname ganerzi.com</span><br><span class="line">    port 22</span><br><span class="line">    identityfile ~/.ssh/william_laptop_win</span><br><span class="line"></span><br><span class="line">host gandie-ubuntu</span><br><span class="line">    user git</span><br><span class="line">    hostname ganerzi.com</span><br><span class="line">    port 22</span><br><span class="line">    identityfile ~/.ssh/william_laptop_ubuntu</span><br></pre></td></tr></table></figure>
+<p>为什么不推荐呢，因为这样在git log查看日志或者别的操作的时候，就分不清是哪个用户提交的推送了（明明是在Windows下推的，用的身份却是Ubuntu的）</p>
+<h2 id="认亲"><a href="#认亲" class="headerlink" title="认亲"></a>认亲</h2><p>假定你完成了第4步，这一步就简单了：<code>git clone gandie-win:gitolite-admin.git</code>，把gitolite-admin克隆到本地，看到”gandie-win”了吗？它就是我们上一步最后定义的别名组，当然如果也定义了”gandie-ubuntu”组，这里用也是可以的……</p>
+<p>如果一切顺利，克隆完成，恭喜你，认亲成功！再有组员基友什么的想用你的服务器托管代码，就不用再切换回Linux操作了，从Windows中将他的公钥和用户名添加到gitolite-admin中推送，让他去clone只属于他自己的项目，就OK了。</p>
+<p>最后一个gitolite的高频率使用功能之一：<code>ssh gandie-win</code></p>
+<p>这个ssh命令并不能真正登录到服务器中（因为git用户是锁死的），而是返回对应的用户所有拥有权限的代码库的名字列表，以及所具有的对应权限，并中断连接。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015041603/2015041603-03.jpg!w-1024" alt="Gitolite"></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>记得我多年前第一次使用密钥对儿登录某服务器的时候，给我的感觉就是：“哇擦居然不要密码！这样安全吗？”其实这个问题这么些年从来没消失过，谈的多了就是网络安全，那话题就太沉重了，别问我为什么，我不想说T_T，总之培养良好的安全意识比什么铁腕儿手段都来的重要，看好你的私钥和闭口不谈密码是一样重要，也是一样安全（或不安全）的。</p>
+<p>还是建议童鞋们，该给密钥加passphrase就一定要加，也千万别一把钥匙即开门锁又开保险柜！</p>
+<p>最后，希望能对你有帮助。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/git/">#git</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/19/2015041901/index.html">测试Markdown语法支持</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/16/2015041602/index.html">彻底解决Linux LC_ALL的问题</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/16/2015041601/index.html">Win8.1和OneDrive 30G免费空间走起</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/04/16/2015041603/index.html">Win8.1上管理gitolite和托管版本库</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
