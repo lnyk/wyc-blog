@@ -178,10 +178,12 @@
 <p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015050801/2015050801-01.jpg!w-1024" alt="K305Bu3"></p>
 <p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2015050801/2015050801-02.jpg!w-1024" alt="ORICO-H1012-U3"></p>
 <p>一个是MAIWO的4硬盘底座，一个是ORICO的10口USB 3.0 HUB，本以为买回来可以直接使用，结果硬盘底座却出了问题，系统无法找到合适的驱动程序，具体问题描述如下：</p>
-<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>软件平台：Windows 8.1 Enterprise 64-bit 英文原版，打好截止2015-05-08之前的所有关键更新补丁</p>
-<p>硬件平台：四台笔记本分别是ThundeRobot，Lenovo Thinkpad，Sony VAIO和Samsung</p>
-<p>故障位置：ThundeRobot</p>
-<p>接口类型：USB 3.0/2.0以及ORICO HUB上的USB 3.0</p>
+<h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><ul>
+<li>软件平台：Windows 8.1 Enterprise 64-bit 英文原版，打好截止2015-05-08之前的所有关键更新补丁</li>
+<li>硬件平台：四台笔记本分别是ThundeRobot，Lenovo Thinkpad，Sony VAIO和Samsung</li>
+<li>故障位置：ThundeRobot</li>
+<li>接口类型：USB 3.0/2.0以及ORICO HUB上的USB 3.0</li>
+</ul>
 <h2 id="故障现象"><a href="#故障现象" class="headerlink" title="故障现象"></a>故障现象</h2><p>四个笔记本使用的都是 Windows 8.1 Enterprise 64-bit，区别是ThundeRobot上用的是原生英文，其他三个本儿上是中文包，不知道是补丁的问题还是主板接口芯片的问题，除了TR以外其他三个本儿都可以自动安装驱动，唯独TR（也是我主用的笔记本）上的系统无法正确识别硬件。</p>
 <h2 id="尝试解决"><a href="#尝试解决" class="headerlink" title="尝试解决"></a>尝试解决</h2><p>其实一开始在怀疑，硬盘连接底座，底座再连接Hub，Hub最终接到笔记本的主USB 3.0口上，虽然中间的硬件都号称免驱动，但这种连接方式会不会给系统识别硬件造成障碍？于是直接将底座接在主机上，依然无法识别……进而开始怀疑是不是败了个残次品？于是在TR上切到Ubuntu 14.04 LTS，一切正常。看来问题锁定了，驱动不对！</p>
 <p>由于Win 8.1在联网环境下是自动搜索安装对应驱动的，这一步过不了，只能手动在设备管理器里面操作，先是扫描硬件改动，又是卸载重新安装，依然无果。</p>
@@ -277,19 +279,19 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2016/02/10/2016021001/index.html">新年新气象，缅怀过去走进未来——换上Typecho</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/06/16/2015061601/index.html">电动车换接口“血腥”实录</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2015/05/29/2015052902/index.html">pybej跨平台全自动扫频煲耳机小程序</a>
             </li>
             
             <li>
                 <a class="footer-post" href="/2015/05/29/2015052901/index.html">LXDE 上的Scrot截屏软件</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2015/05/22/2015052201/index.html">在Windows平台上制作Linux USB启动盘</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2015/05/08/2015050801/index.html">解决MAIWO K305B硬盘底座的Win8.1驱</a>
             </li>
             
         </ul>
