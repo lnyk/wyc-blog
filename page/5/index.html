@@ -151,6 +151,108 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/2013/12/16/2013121602/index.html">
+                终于搞定purcell-emacs.d
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2013121602/2013-12-16-104017.png!w-1024" alt="Emacs with Purcell configuration"></p>
+<p>一开始还想用自己在github上存的emacs设置，后来看了一下网上评论，都说purcell的大家都在用，于是干脆用人家的吧。</p>
+<p>经过试用，感觉还不错，功能很全，主要通用于各种语言编程。</p>
+<p><a href="https://github.com/purcell/emacs.d" target="_blank" rel="noopener">purcell/emacs.d</a></p>
+<p>作者把安装说明也写的很详细，而且不用修改init.el，可以创建lisp/init-local.el添加自己的喜好设定。</p>
+<p>唯一的问题，对于国内用户来说，第一次运行后自动安装编译加载那些需要的package过程太过漫长，连接melpa.milkbox.net:80简直就是一场噩梦，用无线上网卡我更新了整整一晚上。</p>
+<p>不过还好，最终结果还是蛮不错的。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/16/2013121601/index.html">
+                解决ubuntu右上角日期时间消失的问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-16</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>刚刚解决了dpkg的问题，又突然发现日期时间消失了，google了一下，用下面两条命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove</span><br><span class="line">sudo apt-get install gnome-panel</span><br></pre></td></tr></table></figure>
+<p>然后注销或重启。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2013/12/15/2013121501/index.html">
+                解决ubuntu中dpkg操作中断后带来的问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2013-12-15</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>如果由于某些原因导致apt-get或者dpkg操作中断，有可能造成每次安装或更新都会提示如下信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">提示错误E: dpkg 的操作被中断了,</span><br><span class="line">您必须手动执行 <span class="string">'sudo dpkg --configure -a'</span> 以修复这个问题。</span><br></pre></td></tr></table></figure>
+        </div>
+        <a href="/2013/12/15/2013121501/index.html" class="read-more">Read More</a>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/2012/12/23/2012122301/index.html">
                 复活
             </a>
@@ -373,105 +475,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2011/08/28/2011082801/index.html">
-                Mac下转换bin/cue到ISO
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2011-08-28</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>今天发现了一个好玩的小工具，将bin/cue转换为ISO，要知道bin/cue在Mac平台上可是不被原生支持的。</p>
-<p>还是老样子，这个叫做<code>bchunk</code>的可爱小工具还是Unix/Linux系列工具，老办法，用MacPorts安装。</p>
-        </div>
-        <a href="/2011/08/28/2011082801/index.html" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2011/05/25/2011052501/index.html">
-                MacPorts Changed
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2011-05-25</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>When I was dealing with Pymacs, I found python_select was gone, here’s the issue track message from MacPorts:</p>
-<blockquote>
-<p><code>python_select</code> (and other standalone <code>*_select</code> scripts) is gone. Use <code>sudo port select python python26</code> etc.</p>
-</blockquote>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2011/03/06/2011030602/index.html">
-                金庸群侠传
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2011-03-06</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/Whispers/">Whispers</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>这几天在拼命的玩儿金庸群侠传，就是十几年前那个让无数人感动的武侠大梦！</p>
-<p>因为有高手移植到了IOS平台上，所以玩儿起来更方便了。</p>
-<p>真是觉得从那个简单又复杂的DOS年代过来的人特别容易怀旧。</p>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -514,19 +517,19 @@
         <ul>
             
             <li>
+                <a class="footer-post" href="/2015/05/29/2015052902/index.html">pybej跨平台全自动扫频煲耳机小程序</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/05/29/2015052901/index.html">LXDE 上的Scrot截屏软件</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2015/05/22/2015052201/index.html">在Windows平台上制作Linux USB启动盘</a>
+            </li>
+            
+            <li>
                 <a class="footer-post" href="/2015/05/08/2015050801/index.html">解决MAIWO K305B硬盘底座的Win8.1驱</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2015/04/27/2015042701/index.html">Git私有托管服务初（粗）探（谈）</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2015/04/19/2015041901/index.html">测试Markdown语法支持</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2015/04/16/2015041602/index.html">彻底解决Linux LC_ALL的问题</a>
             </li>
             
         </ul>
