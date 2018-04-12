@@ -296,6 +296,8 @@ section.main .post-tags i {
 }
 section.main .post .content p {
   text-indent: 2em;
+  text-align: justify;
+  text-justify: inter-ideograph;
 }
 section.main .post .content h1,
 section.main .post .content h2,
