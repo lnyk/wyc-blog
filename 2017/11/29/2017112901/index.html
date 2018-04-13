@@ -173,7 +173,7 @@
         
 
         <!-- Post Content -->
-        <blockquote><p><code>Sinopia</code>貌似早就停止更新了，而且对5.0以上版本的npm兼容很差，最新的本地镜像工具是<code>Verdacia</code>，用法、结构，甚至配置文件都几乎一样，不知道这两个软件之间是什么关系，总之<code>Verdacia</code>对于当前<code>9.11.1</code>版本的Node及其对应版本的npm支持的都非常好。</p>
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><blockquote><p><code>Sinopia</code>貌似早就停止更新了，而且对5.0以上版本的npm兼容很差，最新的本地镜像工具是<code>Verdacia</code>，用法、结构，甚至配置文件都几乎一样，不知道这两个软件之间是什么关系，总之<code>Verdacia</code>对于当前<code>9.11.1</code>版本的Node及其对应版本的npm支持的都非常好。</p>
 <footer><strong>William Yao 2018年04月13日</strong></footer></blockquote>
 <p>最近这小一年时间，真是折腾了不少东西，要说始终没空更新博客，那真是牵强附会的理由，就连<code>Typecho</code>都升级版本了，我的博客内容却始终没变化，实在有些说不过去，就算权当记录自己的成长历程，也该码点儿字啊。</p>
 <a id="more"></a>
@@ -220,7 +220,7 @@
 <p>如果屏幕有信息返回（应该就三个字母：nvm），就表示安装成功了，如果没有，请<code>exit</code>当前的<code>Terminal</code>，重新开一个，再试试，应该就好了。</p>
 <p>本节终极知识点：</p>
 <p><code>~/.nvm</code>包含了所有东西，并且不是系统级安装，是可以直接考走的！</p>
-<h3 id="用nvm安装node"><a href="#用nvm安装node" class="headerlink" title="用nvm安装node"></a>用<code>nvm</code>安装<code>node</code></h3><p>弄好了<code>nvm</code>，在互联网电脑上的剩下操作，就更简单了！</p>
+<h3 id="用nvm安装node"><a href="#用nvm安装node" class="headerlink" title="用nvm安装node"></a>用nvm安装node</h3><p>弄好了<code>nvm</code>，在互联网电脑上的剩下操作，就更简单了！</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install --lts</span><br></pre></td></tr></table></figure>
 <p>上面的命令，会自动安装<code>node</code>的<code>LTS</code>版本，<code>LTS</code>版本是最新的长期支持稳定运行版本，截至本文发布时，<code>node</code>的<code>LTS</code>版本是<code>v8.9.1</code></p>
 <p>然后</p>
@@ -237,7 +237,7 @@
 <li><code>nvm</code>在安装<code>node</code>的时候，如果可执行文件包下载失败，会自动切换到源码包下载，并自动编译安装到<code>.nvm</code>对应目录中，基本可以做到万无一失的全自动安装！</li>
 <li><code>nvm</code>在安装<code>node</code>之后，会自动安装该版本能够支持的最高版本的对应<code>npm</code>（或者说<code>node</code>自带的<code>npm</code>）</li>
 </ul>
-<h3 id="用npm安装sinopia"><a href="#用npm安装sinopia" class="headerlink" title="用npm安装sinopia"></a>用<code>npm</code>安装<code>sinopia</code></h3><p>那啥，你不知道<code>npm</code>是啥？天呢……<code>npm</code>是<code>node</code>用来管理包的工具，这么说吧：</p>
+<h3 id="用npm安装sinopia"><a href="#用npm安装sinopia" class="headerlink" title="用npm安装sinopia"></a>用npm安装sinopia</h3><p>那啥，你不知道<code>npm</code>是啥？天呢……<code>npm</code>是<code>node</code>用来管理包的工具，这么说吧：</p>
 <p><code>nvm</code>用来管理不同版本的<code>node</code>，对于每个已经安装的<code>node</code>来说，都是相互独立的，从<code>node</code>内部来看，<code>LTS</code>版本的<code>node</code>并不知道还有另外一个<code>9.2.0</code>版本的<code>node</code>在它隔壁。</p>
 <p><code>npm</code>是<code>node</code>管理自己的模块（或是包、插件等等）的工具，每个用<code>nvm</code>安装的<code>node</code>版本，都有它自己的<code>npm</code>包管理工具，虽然不正确，但你可以把<code>npm</code>看作是每个版本的<code>node</code>都会自带的东西。</p>
 <p>好了，基本概念解释清楚了之后，我们来看看这个真正实现<code>本地化</code>的神器：<code>sinopia</code>.</p>
@@ -250,7 +250,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -fr ~/.nvm/versions/node/v9.2.0/lib/node_modules/fs-ext/</span><br><span class="line">rm -fr ~/.nvm/versions/node/v9.2.0/lib/node_modules/crypt3/</span><br><span class="line">rm -fr ~/.nvm/versions/node/v9.2.0/lib/node_modules/sinopia/node_modules/fs-ext/</span><br><span class="line">rm -fr ~/.nvm/versions/node/v9.2.0/lib/node_modules/sinopia/node_modules/crypt3/</span><br></pre></td></tr></table></figure>
 <p>上面四个位置中的<code>v9.2.0</code>是用来安装<code>sinopia</code>的<code>node</code>版本号，请修改为自己的。且上面四个路径不一定都存在，保险起见，挨个都删一下吧，不然在用<code>npm</code>指定用户登录<code>sinopia</code>维护的<code>Registry</code>的时候，<code>htpasswd</code>组件会报错。</p>
 <p>有经验的童鞋，在看了上面四个路径之后，是不是有所收获？没错，<code>nvm</code>真的很强大，完全把每个版本的<code>node</code>都独立封在了各自的目录中，真的挺像<code>python</code>世界的虚拟环境的。</p>
-<h3 id="配置sinopia"><a href="#配置sinopia" class="headerlink" title="配置sinopia"></a>配置<code>sinopia</code></h3><p><code>sinopia</code>就这点最贴合我的审美：号称零配置！装上就能用！</p>
+<h3 id="配置sinopia"><a href="#配置sinopia" class="headerlink" title="配置sinopia"></a>配置sinopia</h3><p><code>sinopia</code>就这点最贴合我的审美：号称零配置！装上就能用！</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/</span><br><span class="line">sinopia</span><br></pre></td></tr></table></figure>
 <p>直接输入<code>sinopia</code>，它就开始工作了！</p>
 <p>第一次运行的时候，<code>sinopia</code>会在<code>~/.config/sinopia/</code>中生成一个<code>config.yaml</code>，这是它默认的配置文件，为了给将来的搬家工作做铺垫，我们先<code>ctrl-c</code>结束<code>sinopia</code>的运行，然后新建个目录，将配置文件丢进去：</p>
@@ -265,7 +265,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">warn  --- config file  - /home/wyao/sinopia/config.yaml</span><br><span class="line">warn  --- http address - http://localhost:4873/</span><br></pre></td></tr></table></figure>
 <p>如果屏幕输出了类似上面的内容，OK，这次<code>sinopia</code>在使用我们修改好的<code>config.yaml</code>运行了，它所维护的所有包，都放在指定地方（这里是~/sinopia/storage）</p>
 <p>这里先别结束<code>sinopia</code>，就让它这么运行着，下一节我们会用它继续工作！</p>
-<h3 id="指挥npm连上sinopia"><a href="#指挥npm连上sinopia" class="headerlink" title="指挥npm连上sinopia"></a>指挥<code>npm</code>连上<code>sinopia</code></h3><p>本节比较简单，因为在<code>npm</code>看来，<code>sinopia</code>给的地址就是一个正常的<code>Registry</code>。我们这么来做，保持上一节打开的<code>sinopia</code>不便，新开一个<code>Terminal</code>（终端），然后：</p>
+<h3 id="指挥npm连上sinopia"><a href="#指挥npm连上sinopia" class="headerlink" title="指挥npm连上sinopia"></a>指挥npm连上sinopia</h3><p>本节比较简单，因为在<code>npm</code>看来，<code>sinopia</code>给的地址就是一个正常的<code>Registry</code>。我们这么来做，保持上一节打开的<code>sinopia</code>不便，新开一个<code>Terminal</code>（终端），然后：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvm use node</span><br><span class="line">npm <span class="built_in">set</span> registry http://localhost:4873</span><br><span class="line">npm adduser</span><br></pre></td></tr></table></figure>
 <p>第一条命令是指定<code>nvm</code>激活最新版本的<code>node</code>，这样做是为了举个例子，你完全可以激活任何一个版本的<code>node</code>，设定<code>registry</code>到<code>sinopia</code>的服务地址，并且用向导注册一个新用户（注册完会提示自动登录到了registry）。</p>
 <p>这里其实还隐藏着一点，就是使用<code>nvm</code>管理的<code>node</code>，对于每一个<code>Terminal</code>（终端）来说，都是独立的，就算一个终端中运行着最新版本<code>node</code>的<code>sinopia</code>，另一个终端完全可以<code>nvm use --lts</code>，互相没有干扰（我又想说<code>python</code>的<code>venv</code>了，真的是天才设计）。</p>

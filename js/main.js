@@ -96,4 +96,9 @@ $(document).ready(function () {
   alphaDust.displayArchives();
   //alphaDust.justifyContent();
   pangu.spacingElementByTagName('p');
+  pangu.spacingElementByTagName('h1');
+  pangu.spacingElementByTagName('h2');
+  pangu.spacingElementByTagName('h3');
+  pangu.spacingElementByTagName('h4');
+  pangu.spacingElementByTagName('blockquote');
 });
