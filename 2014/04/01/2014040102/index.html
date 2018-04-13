@@ -1,178 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html lang="zh-CN">
 <head>
+    <meta charset="UTF-8" />
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
-    
-        <meta name="description" content="William Yao\&#39;s Dream World">
     
 
-    <!--Author-->
-    
-        <meta name="author" content="William Yao">
     
 
-    <!--Open Graph Title-->
+    <title>Ubuntu中简单的C语言Socket C/S例子 | William Yao&#39;s Dream World</title>
+    <meta name="author" content="William Yao" />
+    <meta name="version" content="1.0.0" />
+    <meta name="keywords" content="blog william yao dream world" />
+    <meta name="description" content="
+
+
+
+
+
+
+
+
+平台
+UbuntuKyrin
+
+
+编辑器
+Emacs 24
+
+
+编译器
+GNU Compiler(GCC)
+
+
+
+
+Server代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667# include &amp;lt;stdio.h&amp;gt;# include &amp;lt;string.h&amp;gt" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta name="baidu-site-verification" content="F0CXvmUgA9" />
+
     
-        <meta property="og:title" content="Ubuntu中简单的C语言Socket C/S例子"/>
+    
+    <link rel="icon" href="/favicon.ico">
     
 
-    <!--Open Graph Description-->
-    
-        <meta property="og:description" content="William Yao\&#39;s Dream World" />
-    
-
-    <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article" />
-    
-
-    <!--Page Cover-->
-    
-
-    <meta name="twitter:card" content="summary" />
-    
-
-    <!-- Title -->
-    
-    <title>Ubuntu中简单的C语言Socket C/S例子 - William Yao&#39;s Dream World</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Google Analytics -->
-    
-
-
 </head>
-
-
 <body>
 
-<div class="bg-gradient"></div>
-<div class="bg-pattern"></div>
+    <div class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <button id="open-panel" class="open-panel"><i class="icon-library"></i></button>
 
-<!-- Menu -->
-<!--Menu Links and Overlay-->
-<div class="menu-bg">
-    <div class="menu-container">
-        <ul>
-            
-            <li class="menu-item">
-                <a href="/">
-                    首页
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/archives/index.html">
-                    归档
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/about.html">
-                    关于
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/tags/index.html">
-                    标签
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/categories/index.html">
-                    分类
-                </a>
-            </li>
-            
-            <li class="menu-item">
-                <a href="/contact.html">
-                    联系
-                </a>
-            </li>
-            
-        </ul>
+    <nav class="nav-inner">
+
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/">首页</a>
+        </li>
+        
+        
+        
+        <li class="nav-item nav-item-tag">
+            <a id="nav-tag" class="nav-link" href="#">标签</a>
+            <div id="nav-tags" class="nav-tag-wrap">
+                <i class="nav-tag-arrow"></i>
+                
+  <div class="widget-wrap">
+    <h3 class="widget-title">
+        <i class="icon-tag vm"></i>
+        <span class="vm">标签</span>
+    </h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/64-bit/">64-bit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/7-zip/">7-zip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aliyun/">aliyun</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/android/">android</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/aperture/">aperture</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/app/">app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/audio/">audio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/c/">c</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/caj/">caj</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/calibre/">calibre</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ccnp/">ccnp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdn/">cdn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/">centos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloud/">cloud</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/codec/">codec</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/convert/">convert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cue/">cue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diskutil/">diskutil</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/django/">django</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dpkg/">dpkg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecs/">ecs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encrypt/">encrypt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/europe/">europe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/evernote/">evernote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fedora/">fedora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flickr/">flickr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/game/">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gnome/">gnome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/google/">google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gravatar/">gravatar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grub/">grub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hdd/">hdd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hdiary/">hdiary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hdmi/">hdmi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/https/">https</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iso/">iso</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/itunes/">itunes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/journal/">journal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kms/">kms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/landscape/">landscape</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/locale/">locale</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lxde/">lxde</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/macports/">macports</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/motor/">motor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/movie/">movie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mozilla/">mozilla</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/norway/">norway</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ocr/">ocr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/office/">office</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onedrive/">onedrive</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/papers/">papers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pdf/">pdf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/">photo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photoshop/">photoshop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/portrait/">portrait</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/razer/">razer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sax/">sax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/server/">server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ski/">ski</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/socket/">socket</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/song/">song</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssh/">ssh</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ssl/">ssl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/steam/">steam</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/storage/">storage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tex/">tex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/theme/">theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tv/">tv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typecho/">typecho</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/usb/">usb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/utf8/">utf8</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualenv/">virtualenv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vnc/">vnc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vpc/">vpc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wsgi/">wsgi</a></li></ul>
     </div>
+  </div>
+
+
+            </div>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/categories/index.html">分类</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/archives/index.html">归档</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/atom.xml">订阅</a>
+        </li>
+        
+        
+        
+        <li class="nav-item">
+            <a class="nav-link" href="/about.html">关于</a>
+        </li>
+        
+        
+        
+
+    </nav>
 </div>
 
-<!--Hamburger Icon-->
-<nav>
-    <a href="#menu"></a>
-</nav>
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="https://blog.williamyao.com"></form>
 
-<div class="container">
-
-    <!-- Main Content -->
-    <div class="row">
-    <div class="col-sm-12">
-
-        <!--Title and Logo-->
-        <header>
-    <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Server代码"><span class="toc-number">1.</span> <span class="toc-text">Server代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Client代码"><span class="toc-number">2.</span> <span class="toc-text">Client代码</span></a></li></ol>
         
     </div>
+</aside>
+
 </header>
 
-        <section class="main">
-            
-<div class="post">
-
-    <div class="post-header">
-        <h1 class="title">
-            <a href="/2014/04/01/2014040102/index.html">
-                Ubuntu中简单的C语言Socket C/S例子
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2014-04-01</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/IronWare/">IronWare</a>
-                </span>
-            
-        </div>
-    </div>
-
-    <div id="post_content" class="content">
-
-        <!-- Gallery -->
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
         
+        <h1 itemprop="name">
+            Ubuntu中简单的C语言Socket C/S例子
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="/2014/04/01/2014040102/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2014-04-01T14:42:58.000Z" itemprop="datePublished">2014-04-01</time>
+</a>
 
-        <!-- Post Content -->
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/c/">c</a>, <a class="article-tag-link" href="/tags/socket/">socket</a>, <a class="article-tag-link" href="/tags/ubuntu/">ubuntu</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
         <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><table>
 <thead>
 <tr>
@@ -199,163 +184,49 @@
 <h2 id="Server代码"><a href="#Server代码" class="headerlink" title="Server代码"></a>Server代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> MAXDATASIZE 1024</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> SERVERPORT 8000</span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> MAXCONN_NUM 10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[MAXDATASIZE];</span><br><span class="line">    <span class="keyword">int</span> sockfd, new_fd, numbytes;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">server_addr</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">client_addr</span>;</span></span><br><span class="line">    <span class="keyword">int</span> sin_size;</span><br><span class="line">    <span class="keyword">if</span>((sockfd = socket(AF_INET, SOCK_STREAM, <span class="number">0</span>)) == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(<span class="string">"socket error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(&amp;client_addr, <span class="number">0</span>, <span class="keyword">sizeof</span>(struct sockaddr));</span><br><span class="line">    server_addr.sin_family = AF_INET;</span><br><span class="line">    server_addr.sin_port = htons(SERVERPORT);</span><br><span class="line">    server_addr.sin_addr.s_addr = INADDR_ANY;</span><br><span class="line">    <span class="keyword">if</span>(bind(sockfd, (struct sockaddr *) &amp;server_addr, <span class="keyword">sizeof</span>(struct sockaddr)) == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(<span class="string">"bind error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(listen(sockfd, MAXCONN_NUM) == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(<span class="string">"listen error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        sin_size = <span class="keyword">sizeof</span>(struct sockaddr_in);</span><br><span class="line">        <span class="keyword">if</span>((new_fd = accept(sockfd, (struct sockaddr *) &amp;client_addr, &amp;sin_size)) == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            perror(<span class="string">"accept error"</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"server: got connection from %s\n"</span>, (<span class="keyword">char</span> *)inet_ntoa(client_addr.sin_addr));</span><br><span class="line">        <span class="keyword">if</span>((numbytes = recv(new_fd, buf, MAXDATASIZE, <span class="number">0</span>)) == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            perror(<span class="string">"recv error"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(numbytes)</span><br><span class="line">        &#123;</span><br><span class="line">            buf[numbytes] = <span class="string">'\0'</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"received: %s\n"</span>, buf);</span><br><span class="line">            sleep(<span class="number">3</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"send: hi~~\n"</span>);</span><br><span class="line">        <span class="keyword">if</span>(send(new_fd, <span class="string">"hi, I\'m Server!"</span>, <span class="number">5</span>, <span class="number">0</span>) == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            perror(<span class="string">"send error"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        close(new_fd);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Client代码"><a href="#Client代码" class="headerlink" title="Client代码"></a>Client代码</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/socket.h&gt;</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">include</span> <span class="meta-string">&lt;netinet/in.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> MAXDATASIZE 1024</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> SERVERIP <span class="meta-string">"127.0.0.1"</span></span></span><br><span class="line"><span class="meta"># <span class="meta-keyword">define</span> SERVERPORT 8000</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> * argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> buf[MAXDATASIZE];</span><br><span class="line">    <span class="keyword">int</span> sockfd, numbytes;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sockaddr_in</span> <span class="title">server_addr</span>;</span></span><br><span class="line">    <span class="keyword">if</span>((sockfd = socket(AF_INET, SOCK_STREAM, <span class="number">0</span>)) == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(<span class="string">"socket error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(&amp;server_addr, <span class="number">0</span>, <span class="keyword">sizeof</span>(struct sockaddr));</span><br><span class="line">    server_addr.sin_family = AF_INET;</span><br><span class="line">    server_addr.sin_port = htons(SERVERPORT);</span><br><span class="line">    server_addr.sin_addr.s_addr = inet_addr(SERVERIP);</span><br><span class="line">    <span class="keyword">if</span>(connect(sockfd, (struct sockaddr *) &amp;server_addr, <span class="keyword">sizeof</span>(struct sockaddr)) == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(<span class="string">"connect error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"send: Hello, world!\n"</span>);</span><br><span class="line">    <span class="keyword">if</span>(send(sockfd, <span class="string">"Hello, world!"</span>, <span class="number">14</span>, <span class="number">0</span>) == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(<span class="string">"send error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>((numbytes = recv(sockfd, buf, MAXDATASIZE, <span class="number">0</span>)) == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        perror(<span class="string">"recv error"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(numbytes)</span><br><span class="line">    &#123;</span><br><span class="line">        buf[numbytes] = <span class="string">'\0'</span> ;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"received: %s\n"</span>, buf);</span><br><span class="line">    &#125;</span><br><span class="line">    close(sockfd);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    </div>
+        
+    </section>
+</article>
 
-    
-
-    
-        <div class="post-tags">
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/ubuntu/">#ubuntu</a> <a href="/tags/c/">#c</a> <a href="/tags/socket/">#socket</a>
-        </div>
-    
-
-    <!-- Comments -->
-    
-
-</div>
-        </section>
-
-    </div>
-</div>
 
 
 </div>
-
-<!-- Footer -->
-<div class="push"></div>
-
-<footer class="footer-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
-                <h2>关于</h2>
-                <p>
-                    执着而不计成本，不为索取只为陶醉
-                </p>
-            </div>
-            
-    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
-        <h2>最近发布</h2>
-        <ul>
-            
-            <li>
-                <a class="footer-post" href="/2017/11/29/2017112901/index.html">打造灵活可用的本地Node.js工具链环境</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2017/03/27/2017032701/index.html">Let&#39;s Encrypt全程配置使用指南</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2017/03/23/2017032301/index.html">更改pypi(pip)源到阿里云</a>
-            </li>
-            
-            <li>
-                <a class="footer-post" href="/2017/01/08/2017010801/index.html">“二货成长记”到“灰狼日记”</a>
-            </li>
-            
-        </ul>
-    </div>
-
-
-
-            
-<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
-    <h2>分类</h2>
-    <ul>
-        
-        <li>
-            <a class="footer-post" href="/categories/HDiary/">HDiary</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
-        </li>
-        
-    </ul>
-</div>
-
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <ul class="list-inline footer-social-icons">
-                    
-                    <li class="list-inline-item">
-                        <a href="https://github.com/lnyk">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-github"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="mailto:me@williamyao.com">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-envelope-o"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="\#">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-rss"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="footer-copyright">
-                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
-                </div>
-            </div>
-        </div>
-    </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
 </footer>
 
-<!-- After footer scripts -->
 
-<!-- jQuery -->
-<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    </div>
 
-<!-- Tween Max -->
-<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            var nodes = {
+                nav: $('#nav'),
+                aside: $('#aside'),
+                navTags: $('#nav-tags')
+            };
 
-<!-- Gallery -->
-<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+            $('#open-panel, #aside-mask').on('click', function() {
+                nodes.aside.toggleClass('panel-show');
+            });
+            $('#nav-tag').on('click', function(event) {
+                event.preventDefault();console.log(nodes.navTags.attr('class'))
+                nodes.navTags.toggleClass('tag-show');console.log(nodes.navTags.attr('class'))
+            })/*.hover(function() {
+                nodes.navTags.addClass('tag-show');
+            }, function() {
+                nodes.navTags.removeClass('tag-show');
+            });*/
 
-<!-- pangu -->
-<script src="https://cdn.bootcss.com/pangu/3.3.0/pangu.min.js"></script>
-
-<!-- Custom JavaScript -->
-<script src="/js/main.js"></script>
-
-<!-- Disqus Comments -->
-
-
+            
+            $(document.body).scrollspy({target: '#aside-inner'});
+            
+        });
+    </script>
 
 </body>
-
 </html>
