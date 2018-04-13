@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Ubuntu安装最新版TeX Live"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>Ubuntu安装最新版TeX Live - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2016/02/29/2016022902/index.html">
+                Ubuntu安装最新版TeX Live
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-02-29</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div id="post_content" class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天重装了`UbuntuKylin，从麒麟版本诞生之日，可以说我的Linux就没转过别的平台，主要是喜欢它的中文化（听说是工信部和社区合作的长期中文化产物），不但一堆Locale默认中文，自带中文输入法还有双拼自然码码表，最关键的是对TeX的中文化支持相当好，几乎不用手动干预，一堆安装自动搞定。</p>
+<blockquote><p>时隔好些年，今天因公去了趟<code>麒麟</code>在北京的分公司，有幸见到了当年参与UbuntuKylin开发的几位中国大神，还被送了一个麒麟吉祥物，真是荣幸之至！</p>
+<footer><strong>William Yao 2018年04月10日</strong></footer></blockquote>
+<a id="more"></a>
+<p>当然，写这篇文章，主要目的不是记录怎么用<code>apt-get</code>，而是在今天我装完系统，开始安装<code>TeX Live</code>的时候，发现Ubuntu官方维护的居然是<code>2013.2014update</code>版本！拜托！已经2016年了好吗！</p>
+<p>赶紧去到<code>CTAN</code>上查看官方发布情况，<code>TeX Live 2016发布需要到</code>2016/06/08`，还有好几个月，所以决定先装2015年度版本。</p>
+<p>这样一来，就不能偷懒用apt-get了，好在官方的安装过程也简单的不行，就是脱离了Ubuntu软件仓库维护，日后升级等一系列操作还是得手动，不想“动手”的童鞋，还是乖乖去戳“软件中心”吧～</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>这次不写那么罗嗦了，简介流程走起：</p>
+<h3 id="官方下载"><a href="#官方下载" class="headerlink" title="官方下载"></a>官方下载</h3><p>去<a href="http://mirror.ctan.org/systems/texlive/tlnet/install-tl.zip" target="_blank" rel="noopener">官方网站（CTAN）</a>下载一个很小的Perl安装脚本</p>
+<h3 id="解压运行安装脚本"><a href="#解压运行安装脚本" class="headerlink" title="解压运行安装脚本"></a>解压运行安装脚本</h3><p>这里需要注意，安装脚本支持4种类型的界面方式：</p>
+<ul>
+<li>install-tl -gui text 默认方式，纯文本</li>
+<li>install-tl -gui wizard 向导模式，主要用在Windows系统安装中</li>
+<li>install-tl -gui perltk Tk窗口模式，本文采用这个方式</li>
+<li>install-tl -gui –profile=profile 依据profile中指定的方式执行批量安装</li>
+</ul>
+<p>这里我们使用第三种Tk窗口模式（顺便装上perl-tk），使用下面的命令安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install perl-tk</span><br><span class="line">sudo ./install-tl -gui perltk</span><br></pre></td></tr></table></figure>
+<p>打开的窗口是这样的：</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016022902/2016022902-01.jpg!w-1024" alt="texlive"></p>
+<p>这里我没做任何修改，直接默认安装了，值得一提的是<code>Portable Setup</code>为绿色安装，虽然不太想去琢磨这个绿色在Linux平台上的适用性，但要是在Windows平台上，本人还是非常偏爱一切<strong>绿色软件</strong>的！</p>
+<p>做好心理准备开始下载4G左右的内容后，点击“安装”，会弹出“安装过程”窗口，指示当前的安装进度：</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016022902/2016022902-02.jpg!w-1024" alt="texlive"></p>
+<p>当然，Terminal里也会有同步显示：</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016022902/2016022902-03.jpg!w-1024" alt="texlive"></p>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><p>打开<code>~/.bashrc或</code>profile，添加TeX Live的执行文件目录到环境变量，默认是这样：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATH=/usr/<span class="built_in">local</span>/texlive/2015/bin/i386-linux:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<p>如果像我一样是64位系统，则是这样：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATH=/usr/<span class="built_in">local</span>/texlive/2015/bin/x86_64-linux:<span class="variable">$PATH</span></span><br></pre></td></tr></table></figure>
+<h3 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h3><p>测试编译一下吧，不出意外的话，整个系统就按装好了。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>就像我在《<a href="/2016/02/10/2016021001/index.html" title="新年新气象，缅怀过去走进未来——换上Typecho">新年新气象，缅怀过去走进未来——换上Typecho</a>》这篇文章结尾提到的那样，折腾TeX Live的最主要目的，其实是想将自己写过的文章以出版物级别PDF的形式（而非数据库中的一条记录或文件夹里的一个文本文件）封装一个完美的归宿，作为一个比较喜欢阅读的人，我偏执的认为，这种方式最为尊重文字本身的价值意义。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/linux/">#linux</a> <a href="/tags/ubuntu/">#ubuntu</a> <a href="/tags/tex/">#tex</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2016/03/25/2016032501/index.html">StartCom申请SSL证书及Nginx HTT</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/03/12/2016031201/index.html">TrueCrypt你怎么了？</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/02/29/2016022902/index.html">Ubuntu安装最新版TeX Live</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/02/29/2016022901/index.html">常用7-Zip最高压缩命令</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- pangu -->
+<script src="https://cdn.bootcss.com/pangu/3.3.0/pangu.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

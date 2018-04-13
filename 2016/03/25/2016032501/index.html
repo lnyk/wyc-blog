@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="StartCom申请SSL证书及Nginx HTTPS支持配置全攻略"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>StartCom申请SSL证书及Nginx HTTPS支持配置全攻略 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2016/03/25/2016032501/index.html">
+                StartCom申请SSL证书及Nginx HTTPS支持配置全攻略
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-03-25</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div id="post_content" class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><blockquote><p>除非抱着回顾了解历史的目的，否则请勿再看此文。<code>StartSSL</code>已经因为一些卑劣的行径而死。</p>
+<footer><strong>William Yao 2018年04月13日</strong></footer></blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近收到StartCom的邮件，数字证书即将过期，想到去年在StartSSL上折腾数字证书的一番啰嗦经历心里就打怵，可是又没办法，只好怀着“悲痛”的心情登上StartSSL，结果……！原来恶心人的界面统统消失了，取而代之的是全站的大更新，就连原来非常繁琐的Certification和Validation流程也被非常高效的向导给取代了！整个界面以侧边栏总览的方式将帐号下所有的内容全部概括，看着就让人“赏心悦目”！</p>
+<a id="more"></a>
+<p>经过一段时间的摸索和测试，虽然全新的StartSSL利用向导和无处不在的“提示”大大简化了用户的使用门槛，但还是有一些地方需要注意的，遂作此文，从新用户注册环节开始，经由域名认证、SSL证书认证等步骤直到配置Nginx虚拟主机以支持SSL加密通信，为网站挂上“自信”的HTTPS标签，全程记录每一步分享给大家。</p>
+<p>此文阅读难度：纯新手可读（既然到了SSL级别，应该也不会太“新”吧~）</p>
+<p>废话不多说，让我们开始！</p>
+<h2 id="StartSSL方面"><a href="#StartSSL方面" class="headerlink" title="StartSSL方面"></a>StartSSL方面</h2><p>首先介绍在StartSSL方面的操作，因为这才是真正获得证书认证的关键流程。</p>
+<blockquote>
+<p>注意：因为此文操作全程在Win10平台进行，所以在证书申请的全过程中，推荐使用IE浏览器（方便证书的导入导出），如果使用其他浏览器，遇到的任何问题将超出本文讨论范围。</p>
+</blockquote>
+<h3 id="注册登录"><a href="#注册登录" class="headerlink" title="注册登录"></a>注册登录</h3><p>已经注册过会员的童鞋请跳过此步骤。</p>
+<p>首先需要说明一点，StartSSL继续沿用了以往的登录方式：证书登录！</p>
+<p>这也是很多童鞋在过去兴致勃勃的冲到StartSSL想要申请一个属于自己的数字证书时，被那个非常不友好的StartSSL界面卡在了新用户注册这第一个环节……</p>
+<p>所以，在StartSSL上的全部操作，用的都是一张Email证书，不需要用户名密码什么的。</p>
+<p>首先访问<a href="https://www.startssl.com/" target="_blank" rel="noopener">StartSSL.com</a>，点击Sign-up进行注册</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-01.jpg!w-1024" alt="StartSSL"></p>
+<p>这里最好填写能够正常收到邮件的邮箱，并且最好是常用邮箱，因为以后在StartSSL上的所有操作，都会与此邮箱关联。</p>
+<p>接下来的步骤比较简单，在到让我们选择怎样生成证书的时候，选择直接导入到IE中就可以。</p>
+<p>经过一番邮箱验证之后，我们就得到了由StartSSL颁发的邮箱证书，在“Internet 选项、内容、证书”里面可以选择导出这个证书，妥善保存，日后登录StartSSL就全靠这个证书了，有效期一年，过期后需要重新验证。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-02.jpg!w-1024" alt="StartSSL"></p>
+<p>之后就登录进StartSSL中，默认停留在控制面板页面，右侧侧边栏中会显示所有该证书用户名下的所有认证信息，当然如果是新用户，应该除了个人信息外空空如也，没关系，我们继续。</p>
+<h3 id="验证域名"><a href="#验证域名" class="headerlink" title="验证域名"></a>验证域名</h3><p>在这一步之前，我相信在注册环节中，你已经将个人信息什么的填写完整了。</p>
+<p>想要获得某域名的证书之前，首先要验证该域名的所有权。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-03.jpg!w-1024" alt="StartSSL"></p>
+<p>选择上面的Validations Wizard，启动验证向导，在下面选择Domain Validation对域名进行验证，点击继续，来到下一步</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-04.jpg!w-1024" alt="StartSSL"></p>
+<p>输入想要验证的域名，注意这里我用的是顶级域名，至于二级以上域名是什么情况，我没进行验证，不过看此文的童鞋，应该都有顶级域名吧：）</p>
+<p>填入想要验证并获得证书的域名后，StartSSL系统会自动对该域名进行whois查询，找到域名所有者的电子邮件地址，并让你选择将验证邮件发到哪个邮箱，只能选择查询到的域名所有者邮箱或者列出的其他三个常用形式的管理员邮箱，其他邮箱是无法进行验证的。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-05.jpg!w-1024" alt="StartSSL"></p>
+<p>这里还会遇到个问题，如果你的域名服务商为你开启了隐私保护，那么这里的域名所有者邮件地址一般情况不会查询到真正可操作的邮箱，比如阿里云的域名隐私保护如果开启了，列表中第一个邮箱会是以阿里云结尾的一个伪装邮箱，经测试，这个邮箱是无法收到任何邮件的（本以为会代为转发），所以在进行这一步之前，一定要暂时关闭隐私保护。</p>
+<p>如果你的邮箱服务器比较稳定，会立刻收到验证邮件，按照邮件里的说明将验证码输入进页面里点击验证，域名就验证成功了。</p>
+<h3 id="申请证书"><a href="#申请证书" class="headerlink" title="申请证书"></a>申请证书</h3><p>先多啰嗦一句，StartSSL上的验证、申请流程几乎都是自动的（除了证书废止等操作需要人工审核），所以沿着本文的文络前进的同时，你已经在逐渐拥有各种东西了~</p>
+<p>开始，重新回到控制面板，选择上面的Certificates Wizard启动证书申请向导，默认选择第一项Web Server SSL/TLS Certificate并下一步。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-06.jpg!w-1024" alt="StartSSL"></p>
+<p>接着，我们会来到一个满屏“鸟语”有点让人头大的页面，其实这个页面的内容也非常简单，我们一步一步来。</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-07.jpg!w-1024" alt="StartSSL"></p>
+<p>首先，在上面的文本框中输入想要获得证书的域名，这里要注意以下几点：</p>
+<ol>
+<li>每一行输入一个域名</li>
+<li>第一行的域名为主域名（然并卵……其实很少有人会点击HTTPS旁边的“锁”去认真查看证书内容的）</li>
+<li>只能输入五行（五个域名）</li>
+<li>你这里输入的域名，在最后只会得到一个bundle，也就是单一证书捆绑多个域名，为你在上面输入的所有域名提供验证。</li>
+</ol>
+<p>这里特别要注意，如果真的输入了五个域名（包括二级以上域名），生成了一个证书，其实在后期是比较难管理的，如果你名下有好几个域名，稍加时日，完全搞混乱几乎是必然的，所以我的建议是：不要采用我在上面图片中一次填满五个的方式，而是每次只验证一个（顶级或者二级）域名，这样每个域名都会得到一个独立的证书，给证书以及配套的文件单独建一个以域名为名称的文件夹保存，一目了然，不会搞混。</p>
+<p>另外，如果你已经捆绑了好几个域名到一个证书上，我的做法是：不用这个证书就好~~重新为每个域名申请独立的证书，因为每个域名是可以多次申请多个证书的，不碍事儿。</p>
+<p>填写好域名，我们开始关注页面的下半部分，这一部分是需要我们提交认证签名请求（CSR），我们选择第一项Generated by Myself，使用工具自己生成签名文件及对应密钥。</p>
+<p>这里注意看提示，StartCom很贴心的提供了一个Windows平台上使用的绿色工具，一键完成签名文件及对应密钥的生成工作。当然，如果在其他平台，或者喜欢用openssl，也可以根据提示的命令进行生成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr</span><br></pre></td></tr></table></figure>
+<p>如果机器性能够强（服务器），也可以使用<code>rsa:4096</code>，更高算位提供更高安全性，不过性能会受到影响，记住我们生成的证书是要给服务器用的，你需要在负荷及安全性上做权衡了。</p>
+<p>那么怎么生成CSR呢？这里演示一下StartCom的小小绿色工具的用法，首先在这个页面中点击<code>StartComTool.exe</code>下载到本地，运行该程序：</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-08.jpg!w-1024" alt="StartSSL"></p>
+<p>如果文本框里已经有内容了，就点一下Clear，直接点击下方绿色的Generate CSR按钮，在弹出的对话框中选择路径，保存相关文件（比如给文件起名叫app.williamyao.com.key），这一步工具会自动为我们生成两个名称相同的文件，一个是CSR，一个是Key，这两个文件都要保存好，一个是签名内容（PEM格式），一个是密钥文件，密钥文件在下一步配置Nginx时会用到。</p>
+<p>然后，将文本框中的CSR内容复制粘贴到浏览器的文本框中（直接点“Copy”按钮，回到浏览器粘贴即可），现在我们的页面看起来是这个样子：</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-09.jpg!w-1024" alt="StartSSL"></p>
+<p>之后，我们点击Submit提交申请，不出意外的话，我们的证书文件立刻就生成好了：</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-10.jpg!w-1024" alt="StartSSL"></p>
+<blockquote>
+<p>这里注意，我们不能用下载工具进行下载（因为StartCom的证书认证机制），请点击右键选择“目标另存为”使用IE的方式进行下载。</p>
+</blockquote>
+<p>下载回来的是一个压缩包，解开看一看，原来StartSSL很贴心的为我们生成了一套对应各个常用服务器的证书文件，我们这里把Nginx的对应证书文件单独解压出来，得到一个<code>.crt</code>文件，先放好这个文件，一会儿会用到。</p>
+<p>在进入下一步之前，我建议大家重新整理一下上面的流程中得到的所有文件，以我为例：</p>
+<ol>
+<li>新建文件夹startssl-signed</li>
+<li>进入文件夹，新建文件夹app.williamyao.com</li>
+<li>将对应文件拷贝到app.williamyao.com文件夹中</li>
+</ol>
+<p>经过整理，文件夹中会有如下文件：</p>
+<ul>
+<li><a href="mailto:lnyk@me.com-2017.pfx" target="_blank" rel="noopener">lnyk@me.com-2017.pfx</a>（从IE中导出的用于登录StartSSL的电子邮件证书）</li>
+<li>app.williamyao.com.csr（签名文件）</li>
+<li>app.williamyao.com.key（密钥文件）</li>
+<li>app.williamyao.com.zip（下载下来的证书文件压缩包）</li>
+<li>INTRO（文本文件，里面记录一下上面三个文件的生成日期，以及证书文件的到期日期等等）</li>
+</ul>
+<p>这样整理之后，以后为其他域名申请的证书也可以这样存放，就不会乱套了。</p>
+<p>这里再建议大家一遍，如果手里域名多的话，最好给每个域名单独申请证书（就是只填写一行域名到向导的文本框中），“大合集”的方式，实在不利于日后为其他域名增添SSL支持，以及统一管理。</p>
+<p>整理完文件了？是不是看着赏心悦目的？好，我们进行下一步，配置Nginx，让证书真正发挥用处！</p>
+<h2 id="Nginx-方面"><a href="#Nginx-方面" class="headerlink" title="Nginx 方面"></a>Nginx 方面</h2><p>在进行配置之前稍作一个假设，Nginx以虚拟主机方式保存配置文件，即每个虚拟主机有自己单独的<code>.conf</code>文件，这种方式比把所有东西都丢进<code>nginx.conf</code>里面强得多，而且现代版本的Nginx都是默认采用虚拟主机方式进行配置了。</p>
+<p>至于为什么做这样的铺垫，是为了下面解决容易碰到的一个问题，我们到达那个步骤的时候再详细说明。</p>
+<h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><p>我们需要将两套文件上传到服务器，每一套中有两个文件，一个是CRT证书文件，一个是KEY密钥文件，用于启用williamyao.com以及app.williamyao.com这两个域名对应虚拟主机的SSL支持，</p>
+<p>这里将每套两个文件做如下命名：</p>
+<ul>
+<li>williamyao.com.crt</li>
+<li>williamyao.com.key</li>
+<li>app.williamyao.com.crt</li>
+<li>app.williamyao.com.key</li>
+</ul>
+<p>然后传到服务器上，我的建议是将上面的文件统一放在<code>/etc/ssl/private/</code>路径中（这个路径也是<code>*nix</code>平台规范建议的SSL证书存放路径，便于管理，既然有“先人指路”，我们不妨照做。</p>
+<p>值得注意的是，将文件放在这个文件夹中，需要用到root权限，即<code>sudo cp</code>，放进去后的文件所属用户保持<code>root:root</code>就好，Nginx的执行进程是可以读取的。</p>
+<h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><p>先别急，这里说明一下，启用SSL的一般做法是，虚拟主机的主server段不监听80端口，而是直接监听443端口，然后在主server配置段后新开一个server段监听相同server_name的80端口，并将请求301重定向到HTTPS.</p>
+<p>这样做的好处是，不管访问者是否制定HTTPS协议（一般人上网大都只会输入域名，不会先写协议的吧……），只要输入域名，Nginx接到请求后就会将请求重定向到443端口的SSL主机上。</p>
+<p>下面我们也打算这么做，以我为例：</p>
+<p>SSH到服务器上，分别编辑两个虚拟主机的conf配置文件，我们先来第一个：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /usr/<span class="built_in">local</span>/nginx/conf/vhost/williamyao.com.conf</span><br></pre></td></tr></table></figure>
+<p>将配置信息添加到配置文件中，配置好的williamyao.com.conf文件形如这个样子：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">    <span class="comment"># 下面这一行用于启用 IPv6 支持</span></span><br><span class="line">    <span class="attribute">listen</span> [::]:<span class="number">443</span> ssl ipv6only=<span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">server_name</span> williamyao.com;</span><br><span class="line">    <span class="comment"># SSL 支持配置如下</span></span><br><span class="line">    <span class="attribute">ssl</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">ssl_certificate</span> /etc/ssl/private/williamyao.com.crt;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /etc/ssl/private/williamyao.com.key;</span><br><span class="line"></span><br><span class="line">    ...（其他配置）...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">listen</span> [::]:<span class="number">80</span> ipv6only=<span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">server_name</span> williamyao.com;</span><br><span class="line">    <span class="attribute">return</span> <span class="number">301</span> https://williamyao.com<span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>之后编辑另一个虚拟主机app.williamyao.com.conf配置文件，形如下面这样：</p>
+<p><code>`</code>nginx<br>server<br>{<br>    listen 443 ssl;</p>
+<pre><code># 下面这一行用于启用 IPv6 支持
+listen [::]:443 ssl;
+server_name app.williamyao.com;
+# SSL 支持配置如下
+ssl on;
+ssl_certificate /etc/ssl/private/app.williamyao.com.crt;
+ssl_certificate_key /etc/ssl/private/app.williamyao.com.key;
+
+...（其他配置）...
+</code></pre><p>}</p>
+<p>server<br>{<br>    listen 80;<br>    listen [::]:80;<br>    server_name app.williamyao.com;<br>    return 301 <a href="https://app.williamyao.com$request_uri" target="_blank" rel="noopener">https://app.williamyao.com$request_uri</a>;<br>}</p>
+<p>细心的童鞋以及高手可能已经发现了，这两个虚拟主机的配置稍有不同，这也是我们之前做那个小小的铺垫的用意。注意观察WWW主机的<code>ipv6only=on</code>开关，在APP主机中是没有的，因为按照Nginx关于ipv6only这个开关的设置，在全部虚拟主机中，只能有唯一一台主机监听的某端口带有此开关，在我们的例子中，如果APP主机也启用这个开关，Nginx进程会报“重复监听端口”的错误并强制退出。至于ipv6only的详细内容，请自行百度:P</p>
+<p>全部配置完毕后，重启Nginx或者Reload，不出意外的话，回到浏览器，输入域名（可以不带HTTPS，顺便测试一下301转发），是否一切正常？</p>
+<p>恭喜你，你的服务器已经被标记为“安全”了！</p>
+<p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016032501/2016032501-11.jpg!w-1024" alt="StartSSL"></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>当然，启用SSL加密通信，还是那个万年不变的弊端，如果你的网站有外链的话，至少IE浏览器在的默认安全级别之下，始终会有个烦人的安全提示，类似“此网站不安全”！并会自动关闭掉你所有的外链内容读取。本来是更加安全的通信模式，就因为这提示，反倒会让访问者看着不放心……</p>
+<p>特别是越来越趋势化的扁平设计风格，更多的引用一些开放的JS公共库以达到更好的页面效果，这时候如果启用SSL，至少IE的那个恶心提示，几乎是无可避免的了，好在如Gravatar这类开放服务，都具备HTTPS能力支持。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>启用SSL加密通信，不光是对通信安全的加固，更是对访问站点的用户的负责（至少在态度上:P），网络安全方面的话题谈起来就有点儿大了，至少有一个顶级CA对我们的通信进行授权和认证，这本身就是一种令人觉得舒服的事儿~</p>
+<p>还是那句老话：希望本文对你能有帮助。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/nginx/">#nginx</a> <a href="/tags/ssl/">#ssl</a> <a href="/tags/https/">#https</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2016/03/25/2016032501/index.html">StartCom申请SSL证书及Nginx HTT</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/03/12/2016031201/index.html">TrueCrypt你怎么了？</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/02/29/2016022902/index.html">Ubuntu安装最新版TeX Live</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/02/29/2016022901/index.html">常用7-Zip最高压缩命令</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- pangu -->
+<script src="https://cdn.bootcss.com/pangu/3.3.0/pangu.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

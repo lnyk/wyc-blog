@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="常用7-Zip最高压缩命令"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>常用7-Zip最高压缩命令 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2016/02/29/2016022901/index.html">
+                常用7-Zip最高压缩命令
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2016-02-29</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div id="post_content" class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>每次都记不住7-Zip的命令，到处搜索，这次就先备注在这里吧。</p>
+<a id="more"></a>
+<p>最高压缩命令（最耗内存和时间）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">7z a -t7z ~/snapshot.7z target_dir/ -r -mx=9 -ms -mf -mhc -mhcf -mmt</span><br><span class="line"># a        添加或创建压缩文档</span><br><span class="line"># -t7z     指定压缩包格式为7z（其实会自动根据指定文件名来判断，这个开关可以不写）</span><br><span class="line">#          比如指定压缩包名称为 snapshot.7z，则自动采用 7z 格式</span><br><span class="line">#          target_dir 为需要压缩的文件（目录），支持 WildCard</span><br><span class="line"># -r       递归到所有的子目录</span><br><span class="line"># -mx=9    设置压缩等级为极限压缩</span><br><span class="line">#          （默认为：LZMA 最大算法、32 MB 字典大小、BT4b Match finder、单词大小为 64、BCJ2 过滤器）</span><br><span class="line"># -ms      开启固实模式（把所有文件当作一整块来存储）</span><br><span class="line"># -mf      开启可执行文件压缩过滤器</span><br><span class="line"># -mhc     开启档案文件头压缩</span><br><span class="line"># -mhcf    开启档案文件头完全压缩</span><br><span class="line"># -mmt     开启多线程模式</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，在ECS上测试极限压缩，<code>1G CPU/1G内存</code>是没法开到<code>-mx=9</code>的，但是<code>-mx=8</code>没有问题，虽然官方文档只说了<code>-mx=[1/3/5/7/9]</code>的对应压缩算法，但作为一个代码强迫症患者，就是喜欢逐级量化！</p>
+<ul>
+<li>0 Copy No compression.</li>
+<li>1 LZMA 64 KB 32 HC4 BCJ Fastest compressing</li>
+<li>3 LZMA 1 MB 32 HC4 BCJ Fast compressing</li>
+<li>5 LZMA 16 MB 32 BT4 BCJ Normal compressing</li>
+<li>7 LZMA 32 MB 64 BT4 BCJ Maximum compressing</li>
+<li>9 LZMA 64 MB 64 BT4 BCJ2 Ultra compressing</li>
+</ul>
+<p>还有，如果CPU是单核，<code>-mmt</code>无效（不报错，只是不起作用）</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/7-zip/">#7-zip</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2016/03/25/2016032501/index.html">StartCom申请SSL证书及Nginx HTT</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/03/12/2016031201/index.html">TrueCrypt你怎么了？</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/02/29/2016022902/index.html">Ubuntu安装最新版TeX Live</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2016/02/29/2016022901/index.html">常用7-Zip最高压缩命令</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- pangu -->
+<script src="https://cdn.bootcss.com/pangu/3.3.0/pangu.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
