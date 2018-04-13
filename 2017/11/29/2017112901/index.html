@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="William Yao\&#39;s Dream World">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="William Yao">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="打造灵活可用的本地Node.js工具链环境"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="William Yao\&#39;s Dream World" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="William Yao&#39;s Dream World"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>打造灵活可用的本地Node.js工具链环境 - William Yao&#39;s Dream World</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+</head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives/index.html">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags/index.html">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/categories/index.html">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact.html">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-chrome" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">William Yao's Dream World</h1>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2017/11/29/2017112901/index.html">
+                打造灵活可用的本地Node.js工具链环境
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2017-11-29</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/IronWare/">IronWare</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div id="post_content" class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <blockquote><p><code>Sinopia</code>貌似早就停止更新了，而且对5.0以上版本的npm兼容很差，最新的本地镜像工具是<code>Verdacia</code>，用法、结构，甚至配置文件都几乎一样，不知道这两个软件之间是什么关系，总之<code>Verdacia</code>对于当前<code>9.11.1</code>版本的Node及其对应版本的npm支持的都非常好。</p>
+<footer><strong>William Yao 2018年04月13日</strong></footer></blockquote>
+<p>最近这小一年时间，真是折腾了不少东西，要说始终没空更新博客，那真是牵强附会的理由，就连<code>Typecho</code>都升级版本了，我的博客内容却始终没变化，实在有些说不过去，就算权当记录自己的成长历程，也该码点儿字啊。</p>
+<a id="more"></a>
+<p>最近一段时间，因为工作需要，实在没有办法，硬着头皮开始折腾前端方面的东西。要说方便的话，JS的东西，基本可以拿来就用，涉及到的知识点也就HTML5/ES5-6/服务器一类的内容，只要与现有体系（技术）结合的好，django+bootstrap也就分分钟的事儿，可为什么说叫“硬着头皮”呢？</p>
+<p>不管是正打算窥探前端世界的雏鸟们，还是已经到了没事儿写个插件模块的高手，我觉得大家至少在下面这一点上有一个共识：前端技术体系，是一个由一堆极客构建出来的庞大、松散、版本迭代速度奇快的，供重度代码强迫症患者放肆发泄的神奇世界。</p>
+<p>说回这些天来我自己的感受，怎么说呢……正事儿没怎么干，光“搭环境”就让我乐此不疲的废寝忘食了无数个花好月圆……这里套用加西亚的叙事风格：“一个月之后，拿着自己用echarts拼凑出来的图表准备交差的时候，怎么也不会想到，原来当年直接被我忽略掉了的<code>normalize.css</code>和一堆<code>.min.js</code>，才应该是整个项目的起点。说白了，就是在前端技术的世界门前，我又一次迷了路。</p>
+<p>这也是今晚突然来了情绪，说什么也要写这么一篇小短文的其中一个原因，目的就是想让对前端技术感兴趣的童鞋们，别像我一样迷路。本文想要达到的效果，就像标题所说的那样，通过简单的几个步骤，构建起灵活可用的本地Node.js工具链环境。</p>
+<p>因为，构建好工具链（俗称搭环境），才是迈向前段世界的正确的第一步！</p>
+<p>至于另外一个原因，其实也是本文最想分享给大家的，是怎么在没有互联网的<code>内网</code>环境中，继续用你自己搭好的工具链环境！</p>
+<p>怎么样，上面写的全是废话吧？好吧，让我们赶快开始！</p>
+<h2 id="先跑个题儿"><a href="#先跑个题儿" class="headerlink" title="先跑个题儿"></a>先跑个题儿</h2><p>我喜欢用<code>emacs</code>，因为emacs是我的信仰！但不管是<code>deb</code>世界还是<code>rpm</code>世界，版本更新都不怎么及时，真烦！于是搜贴，用下面的几行命令，可以在<code>ubuntu</code>或者<code>apt</code>的世界里，用上最新版的<code>emacs</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:kelleyk/emacs</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install emacs25</span><br></pre></td></tr></table></figure>
+<p>如果你之前用源码编译安装的，并且当时的源码包还在（千万别轻易删除任何源码包），那么大多数用<code>make</code>方式进行编译安装的源码包，都支持：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make uninstall</span><br></pre></td></tr></table></figure>
+<p>跑题结束，正文开始！</p>
+<h2 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h2><p>对于前端世界而言，大的包管理架构林林总总好多个，但最有名的还是node.js中的npm（虽然yarn作为后起之秀也相当不错），而<code>node</code>本身的多版本管理，也经常让人头痛，并且，如果你没办法连接互联网，那一切都可以拜拜了！</p>
+<p>所以，本文所分享给大家的应用场景是：</p>
+<ul>
+<li>你的日常开发工作，均需要在<code>内网</code>环境中进行，绝对连不了互联网！</li>
+<li>你至少有一台电脑可以连互联网，且从这台电脑上下载的东西，不管是刻盘也好优盘也好网闸也好，总之能拷贝到你内网中那台连不了互联网的可怜电脑上（比如我这儿）。</li>
+<li>两台电脑都跑着Linux（推荐Ubuntu或者CentOS），因为我不用Windows，所以如果你用的Windows，抱歉我没法教你……</li>
+</ul>
+<p>如果符合上面三个条件，你可以放心的继续阅读本文了。</p>
+<h3 id="阅读前注意！"><a href="#阅读前注意！" class="headerlink" title="阅读前注意！"></a>阅读前注意！</h3><blockquote>
+<p>请一步步的按顺序仔细阅读，因为每一个小节中即包含了<code>怎么回事</code>，也包含了<code>该怎么干</code>。</p>
+</blockquote>
+<blockquote>
+<p>对于Linux新手，也是最容易犯的错误，请记住一句话：在没让你<code>sudo</code>的时候，就别乱用<code>root</code>！特别是这条，因为你很可能把什么东西给搞成系统级安装，你自己用着还不知道！</p>
+</blockquote>
+<h3 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h3><p>这东西很神奇！很方便！很强大！它是用来管理本地node版本的工具，怎么说呢？有点类似<code>python</code>的<code>virtualenv</code>，你可以用这东西在<code>node</code>的若干个版本之间无缝切换，而且安装配置全自动，最重要的，这东西可以带着<code>node</code>，以及用<code>npm install -g</code>全局安装的所有东西，一起搬家！</p>
+<p>本节操作，在互联网电脑上进行。</p>
+<p><a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm的官网，以及安装使用说明</a></p>
+<p>首先，如果你当前系统中有<code>node</code>和<code>npm</code>，请统统删了！</p>
+<p>然后，装上<code>git</code>！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
+<p>随后，安装<code>nvm</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash</span><br></pre></td></tr></table></figure>
+<p>官网说的很清楚，上面的脚本，会从<code>github</code>上克隆<code>nvm</code>到<code>~/.nvm</code>中，并且在你的<code>profile</code>中加两句变量定义和脚本引用，就算装完了！是不是很简单？</p>
+<p>看到没，<code>nvm</code>不是系统级的安装，它自己本身就是可以<code>搬家</code>的！</p>
+<p>验证一下<code>nvm</code>的安装结果：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> -v nvm</span><br></pre></td></tr></table></figure>
+<p>如果屏幕有信息返回（应该就三个字母：nvm），就表示安装成功了，如果没有，请<code>exit</code>当前的<code>Terminal</code>，重新开一个，再试试，应该就好了。</p>
+<p>本节终极知识点：</p>
+<p><code>~/.nvm</code>包含了所有东西，并且不是系统级安装，是可以直接考走的！</p>
+<h3 id="用nvm安装node"><a href="#用nvm安装node" class="headerlink" title="用nvm安装node"></a>用<code>nvm</code>安装<code>node</code></h3><p>弄好了<code>nvm</code>，在互联网电脑上的剩下操作，就更简单了！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install --lts</span><br></pre></td></tr></table></figure>
+<p>上面的命令，会自动安装<code>node</code>的<code>LTS</code>版本，<code>LTS</code>版本是最新的长期支持稳定运行版本，截至本文发布时，<code>node</code>的<code>LTS</code>版本是<code>v8.9.1</code></p>
+<p>然后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install node</span><br></pre></td></tr></table></figure>
+<p>上面只指定node，不指定版本号，默认就是安装<code>node</code>的最新（稳定）版本，注意这个版本一般不是长期支持版本。截至本文发布，最新版本是<code>v9.2.0</code></p>
+<p>这里，推荐你把将来可能用到的所有<code>node</code>版本，统统装上！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm ls         查看本地Node.js版本</span><br><span class="line">nvm ls-remote  查看远端Node.js的所有版本，想装哪些版本，就从这里面挑吧！</span><br></pre></td></tr></table></figure>
+<p><code>nvm</code>会自动将你<code>install</code>的最近一个版本，作为<code>node</code>的默认运行版本，你可以使用下面的命令在本地已经安装的版本（用<code>nvm ls</code>查看）中自由切换：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvm use node</span><br><span class="line">或者</span><br><span class="line">nvm use --lts</span><br></pre></td></tr></table></figure>
+<p>这里只需要注意一点，代表<code>LTS</code>版本的标签，前面要带上<code>--</code>.</p>
+<p>本节需要掌握的知识点：</p>
+<ul>
+<li><code>nvm</code>会把所有已经安装的版本统一放在<code>.nvm/versions/node/</code></li>
+<li><code>nvm</code>在安装<code>node</code>的时候，如果可执行文件包下载失败，会自动切换到源码包下载，并自动编译安装到<code>.nvm</code>对应目录中，基本可以做到万无一失的全自动安装！</li>
+<li><code>nvm</code>在安装<code>node</code>之后，会自动安装该版本能够支持的最高版本的对应<code>npm</code>（或者说<code>node</code>自带的<code>npm</code>）</li>
+</ul>
+<h3 id="用npm安装sinopia"><a href="#用npm安装sinopia" class="headerlink" title="用npm安装sinopia"></a>用<code>npm</code>安装<code>sinopia</code></h3><p>那啥，你不知道<code>npm</code>是啥？天呢……<code>npm</code>是<code>node</code>用来管理包的工具，这么说吧：</p>
+<p><code>nvm</code>用来管理不同版本的<code>node</code>，对于每个已经安装的<code>node</code>来说，都是相互独立的，从<code>node</code>内部来看，<code>LTS</code>版本的<code>node</code>并不知道还有另外一个<code>9.2.0</code>版本的<code>node</code>在它隔壁。</p>
+<p><code>npm</code>是<code>node</code>管理自己的模块（或是包、插件等等）的工具，每个用<code>nvm</code>安装的<code>node</code>版本，都有它自己的<code>npm</code>包管理工具，虽然不正确，但你可以把<code>npm</code>看作是每个版本的<code>node</code>都会自带的东西。</p>
+<p>好了，基本概念解释清楚了之后，我们来看看这个真正实现<code>本地化</code>的神器：<code>sinopia</code>.</p>
+<p><code>sinopia</code>简单的理解，就是<code>Node</code>世界中众多模块中的一个，它的功能很简单也很强大！</p>
+<p>简单，就是全自动的维护运行一个<code>本地</code>的<code>node</code>模块仓库（<code>node</code>的仓库叫做<code>registry</code>）。</p>
+<p>强大，是在<code>npm</code>告诉<code>sinopia</code>想要什么模块之后，<code>sinopia</code>先看看它自己这儿有没有，如果有，就直接提供给<code>npm</code>，如果没有，会先自动从<code>npm</code>的官方仓库中下载回来，保存到自己这儿，然后再提供给<code>npm</code>，这一切均自动完成。当然，<code>sinopia</code>还支持多用户上传分享模块等等功能，它就是在替你维护一个全功能的<code>Registry</code>！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm use node</span><br><span class="line">npm install -g sinopia</span><br></pre></td></tr></table></figure>
+<p>这里我们先指挥<code>nvm</code>激活<code>node</code>的最新版本，然后用<code>npm</code>将<code>sinopia</code>全局安装（-g）到<code>node</code>的全局模块库中。这里跟上一节不同，你完全没必要每个<code>node</code>版本都装一个<code>sinopia</code>，用最新的<code>node</code>装最新的<code>sinopia</code>就好啦。</p>
+<p>在上面装<code>sinopia</code>的最后，编译器[有可能]会报两个依赖包编译失败的错误，一个是<code>fs-ext</code>，一个是<code>crypt3</code>，出现这种情况，我也不知道是怎么回事，<code>node</code>的<code>LTS</code>和最新版在<code>Ubuntu 16.04 LTS</code>中都会出现这两个错误，但没关系，从<code>sinopia</code>的依赖包文件中可以看到，<code>fs-ext</code>和<code>crypt3</code>这两个包是可选依赖，简单讲就是“没它们也行”的意思，但毕竟是编译错误，我们需要手动删除关于这两个包的一些多余文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm -fr ~/.nvm/versions/node/v9.2.0/lib/node_modules/fs-ext/</span><br><span class="line">rm -fr ~/.nvm/versions/node/v9.2.0/lib/node_modules/crypt3/</span><br><span class="line">rm -fr ~/.nvm/versions/node/v9.2.0/lib/node_modules/sinopia/node_modules/fs-ext/</span><br><span class="line">rm -fr ~/.nvm/versions/node/v9.2.0/lib/node_modules/sinopia/node_modules/crypt3/</span><br></pre></td></tr></table></figure>
+<p>上面四个位置中的<code>v9.2.0</code>是用来安装<code>sinopia</code>的<code>node</code>版本号，请修改为自己的。且上面四个路径不一定都存在，保险起见，挨个都删一下吧，不然在用<code>npm</code>指定用户登录<code>sinopia</code>维护的<code>Registry</code>的时候，<code>htpasswd</code>组件会报错。</p>
+<p>有经验的童鞋，在看了上面四个路径之后，是不是有所收获？没错，<code>nvm</code>真的很强大，完全把每个版本的<code>node</code>都独立封在了各自的目录中，真的挺像<code>python</code>世界的虚拟环境的。</p>
+<h3 id="配置sinopia"><a href="#配置sinopia" class="headerlink" title="配置sinopia"></a>配置<code>sinopia</code></h3><p><code>sinopia</code>就这点最贴合我的审美：号称零配置！装上就能用！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/</span><br><span class="line">sinopia</span><br></pre></td></tr></table></figure>
+<p>直接输入<code>sinopia</code>，它就开始工作了！</p>
+<p>第一次运行的时候，<code>sinopia</code>会在<code>~/.config/sinopia/</code>中生成一个<code>config.yaml</code>，这是它默认的配置文件，为了给将来的搬家工作做铺垫，我们先<code>ctrl-c</code>结束<code>sinopia</code>的运行，然后新建个目录，将配置文件丢进去：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span></span><br><span class="line">mkdir sinopia</span><br><span class="line"><span class="built_in">cd</span> sinopia</span><br><span class="line">cp ~/.config/sinopia/config.yaml ./</span><br></pre></td></tr></table></figure>
+<p>然后用编辑器打开这个配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/sinopia/config.yaml</span><br></pre></td></tr></table></figure>
+<p>将第一行的<code>storage</code>变量内容修改为相对路径：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">storage: ./storage</span><br></pre></td></tr></table></figure>
+<p>这一行的意思是，告诉<code>sinopia</code>，用来存储所有模块的地方，是与这个<code>config.yaml</code>配置文件在一起的<code>storage</code>目录。</p>
+<p>然后，我们带着参数再次运行<code>sinopia</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/sinopia</span><br><span class="line">sinopia -c config.yaml</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">warn  --- config file  - /home/wyao/sinopia/config.yaml</span><br><span class="line">warn  --- http address - http://localhost:4873/</span><br></pre></td></tr></table></figure>
+<p>如果屏幕输出了类似上面的内容，OK，这次<code>sinopia</code>在使用我们修改好的<code>config.yaml</code>运行了，它所维护的所有包，都放在指定地方（这里是~/sinopia/storage）</p>
+<p>这里先别结束<code>sinopia</code>，就让它这么运行着，下一节我们会用它继续工作！</p>
+<h3 id="指挥npm连上sinopia"><a href="#指挥npm连上sinopia" class="headerlink" title="指挥npm连上sinopia"></a>指挥<code>npm</code>连上<code>sinopia</code></h3><p>本节比较简单，因为在<code>npm</code>看来，<code>sinopia</code>给的地址就是一个正常的<code>Registry</code>。我们这么来做，保持上一节打开的<code>sinopia</code>不便，新开一个<code>Terminal</code>（终端），然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nvm use node</span><br><span class="line">npm <span class="built_in">set</span> registry http://localhost:4873</span><br><span class="line">npm adduser</span><br></pre></td></tr></table></figure>
+<p>第一条命令是指定<code>nvm</code>激活最新版本的<code>node</code>，这样做是为了举个例子，你完全可以激活任何一个版本的<code>node</code>，设定<code>registry</code>到<code>sinopia</code>的服务地址，并且用向导注册一个新用户（注册完会提示自动登录到了registry）。</p>
+<p>这里其实还隐藏着一点，就是使用<code>nvm</code>管理的<code>node</code>，对于每一个<code>Terminal</code>（终端）来说，都是独立的，就算一个终端中运行着最新版本<code>node</code>的<code>sinopia</code>，另一个终端完全可以<code>nvm use --lts</code>，互相没有干扰（我又想说<code>python</code>的<code>venv</code>了，真的是天才设计）。</p>
+<p>注册完用户（其实也可以不注册），新建一个临时文件夹，用<code>npm</code>通过<code>sinopia</code>把将来可能会用到的模块，统统装一遍，这一步不为别的，只是让<code>sinopia</code>把那些模块从官方仓库中下载回来并保存到它自己的<code>storage</code>目录中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">mkdir sss</span><br><span class="line"><span class="built_in">cd</span> sss</span><br><span class="line">npm install -g gulp</span><br><span class="line">npm install -g grunt</span><br><span class="line">npm install jquery</span><br><span class="line">npm install bootstrap</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>看着另一个终端中的<code>sinopia</code>正在替你做着所有事情，心情是不是很好？等装完想装的，结束<code>sinopia</code>，<code>exit</code>所有终端窗口，我们准备最后一个大环节：打包搬家！</p>
+<h3 id="搬家准备"><a href="#搬家准备" class="headerlink" title="搬家准备"></a>搬家准备</h3><p>在这一节中，我们主要打包两样东西：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span></span><br><span class="line">tar cjvf nvm.tar.bz2 ~/.nvm/</span><br><span class="line">tar cjvf sinopia.tar.bz2 ~/sinopia/</span><br></pre></td></tr></table></figure>
+<p>就这两样！只有这两样！简单不？</p>
+<p>刻盘、优盘、网闸，随你便，让我们暂时离开互联网，搬到内网机器上。</p>
+<h3 id="落户内网"><a href="#落户内网" class="headerlink" title="落户内网"></a>落户内网</h3><p>你已经成功把上面两个包弄到内网来了，并且内网的这台机器也是Linux（理由请看本文开始部分），假设这两个包拷贝在~/Downloads/中，我们解压它们：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br><span class="line">tar xjvf nvm.tar.bz2</span><br><span class="line">tar xjvf sinopia.tar.bz2</span><br></pre></td></tr></table></figure>
+<p>然后移动<code>.nvm</code>目录到<code>~/</code>中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv ~/Downloads/.nvm ~/</span><br></pre></td></tr></table></figure>
+<p>至于<code>sinopia</code>目录，把它放在服务一类的程序目录中就好，比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv ~/Downloads/sinopia ~/running/</span><br></pre></td></tr></table></figure>
+<p>然后我们编辑当前系统用户的<code>profile</code>（Ubuntu的文件在~/.bashrc），在最后加上几行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$HOME</span>/.nvm"</span></span><br><span class="line">[ -s <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span>  <span class="comment"># This loads nvm</span></span><br><span class="line">[ -s <span class="string">"<span class="variable">$NVM_DIR</span>/bash_completion"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/bash_completion"</span>  <span class="comment"># This loads nvm bash_completion</span></span><br></pre></td></tr></table></figure>
+<p>然后<code>source .bashrc</code>或者关了重开一个<code>Terminal</code>，测试一下我们的<code>nvm</code>激活了没有：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvm ls</span><br><span class="line">nvm use node</span><br></pre></td></tr></table></figure>
+<p>如果测试用的命令有用，恭喜你，<code>nvm</code>落户成功了！</p>
+<p>接下来，我们继续操作<code>sinopia</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/running/sinopia</span><br><span class="line">nvm use node</span><br><span class="line">sinopia -c config.yaml</span><br></pre></td></tr></table></figure>
+<p>如果一切正常，<code>sinopia</code>会顺利起来，和互联网那台机器一样开始提供服务！</p>
+<p>这里需要注意，第二行命令是激活某一个版本的<code>node</code>，这里你需要激活那个在互联网机器上安装<code>sinopia</code>的版本，因为别的版本中没有安装<code>sinopia</code>（当然，如果你多个<code>node</code>版本全装了，算你狠……）</p>
+<p>再提醒一点，什么<code>npm set registry</code>，<code>npm add user</code>之类的操作，只要是在之前互联网机器上做过的，现在都<code>不需要</code>再做了，还记得吗？所有东西，都保存在<code>.nvm</code>目录中，配置也一样，我们全搬过来了！</p>
+<h3 id="日后维护"><a href="#日后维护" class="headerlink" title="日后维护"></a>日后维护</h3><p>按照上面的操作进行到这里，我们已经把<code>nvm</code>，多个版本的<code>node</code>，对应的<code>npm</code>，以及<code>sinopia</code>统统搬进了内网。</p>
+<p>如果以后想要安装其他<code>node</code>模块，只需要回到那台互联网机器上运行<code>sinopia</code>，找个临时文件夹<code>npm install</code>想要的模块，然后把<code>sinopia</code>的<code>storage</code>文件夹替换内网机器上的<code>storage</code>文件夹即可。</p>
+<p>如果想要更新<code>node</code>版本，在互联网机器上操作完<code>nvm</code>之后，直接打包<code>.nvm</code>目录回到内网，替换原来目录即可。</p>
+<p>上面两个操作建议<code>替换</code>，因为我不确定<code>合并</code>目录会带来什么隐患，还是删了旧的，直接用新目录保险！</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>好久不写文章，确实写的废话连篇，但至少至此，你应该能够很牛逼的对你的团队成员讲：“老子新建了一个registry，都把npm set到我这里，自己注册用户，我们用私有仓库共享模块！</p>
+<p>希望本文能够帮助到你！</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/javascript/">#javascript</a> <a href="/tags/nodejs/">#nodejs</a> <a href="/tags/npm/">#npm</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    执着而不计成本，不为索取只为陶醉
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>最近发布</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/2017/11/29/2017112901/index.html">打造灵活可用的本地Node.js工具链环境</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2017/03/27/2017032701/index.html">Let&#39;s Encrypt全程配置使用指南</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2017/03/23/2017032301/index.html">更改pypi(pip)源到阿里云</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/2017/01/08/2017010801/index.html">“二货成长记”到“灰狼日记”</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/HDiary/">HDiary</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Dreams/">Dreams</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/Whispers/">Whispers</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/IronWare/">IronWare</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a href="https://github.com/lnyk">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:me@williamyao.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @William Yao. All rights reserved | Design & Hexo <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
+<!-- Tween Max -->
+<script src="https://cdn.bootcss.com/gsap/latest/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="https://cdn.bootcss.com/featherlight/1.7.12/featherlight.min.js"></script>
+
+<!-- pangu -->
+<script src="https://cdn.bootcss.com/pangu/3.3.0/pangu.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="/js/main.js"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
