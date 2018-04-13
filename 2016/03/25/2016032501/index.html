@@ -173,7 +173,8 @@
         
 
         <!-- Post Content -->
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><blockquote><p>除非抱着回顾了解历史的目的，否则请勿再看此文。<code>StartSSL</code>已经因为一些卑劣的行径而死。</p>
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><blockquote><p>除非抱着回顾了解历史的目的，否则请勿再看此文，<code>StartSSL</code>已经因为一些卑劣的行径而死。</p>
+<p>申请并自动更新证书，请使用<code>Let&#39;s Encrypt!</code></p>
 <footer><strong>William Yao 2018年04月13日</strong></footer></blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近收到StartCom的邮件，数字证书即将过期，想到去年在StartSSL上折腾数字证书的一番啰嗦经历心里就打怵，可是又没办法，只好怀着“悲痛”的心情登上StartSSL，结果……！原来恶心人的界面统统消失了，取而代之的是全站的大更新，就连原来非常繁琐的Certification和Validation流程也被非常高效的向导给取代了！整个界面以侧边栏总览的方式将帐号下所有的内容全部概括，看着就让人“赏心悦目”！</p>
 <a id="more"></a>
@@ -269,9 +270,9 @@
 <p>SSH到服务器上，分别编辑两个虚拟主机的conf配置文件，我们先来第一个：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /usr/<span class="built_in">local</span>/nginx/conf/vhost/williamyao.com.conf</span><br></pre></td></tr></table></figure>
 <p>将配置信息添加到配置文件中，配置好的williamyao.com.conf文件形如这个样子：</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">443</span> ssl;</span><br><span class="line">    <span class="comment"># 下面这一行用于启用 IPv6 支持</span></span><br><span class="line">    <span class="attribute">listen</span> [::]:<span class="number">443</span> ssl ipv6only=<span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">server_name</span> williamyao.com;</span><br><span class="line">    <span class="comment"># SSL 支持配置如下</span></span><br><span class="line">    <span class="attribute">ssl</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">ssl_certificate</span> /etc/ssl/private/williamyao.com.crt;</span><br><span class="line">    <span class="attribute">ssl_certificate_key</span> /etc/ssl/private/williamyao.com.key;</span><br><span class="line"></span><br><span class="line">    ...（其他配置）...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">listen</span> [::]:<span class="number">80</span> ipv6only=<span class="literal">on</span>;</span><br><span class="line">    <span class="attribute">server_name</span> williamyao.com;</span><br><span class="line">    <span class="attribute">return</span> <span class="number">301</span> https://williamyao.com<span class="variable">$request_uri</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    # 下面这一行用于启用 IPv6 支持</span><br><span class="line">    listen [::]:443 ssl ipv6only=on;</span><br><span class="line">    server_name williamyao.com;</span><br><span class="line">    # SSL 支持配置如下</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /etc/ssl/private/williamyao.com.crt;</span><br><span class="line">    ssl_certificate_key /etc/ssl/private/williamyao.com.key;</span><br><span class="line"></span><br><span class="line">    ...（其他配置）...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    listen [::]:80 ipv6only=on;</span><br><span class="line">    server_name williamyao.com;</span><br><span class="line">    return 301 https://williamyao.com$request_uri;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>之后编辑另一个虚拟主机app.williamyao.com.conf配置文件，形如下面这样：</p>
-<p><code>`</code>nginx<br>server<br>{<br>    listen 443 ssl;</p>
+<p><code>`</code>conf<br>server<br>{<br>    listen 443 ssl;</p>
 <pre><code># 下面这一行用于启用 IPv6 支持
 listen [::]:443 ssl;
 server_name app.williamyao.com;
@@ -333,19 +334,19 @@ ssl_certificate_key /etc/ssl/private/app.williamyao.com.key;
         <ul>
             
             <li>
-                <a class="footer-post" href="/2016/03/25/2016032501/index.html">StartCom申请SSL证书及Nginx HTT</a>
+                <a class="footer-post" href="/2017/03/27/2017032701/index.html">\&#34;Let\&#39;s Encrypt\&#34;全程配置使用指</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2016/03/12/2016031201/index.html">TrueCrypt你怎么了？</a>
+                <a class="footer-post" href="/2017/03/23/2017032301/index.html">更改pypi(pip)源到阿里云</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2016/02/29/2016022902/index.html">Ubuntu安装最新版TeX Live</a>
+                <a class="footer-post" href="/2017/01/08/2017010801/index.html">“二货成长记”到“灰狼日记”</a>
             </li>
             
             <li>
-                <a class="footer-post" href="/2016/02/29/2016022901/index.html">常用7-Zip最高压缩命令</a>
+                <a class="footer-post" href="/2016/03/31/2016033101/index.html">更新JavaScript公共库到BootCDN</a>
             </li>
             
         </ul>
@@ -357,6 +358,10 @@ ssl_certificate_key /etc/ssl/private/app.williamyao.com.key;
 <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
     <h2>分类</h2>
     <ul>
+        
+        <li>
+            <a class="footer-post" href="/categories/HDiary/">HDiary</a>
+        </li>
         
         <li>
             <a class="footer-post" href="/categories/Dreams/">Dreams</a>
