@@ -1527,6 +1527,9 @@ body {
 }
 .article {
   padding-bottom: 42px;
+  text-indent: 2em;
+  text-align: justify;
+  text-justify: inter-ideograph;
 }
 .article .article-date {
   float: left;

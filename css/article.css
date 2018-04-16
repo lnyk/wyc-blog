@@ -1,6 +1,9 @@
 .article {
   padding-bottom: 42px;
 }
+.article p {
+  text-indent: 2em;
+}
 .article .article-date {
   float: left;
   display: block;
@@ -128,6 +131,9 @@
   }
   .article {
     padding-bottom: 0;
+  }
+  .article p {
+    text-indent: 2em;
   }
   .article .article-date {
     float: none;
