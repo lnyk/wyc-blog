@@ -167,7 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>每次都记不住7-Zip的命令，到处搜索，这次就先备注在这里吧。</p>
+        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>每次都记不住7-Zip的命令，到处搜索，这次就先备注在这里吧。</p>
 <a id="more"></a>
 <p>最高压缩命令（最耗内存和时间）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">7z a -t7z ~/snapshot.7z target_dir/ -r -mx=9 -ms -mf -mhc -mhcf -mmt</span><br><span class="line"># a        添加或创建压缩文档</span><br><span class="line"># -t7z     指定压缩包格式为7z（其实会自动根据指定文件名来判断，这个开关可以不写）</span><br><span class="line">#          比如指定压缩包名称为 snapshot.7z，则自动采用 7z 格式</span><br><span class="line">#          target_dir 为需要压缩的文件（目录），支持 WildCard</span><br><span class="line"># -r       递归到所有的子目录</span><br><span class="line"># -mx=9    设置压缩等级为极限压缩</span><br><span class="line">#          （默认为：LZMA 最大算法、32 MB 字典大小、BT4b Match finder、单词大小为 64、BCJ2 过滤器）</span><br><span class="line"># -ms      开启固实模式（把所有文件当作一整块来存储）</span><br><span class="line"># -mf      开启可执行文件压缩过滤器</span><br><span class="line"># -mhc     开启档案文件头压缩</span><br><span class="line"># -mhcf    开启档案文件头完全压缩</span><br><span class="line"># -mmt     开启多线程模式</span><br></pre></td></tr></table></figure>
@@ -455,10 +455,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
               </li>
              
@@ -488,6 +484,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">server</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -751,15 +751,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">typecho</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">game</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">steam</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">typecho</a>
               </li>
              
               <li class="article-tag-list-item">
