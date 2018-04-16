@@ -84,8 +84,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -178,7 +176,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天打开Steam居然看到了这样的场面：</p>
+        <p>今天打开Steam居然看到了这样的场面：</p>
 <p><img src="https://wyc-blog.oss-cn-beijing.aliyuncs.com/images/2016021101/2016021101-01.jpg!w-1024" alt="Steam"></p>
 <a id="more"></a>
 <p>一开始想，Valve也挺会凑热闹的嘛，结果点进去一看才发现，Steam中国商店全平台折扣，一般的像是“打折”这一类的信息，对于我等技术大叔来说基本是小脑略过的信息，可一看价目表，我确实心痒痒了！</p>
@@ -380,7 +378,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -401,8 +399,6 @@
       
     
       
-      
-      
     
     
 
@@ -410,13 +406,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -657,11 +651,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -873,12 +867,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

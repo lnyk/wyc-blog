@@ -75,8 +75,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -169,7 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天无意中发现了一个很不错的文件共享网站，虽然只是for Mac的，但云存储体验和有趣的Mac应用程序结合，还是蛮新鲜的，而且网站自动使用cl.ly来缩短URL的长度，最让人高兴的是，在支持Aperture/iPhoto/VLC等等一系列软件的插件支持的前提下，好像我还没看到存储空间的限制。难道真是无限量存储，还真让人兴奋。</p>
+        <p>今天无意中发现了一个很不错的文件共享网站，虽然只是for Mac的，但云存储体验和有趣的Mac应用程序结合，还是蛮新鲜的，而且网站自动使用cl.ly来缩短URL的长度，最让人高兴的是，在支持Aperture/iPhoto/VLC等等一系列软件的插件支持的前提下，好像我还没看到存储空间的限制。难道真是无限量存储，还真让人兴奋。</p>
 <p>废话不多说，赶紧奉上网址，希望各位Mac Fan用的开心。</p>
 <p><a href="http://www.getcloudapp.com/" title="GetCloudApp.com" target="_blank" rel="noopener">GetCloudApp.com</a></p>
 <p>对了，我的帐号是<a href="mailto:monoyo@gmail.com" title="monoyo@gmail.com" target="_blank" rel="noopener">monoyo@gmail.com</a>，有兴趣的朋友可以浏览一下我共享的东西哦。</p>
@@ -353,7 +351,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -374,8 +372,6 @@
       
     
       
-      
-      
     
     
 
@@ -383,13 +379,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -630,11 +624,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -846,12 +840,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

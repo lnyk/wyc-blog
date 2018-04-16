@@ -75,8 +75,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -169,7 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>不久前买了一套6本的CCNP官方教程中文版，又从网上Down了一套6本英文PDF版，打算入门CCNP，结果才看了两天，就发现，当年的基础知识有不少印象都模糊了，只好又趁着周末去买了三本CCNA的，打算先预热一下基础知识，然后再上CCNP，毕竟跨专业很多年了，重新捡起来也不是那么顺手。</p>
+        <p>不久前买了一套6本的CCNP官方教程中文版，又从网上Down了一套6本英文PDF版，打算入门CCNP，结果才看了两天，就发现，当年的基础知识有不少印象都模糊了，只好又趁着周末去买了三本CCNA的，打算先预热一下基础知识，然后再上CCNP，毕竟跨专业很多年了，重新捡起来也不是那么顺手。</p>
 <p>总觉得目前的工作环境里有大把的时间可以利用起来，快三十的男人了，再不把时间充分利用在学习硬东西上，恐怕将来要吃亏。</p>
 <p>因为每天都在写日记，博客真的荒废了很久了，希望能尽快把新加坡这个新服务器完全弄起来，内容没有不怕，服务总得全功能，不然也对不起咱的资金投入……</p>
 
@@ -341,7 +339,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -362,8 +360,6 @@
       
     
       
-      
-      
     
     
 
@@ -371,13 +367,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -618,11 +612,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -834,12 +828,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

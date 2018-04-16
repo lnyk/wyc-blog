@@ -80,8 +80,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -174,7 +172,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>用了一年多的64-bit Windows 8，不管是Firefox还是Thunderbird都是天天在用，对于运行速度完全没有关注，只知道在平时工作的Ubuntu上运行的这两个软件速度要比Windows上流畅的多，而且最近还因为速度问题用上了传说中Chromium核心的百度浏览器……</p>
+        <p>用了一年多的64-bit Windows 8，不管是Firefox还是Thunderbird都是天天在用，对于运行速度完全没有关注，只知道在平时工作的Ubuntu上运行的这两个软件速度要比Windows上流畅的多，而且最近还因为速度问题用上了传说中Chromium核心的百度浏览器……</p>
 <p>直到今天偶尔看到Mozilla 64-bit产品线，才突然觉得”Program Files(x84)”这个文件夹实在太丑了！浪费是可耻的，所以在64位系统上运行32位程序，本身也是一种罪恶吧！</p>
 <a id="more"></a>
 <p>下载之前有几点需要说明：</p>
@@ -385,7 +383,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -406,8 +404,6 @@
       
     
       
-      
-      
     
     
 
@@ -415,13 +411,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -662,11 +656,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -878,12 +872,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

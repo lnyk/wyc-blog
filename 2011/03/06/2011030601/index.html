@@ -75,8 +75,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -169,7 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天WordPress提示有新版本升级，赶紧升级，然后想选个主题。在选主题的过程中发现了BuddyPress这个可以把博客变成社区的插件，尝试了一下，觉得原来挺简单的博客，一下子变得复杂了。搜索了一下插件库，发现关于BuddyPress的相关插件还真不少，可以这样我觉得WordPress的路就走歪了，毕竟维基有mediawiki，论坛有phpBB，现在这世界第一大开源博客系统WordPress，让一个小小的BuddyPress插件给搞的人不像人鬼不像鬼。总之个人不喜欢。</p>
+        <p>今天WordPress提示有新版本升级，赶紧升级，然后想选个主题。在选主题的过程中发现了BuddyPress这个可以把博客变成社区的插件，尝试了一下，觉得原来挺简单的博客，一下子变得复杂了。搜索了一下插件库，发现关于BuddyPress的相关插件还真不少，可以这样我觉得WordPress的路就走歪了，毕竟维基有mediawiki，论坛有phpBB，现在这世界第一大开源博客系统WordPress，让一个小小的BuddyPress插件给搞的人不像人鬼不像鬼。总之个人不喜欢。</p>
 <p>今天换了一个博客风格，虽然看起来有点乱，不过总是需要尝试一下新事物的，毕竟好久没更新文章了，就先从“界面”开始吧。</p>
 
       
@@ -344,7 +342,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -365,8 +363,6 @@
       
     
       
-      
-      
     
     
 
@@ -374,13 +370,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -621,11 +615,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -837,12 +831,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

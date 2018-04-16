@@ -75,8 +75,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -169,7 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天重装Pillow时遇到了编码问题，编译不通过，于是重新设置了一下python的默认编码。</p>
+        <p>今天重装Pillow时遇到了编码问题，编译不通过，于是重新设置了一下python的默认编码。</p>
 <a id="more"></a>
 <p>Python在初始化的时候默认使用ascii编码，并且在初始化之后禁止用户修改默认编码，所以造成很多非ascii编码的文件在非显式指定编码的时候报错，这样我们就需要修改一下默认编码为UTF-8了。</p>
 <h2 id="在Ubuntu中"><a href="#在Ubuntu中" class="headerlink" title="在Ubuntu中"></a>在Ubuntu中</h2><p><code>/etc/python[x.x]/sitecustomize.py</code>这个文件在python运行之前会自动运行，也是整个python的“全站”用户自定义初始化文件。</p>
@@ -353,7 +351,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -374,8 +372,6 @@
       
     
       
-      
-      
     
     
 
@@ -383,13 +379,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -630,11 +624,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -846,12 +840,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

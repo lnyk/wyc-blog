@@ -80,8 +80,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -174,7 +172,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天整理硬盘，需要访问加密分区，因为前一阵子刚重装了系统，这次需要重新装回<a href="http://truecrypt.sourceforge.net/" target="_blank" rel="noopener">TrueCrypt</a>。从<code>4.x</code>开始一直使用这个可爱的加密系统创建活动虚拟磁盘保存加密数据，也是通过了解这个开源软件，顺便才小小研究了当时非常流行的几个加密算法，可是今天打开官网，却发现了不对的地方。</p>
+        <p>今天整理硬盘，需要访问加密分区，因为前一阵子刚重装了系统，这次需要重新装回<a href="http://truecrypt.sourceforge.net/" target="_blank" rel="noopener">TrueCrypt</a>。从<code>4.x</code>开始一直使用这个可爱的加密系统创建活动虚拟磁盘保存加密数据，也是通过了解这个开源软件，顺便才小小研究了当时非常流行的几个加密算法，可是今天打开官网，却发现了不对的地方。</p>
 <blockquote><p>WARNING: Using TrueCrypt is not secure as it may contain unfixed security issues.</p>
 <footer><strong>TrueCrypt官网</strong></footer></blockquote>
 <a id="more"></a>
@@ -408,7 +406,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -429,8 +427,6 @@
       
     
       
-      
-      
     
     
 
@@ -438,13 +434,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -685,11 +679,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -901,12 +895,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

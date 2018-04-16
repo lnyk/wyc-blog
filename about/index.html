@@ -75,8 +75,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -169,7 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><h2 id="关于文章"><a href="#关于文章" class="headerlink" title="关于文章"></a>关于文章</h2><p>其实也没有什么啦（千万别信，我这只是一种表达谦虚的方式而已，你懂的）！说起文章的话，其实经济文化社会生产等各方面都有所包含：）但我又是个看不惯乱糟糟场面的强迫症患者，所以姑且将这些文字统统扔到了下面三个洞里。</p>
+        <h2 id="关于文章"><a href="#关于文章" class="headerlink" title="关于文章"></a>关于文章</h2><p>其实也没有什么啦（千万别信，我这只是一种表达谦虚的方式而已，你懂的）！说起文章的话，其实经济文化社会生产等各方面都有所包含：）但我又是个看不惯乱糟糟场面的强迫症患者，所以姑且将这些文字统统扔到了下面三个洞里。</p>
 <h3 id="IRONWARE"><a href="#IRONWARE" class="headerlink" title="IRONWARE"></a>IRONWARE</h3><p>数字的洪流，堆砌成亦真亦幻的现实</p>
 <p>这里堆砌着无数属于“停了电就什么作用都没有了”的文章，为什么这么说呢？因为它们讲述的是“电视机、收音机、洗衣机、电灯泡、空调、热水器”的故事，如果没有电，它们就什么都不是了……当然，这里面还混杂着少部分的云计算、互联网、服务器、软件和编程的小东东，凑合看看也就罢了。</p>
 <h3 id="DREAMS"><a href="#DREAMS" class="headerlink" title="DREAMS"></a>DREAMS</h3><p>定格的瞬间，记录下如梦一样的世界</p>
@@ -328,7 +326,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -349,8 +347,6 @@
       
     
       
-      
-      
     
     
 
@@ -358,13 +354,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -605,11 +599,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -821,12 +815,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

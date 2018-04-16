@@ -79,8 +79,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -173,7 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天还真写了不少东西！</p>
+        <p>今天还真写了不少东西！</p>
 <p>以前一直在Ubuntu上操作gitolite托管git仓库，近日需要在Win8.1平台上写代码，众所周知git是linux世界的东西，即使MinGW和GitHub for Windows解决了大问题，但一些常用架构和服务框架还是没法在Windows平台上使用的，比如gitolite这个方便的git托管服务器维护工具！</p>
 <p>关于gitolite一直想写篇文章介绍一下怎么实际安装和操作，一会儿再动笔，先打个标记在这里，等不及的可以先看<a href="https://github.com/sitaramc/gitolite" target="_blank" rel="noopener">官方文档（其实挺简单）</a></p>
 <p>在Linux平台上使用gitolite托管版本库，我一直都是用分布式单用户流程，用密钥直接操作，现在启用Windows平台，就相当于添加了一个用户给gitolite，本文就顺便科普的详细带你走一边给gitolite添加新用户的流程吧。</p>
@@ -396,7 +394,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -417,8 +415,6 @@
       
     
       
-      
-      
     
     
 
@@ -426,13 +422,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -673,11 +667,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -889,12 +883,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

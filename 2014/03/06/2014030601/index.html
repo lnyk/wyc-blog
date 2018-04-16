@@ -75,8 +75,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -169,7 +167,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>今天买了新笔记本，因为没有预装系统，所以直接用Ubuntu引导的系统，插上我的Razer Naga鼠标之后，发现移动速度太快，即使设置为最低也没用，看来得用系统及别的降速了。</p>
+        <p>今天买了新笔记本，因为没有预装系统，所以直接用Ubuntu引导的系统，插上我的Razer Naga鼠标之后，发现移动速度太快，即使设置为最低也没用，看来得用系统及别的降速了。</p>
 <p>打开终端，使用<code>xinput --list</code>命令找到鼠标的ID，我的ID是11，所以用下列命令进行降速，中间的句子是说明：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xinput --<span class="built_in">set</span>-prop <span class="string">"11"</span> <span class="string">"Device Accel Constant Deceleration"</span> 3</span><br></pre></td></tr></table></figure>
 <p>命令的意思是，把输入设备<code>11</code>的移动速度属性降到<code>3</code>，你也可以试试别的数字，对于我，3正好。</p>
@@ -347,7 +345,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -368,8 +366,6 @@
       
     
       
-      
-      
     
     
 
@@ -377,13 +373,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -624,11 +618,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -840,12 +834,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

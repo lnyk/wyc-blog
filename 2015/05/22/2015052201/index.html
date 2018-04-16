@@ -77,8 +77,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -171,7 +169,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><p>上周一直在折腾这台N年前的小上网本，初步设想是换SSD，加内存，上搭载轻量级LXDE桌面的Lubuntu，结果不知道是由于优盘年代比较久远，还是本本自己优盘引导有问题，或者是优盘启动制作工具的问题（事后证明是后者），总是引导不进安装程序，又不想手动折腾Grub，只好耐着性子慢慢Bing（度娘就算了吧，在我这行里，用度娘你是搜不到任何有价值的东西的），结果在大神“指点”之下，原来可以这么简单。</p>
+        <p>上周一直在折腾这台N年前的小上网本，初步设想是换SSD，加内存，上搭载轻量级LXDE桌面的Lubuntu，结果不知道是由于优盘年代比较久远，还是本本自己优盘引导有问题，或者是优盘启动制作工具的问题（事后证明是后者），总是引导不进安装程序，又不想手动折腾Grub，只好耐着性子慢慢Bing（度娘就算了吧，在我这行里，用度娘你是搜不到任何有价值的东西的），结果在大神“指点”之下，原来可以这么简单。</p>
 <a id="more"></a>
 <p>如果你用Ubuntu社区提供的启动盘创建器，或者LILI引导14.04以下的TLS版（长期支持版本），应该是可以正常引导的，但如果像我这次，用来引导Lubuntu 15.04，就可能会出现无法启动的情况。</p>
 <p>所以，如果出现了问题，还是使用下面的“终极工具”吧，虽然方式可能野蛮了一点点，但成功率相当高，那就是来自SUSE Studio的<a href="http://cloud.github.com/downloads/openSUSE/kiwi/ImageWriter.exe" target="_blank" rel="noopener">ImageWriter</a></p>
@@ -364,7 +362,7 @@
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -385,8 +383,6 @@
       
     
       
-      
-      
     
     
 
@@ -394,13 +390,11 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -641,11 +635,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -857,12 +851,6 @@
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

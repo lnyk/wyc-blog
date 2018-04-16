@@ -87,8 +87,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
-    			
             
 		</nav>
 		<nav class="header-nav">
@@ -181,7 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.css"><script src="https://cdn.bootcss.com/aplayer/1.10.1/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/js/Meting.min.js"></script><blockquote><p>除非抱着回顾了解历史的目的，否则请勿再看此文，StartSSL已经因为一些卑劣的行径而死。</p>
+        <blockquote><p>除非抱着回顾了解历史的目的，否则请勿再看此文，StartSSL已经因为一些卑劣的行径而死。</p>
 <p>申请并自动更新证书，请使用Let’s Encrypt!</p>
 <p>参考文章：<a href="/2017/03/27/2017032701/index.html" title="Let's Encrypt全程配置使用指南">Let’s Encrypt全程配置使用指南</a></p>
 <footer><strong>William Yao</strong><cite>2018年04月13日</cite></footer></blockquote>
@@ -478,7 +476,7 @@ ssl_certificate_key /etc/ssl/private/app.williamyao.com.key;
 		toc_hide_index: false,
 		root: "/",
 		innerArchive: true,
-		showTags: true
+		showTags: false
 	}
 </script>
 
@@ -499,8 +497,6 @@ ssl_certificate_key /etc/ssl/private/app.williamyao.com.key;
       
     
       
-      
-      
     
     
 
@@ -508,13 +504,11 @@ ssl_certificate_key /etc/ssl/private/app.williamyao.com.key;
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有内容</a></li>
       
         
       
         
-      
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -755,11 +749,11 @@ ssl_certificate_key /etc/ssl/private/app.williamyao.com.key;
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tex</a>
+                <a href="javascript:void(0)" class="js-tag color1">movie</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">movie</a>
+                <a href="javascript:void(0)" class="js-tag color4">tex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -971,12 +965,6 @@ ssl_certificate_key /etc/ssl/private/app.williamyao.com.key;
 
     
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   
