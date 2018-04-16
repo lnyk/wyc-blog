@@ -2233,6 +2233,9 @@ pre .css ~ * .id {
   padding: 30px 0px 15px 25px;
   padding-left: 7.6923%; }
 
+.article-entry p {
+  text-indent: 2em; }
+
 .article-meta {
   width: 150px;
   font-size: 14;
